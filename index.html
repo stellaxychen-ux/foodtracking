@@ -1,821 +1,342 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>P-Care | 胰腺营养助手</title>
+  <title>P‑Care | 胰腺营养助手</title>
 
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50:  "#e9fff4",
+              100: "#c9ffe1",
+              200: "#8fffc1",
+              300: "#56f3a1",
+              400: "#26d980",
+              500: "#12b76a",
+              600: "#0e8f53",
+              700: "#0d6f43",
+              800: "#0c5637",
+              900: "#0b472f"
+            }
+          },
+          boxShadow: {
+            soft: "0 8px 30px rgba(2, 6, 23, 0.08)"
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Icons -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+
+  <!-- Chart.js (for Analysis popup) -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 
   <style>
-    :root{
-      --bg: #F5F7FB;
-      --card: #FFFFFF;
-      --text: #0F172A;
-      --muted: #64748B;
-      --border: rgba(15,23,42,.08);
-
-      --safe: #16A34A;
-      --caution: #F59E0B;
-      --avoid: #EF4444;
-
-      --brand1:#2563EB;
-      --brand2:#7C3AED;
-    }
-    html,body{ background: var(--bg); color: var(--text); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji"; }
-    .card{ background: var(--card); border: 1px solid var(--border); border-radius: 18px; box-shadow: 0 10px 25px rgba(15,23,42,.06); }
-    .chip{ border: 1px solid var(--border); border-radius: 999px; padding:.25rem .6rem; font-size:.75rem; color: var(--muted); background: rgba(255,255,255,.7); }
-    .badge{ border-radius: 999px; padding: .2rem .55rem; font-size:.75rem; font-weight: 700; }
-    .badge-safe{ background: rgba(22,163,74,.12); color: var(--safe); }
-    .badge-caution{ background: rgba(245,158,11,.14); color: var(--caution); }
-    .badge-avoid{ background: rgba(239,68,68,.12); color: var(--avoid); }
-    .btn-primary{
-      background: linear-gradient(135deg, var(--brand1) 0%, var(--brand2) 100%);
-      color: white;
-    }
-    .btn-ghost{
-      background: rgba(255,255,255,.85);
-      border: 1px solid var(--border);
-      color: #0F172A;
-    }
-    .food-left-safe{ border-left: 6px solid var(--safe); }
-    .food-left-caution{ border-left: 6px solid var(--caution); }
-    .food-left-avoid{ border-left: 6px solid var(--avoid); }
-
-    /* Toast */
-    .toast{ position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%); z-index: 60; }
-    .toast > div{ background: rgba(15,23,42,.92); color: white; border-radius: 14px; padding: 10px 14px; box-shadow: 0 12px 30px rgba(0,0,0,.18); font-size: 14px; display:flex; align-items:center; gap:10px; }
-    .kbd{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace; padding: 1px 6px; border-radius: 6px; background: rgba(15,23,42,.06); border:1px solid var(--border); font-size: 12px; }
+    :root { color-scheme: light; }
+    body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif; }
+    .glass { backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+    .card { background: rgba(255,255,255,0.92); border: 1px solid rgba(15, 23, 42, 0.06); border-radius: 18px; }
+    .tag { border-radius: 999px; padding: 2px 10px; font-size: 12px; font-weight: 700; }
+    .tag-safe { background: #e9fff4; color: #0e8f53; border: 1px solid rgba(18,183,106,.25); }
+    .tag-caution { background: #fff8e1; color: #a16207; border: 1px solid rgba(161,98,7,.25); }
+    .tag-avoid { background: #ffecec; color: #b42318; border: 1px solid rgba(180,35,24,.22); }
+    .food-safe { border-left: 6px solid #12b76a; }
+    .food-caution { border-left: 6px solid #f59e0b; }
+    .food-avoid { border-left: 6px solid #ef4444; }
   </style>
 </head>
 
-<body class="pb-24">
-
-  <!-- Top bar -->
-  <header class="sticky top-0 z-50 backdrop-blur bg-white/70 border-b" style="border-color: var(--border);">
-    <div class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-2xl flex items-center justify-center text-white"
-             style="background: linear-gradient(135deg, var(--brand1), var(--brand2));">
-          <i class="fa-solid fa-staff-snake"></i>
-        </div>
-        <div>
-          <div class="flex items-center gap-2">
-            <h1 class="text-lg sm:text-xl font-extrabold tracking-tight">P-Care</h1>
-            <span class="chip">胰腺营养助手</span>
+<body class="bg-slate-50 text-slate-900 pb-24">
+  <!-- Top Bar -->
+  <header class="sticky top-0 z-40">
+    <div class="bg-white/70 glass border-b border-slate-100">
+      <div class="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-2xl bg-brand-500 text-white flex items-center justify-center shadow-soft">
+            <span class="text-lg">🥬</span>
           </div>
-          <p class="text-xs text-slate-500 mt-0.5">
-            少量多餐｜高蛋白｜低脂低纤维｜因人而异（请以医生/营养师指导为准）
-          </p>
+          <div>
+            <h1 class="text-xl font-extrabold tracking-tight">P‑Care</h1>
+            <p class="text-xs text-slate-500">胰腺营养 & 食物安全助手 · Evidence‑informed</p>
+          </div>
         </div>
-      </div>
 
-      <div class="flex items-center gap-2">
-        <button id="btnLang" class="btn-ghost px-3 py-2 rounded-xl text-sm font-semibold">
-          <i class="fa-solid fa-language mr-2"></i><span id="langLabel">中文</span>
-        </button>
-        <button onclick="openSettings()" class="btn-ghost px-3 py-2 rounded-xl text-sm font-semibold">
-          <i class="fa-solid fa-gear mr-2"></i>设置
-        </button>
+        <div class="flex items-center gap-2">
+          <button id="btnAnalysis" class="px-3 py-2 rounded-xl bg-brand-50 border border-brand-100 text-brand-700 font-semibold hover:bg-brand-100">
+            <i class="fa-solid fa-chart-pie mr-2"></i>分析
+          </button>
+          <button id="btnSettings" class="w-10 h-10 rounded-xl bg-white border border-slate-100 hover:bg-slate-50">
+            <i class="fa-solid fa-gear text-slate-500"></i>
+          </button>
+        </div>
       </div>
     </div>
   </header>
 
-  <main class="max-w-5xl mx-auto px-4 pt-6 space-y-6">
-
-    <!-- Dashboard -->
-    <section class="card p-5 sm:p-6">
-      <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
-        <div>
-          <h2 class="text-base sm:text-lg font-extrabold">
-            <span data-i18n="dailyGoalsTitle">每日目标</span>
-            <span class="text-xs font-normal text-slate-500 ml-2">
-              (<span data-i18n="targetWeight">目标体重</span>：<span id="targetWeightDisplay">--</span> kg)
-            </span>
-          </h2>
-          <p class="text-sm text-slate-500 mt-1" id="goalHint">
-            建议范围可在设置中调整（能量/蛋白按体重估算）。
-          </p>
-        </div>
-
-        <div class="flex items-center gap-2">
-          <span class="chip"><i class="fa-solid fa-utensils mr-2"></i><span id="mealModeLabel">术后/消化敏感</span></span>
-          <span class="chip"><i class="fa-solid fa-shield-heart mr-2"></i><span data-i18n="guideLabel">食物安全分级</span></span>
-        </div>
-      </div>
-
-      <!-- Calories -->
-      <div class="mt-5">
-        <div class="flex justify-between text-sm">
-          <span class="text-slate-600 font-semibold">
-            <i class="fa-solid fa-fire mr-2 text-orange-500"></i><span data-i18n="calories">热量</span>
-          </span>
-          <span class="font-extrabold text-slate-800">
-            <span id="calCurrent">0</span> / <span id="calTarget">2000</span> kcal
-          </span>
-        </div>
-        <div class="w-full bg-slate-200/70 rounded-full h-3 mt-2 overflow-hidden">
-          <div id="calBar" class="h-3 rounded-full" style="width:0%; background: linear-gradient(90deg,#F97316,#FB7185);"></div>
-        </div>
-      </div>
-
-      <!-- Protein -->
-      <div class="mt-4">
-        <div class="flex justify-between text-sm">
-          <span class="text-slate-600 font-semibold">
-            <i class="fa-solid fa-drumstick-bite mr-2 text-blue-600"></i><span data-i18n="protein">蛋白质</span>
-          </span>
-          <span class="font-extrabold text-slate-800">
-            <span id="protCurrent">0</span> / <span id="protTarget">80</span> g
-          </span>
-        </div>
-        <div class="w-full bg-slate-200/70 rounded-full h-3 mt-2 overflow-hidden">
-          <div id="protBar" class="h-3 rounded-full" style="width:0%; background: linear-gradient(90deg,#2563EB,#22C55E);"></div>
-        </div>
-        <p class="text-xs text-slate-500 mt-2">
-          <i class="fa-solid fa-circle-info mr-1"></i>
-          <span data-i18n="proteinTip">术后/治疗期间常强调高蛋白以帮助恢复；具体以个体耐受与医嘱为准。</span>
-        </p>
-      </div>
-
-      <div class="mt-5 flex flex-col sm:flex-row gap-3">
-        <button onclick="askAI()" class="btn-primary px-4 py-3 rounded-2xl font-extrabold flex items-center justify-center gap-2">
-          <i class="fa-solid fa-robot"></i><span data-i18n="askAI">问 AI 助手</span>
-        </button>
-        <button onclick="googleSearch()" class="btn-ghost px-4 py-3 rounded-2xl font-extrabold flex items-center justify-center gap-2">
-          <i class="fa-brands fa-google"></i><span data-i18n="searchWeb">网页检索</span>
-        </button>
-        <button onclick="resetToday()" class="btn-ghost px-4 py-3 rounded-2xl font-extrabold flex items-center justify-center gap-2">
-          <i class="fa-solid fa-rotate-left"></i><span data-i18n="reset">清空今日</span>
-        </button>
-      </div>
-    </section>
-
-    <!-- Search + Filters -->
-    <section class="card p-5 sm:p-6">
-      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-        <div>
-          <h3 class="text-lg font-extrabold">
-            <span data-i18n="foodGuideTitle">食物安全指南</span>
-          </h3>
-          <p class="text-sm text-slate-500 mt-1">
-            <span data-i18n="searchHint">输入中文或英文：例如“鸡蛋羹 / 小米粥 / banana / steak”。支持别名匹配。</span>
-          </p>
-        </div>
-
-        <div class="flex gap-2 flex-wrap">
-          <button class="btn-ghost px-3 py-2 rounded-xl text-sm font-bold" onclick="setFilter('all')" id="fltAll">
-            <i class="fa-solid fa-layer-group mr-2"></i><span data-i18n="all">全部</span>
-          </button>
-          <button class="btn-ghost px-3 py-2 rounded-xl text-sm font-bold" onclick="setFilter('safe')" id="fltSafe">
-            <i class="fa-solid fa-circle-check mr-2 text-green-600"></i><span data-i18n="safe">推荐</span>
-          </button>
-          <button class="btn-ghost px-3 py-2 rounded-xl text-sm font-bold" onclick="setFilter('caution')" id="fltCaution">
-            <i class="fa-solid fa-triangle-exclamation mr-2 text-amber-600"></i><span data-i18n="caution">谨慎</span>
-          </button>
-          <button class="btn-ghost px-3 py-2 rounded-xl text-sm font-bold" onclick="setFilter('avoid')" id="fltAvoid">
-            <i class="fa-solid fa-circle-xmark mr-2 text-red-600"></i><span data-i18n="avoid">避免</span>
-          </button>
-        </div>
-      </div>
-
-      <div class="mt-4 relative">
-        <input id="foodSearch" oninput="refresh()" placeholder="我能吃…（如：小米粥 / 蒸鱼 / yogurt）"
-               class="w-full p-4 rounded-2xl outline-none bg-white border"
-               style="border-color: var(--border);"
-        />
-        <div class="absolute right-4 top-4 text-slate-400">
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </div>
-        <p class="text-xs text-slate-500 mt-2">
-          <span class="kbd">Enter</span> = 选择第 1 个匹配项并加入记录（若为“避免”将不会加入）
-        </p>
-      </div>
-
-      <div class="mt-5 space-y-3" id="foodList"></div>
-
-      <div id="notFound" class="hidden mt-6 text-center p-6 rounded-2xl border bg-white"
-           style="border-color: var(--border);">
-        <p class="text-slate-600 font-semibold" data-i18n="notFoundTitle">未在本地临床食物库中找到。</p>
-        <p class="text-sm text-slate-500 mt-1" data-i18n="notFoundDesc">
-          你可以点击“问 AI 助手”，把你的具体情况（术后周数、症状、是否腹泻/脂肪泻、是否在用胰酶）一起描述，会更准确。
-        </p>
-        <button onclick="askAI()" class="mt-4 btn-primary px-4 py-3 rounded-2xl font-extrabold inline-flex items-center gap-2">
-          <i class="fa-solid fa-robot"></i><span data-i18n="askAI">问 AI 助手</span>
-        </button>
-      </div>
-    </section>
-
-    <!-- Disclaimer -->
-    <section class="text-xs text-slate-500 px-1">
-      <p>
-        <i class="fa-solid fa-circle-info mr-1"></i>
-        <span data-i18n="disclaimer">
-          免责声明：本工具用于健康教育与自我记录，不能替代医生/营养师诊疗。若出现持续呕吐、无法进食、明显腹痛、黑便/便血、快速体重下降等，请及时就医。
-        </span>
-      </p>
-    </section>
-
-  </main>
-
-  <!-- Settings Modal -->
-  <div id="settingsModal" class="fixed inset-0 bg-black/40 hidden items-center justify-center z-50 p-4">
-    <div class="card w-full max-w-xl p-5 sm:p-6">
+  <main class="max-w-4xl mx-auto px-4 pt-5 space-y-5">
+    <!-- Summary / Goals -->
+    <section class="card shadow-soft p-5">
       <div class="flex items-start justify-between gap-4">
         <div>
-          <h3 class="text-lg font-extrabold" data-i18n="settingsTitle">个性化设置</h3>
-          <p class="text-sm text-slate-500 mt-1" data-i18n="settingsDesc">
-            目标按体重估算；你可在建议区间内调整热量/蛋白系数，并保存到本机（localStorage）。
+          <h2 class="text-lg font-bold">今日目标 🎯</h2>
+          <p class="text-sm text-slate-500 mt-1">
+            目标会根据体重自动计算；可在设置中调整。
+          </p>
+          <p class="text-xs text-slate-500 mt-2">
+            * 胰腺癌营养：推荐能量 25–30 kcal/(kg·d)，蛋白质 1.2–2.0 g/(kg·d)。<span class="text-slate-400">(见“信息来源”)</span>
           </p>
         </div>
-        <button onclick="closeSettings()" class="btn-ghost px-3 py-2 rounded-xl font-bold">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
+
+        <div class="text-right">
+          <div class="text-xs text-slate-500">目标体重</div>
+          <div class="text-2xl font-extrabold"><span id="targetWeightDisplay">--</span><span class="text-base font-bold text-slate-500"> kg</span></div>
+          <div class="text-xs text-slate-500 mt-1"><span id="dietModeBadge" class="tag tag-safe">默认：术后/消化友好</span></div>
+        </div>
       </div>
 
-      <div class="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div>
-          <label class="text-sm font-bold text-slate-700" data-i18n="weightLabel">体重 (kg)</label>
-          <input type="number" id="weightInput" class="mt-2 w-full p-3 rounded-xl border outline-none"
-                 style="border-color: var(--border);" min="20" max="200" />
-          <p class="text-xs text-slate-500 mt-2" data-i18n="weightTip">用于估算每日能量与蛋白目标。</p>
-        </div>
-
-        <div>
-          <label class="text-sm font-bold text-slate-700" data-i18n="modeLabel">模式</label>
-          <select id="modeInput" class="mt-2 w-full p-3 rounded-xl border outline-none"
-                  style="border-color: var(--border);">
-            <option value="sensitive">术后/消化敏感（更严格）</option>
-            <option value="stable">相对稳定（逐步恢复）</option>
-          </select>
-          <p class="text-xs text-slate-500 mt-2" data-i18n="modeTip">模式会影响“避免/谨慎”的提示文案（不替代个体化医嘱）。</p>
-        </div>
-
-        <div class="sm:col-span-2">
-          <label class="text-sm font-bold text-slate-700" data-i18n="calFactor">热量系数 (kcal/kg·d)</label>
-          <input type="range" id="calPerKgInput" min="25" max="35" step="1" class="mt-2 w-full" />
-          <div class="flex justify-between text-xs text-slate-500">
-            <span>25</span>
-            <span><span data-i18n="current">当前</span>：<b id="calPerKgLabel">30</b></span>
-            <span>35</span>
+      <div class="mt-5 grid md:grid-cols-2 gap-4">
+        <!-- Calories -->
+        <div class="p-4 rounded-2xl bg-white border border-slate-100">
+          <div class="flex items-center justify-between text-sm mb-2">
+            <span class="text-slate-600 font-semibold"><i class="fa-solid fa-fire mr-2 text-orange-500"></i>热量</span>
+            <span class="font-extrabold"><span id="calCurrent">0</span> / <span id="calTarget">0</span> kcal</span>
+          </div>
+          <div class="w-full bg-slate-100 rounded-full h-3">
+            <div id="calBar" class="bg-orange-400 h-3 rounded-full" style="width:0%"></div>
+          </div>
+          <div class="flex items-center justify-between mt-2 text-xs text-slate-500">
+            <span>✅ 少量多餐更舒适</span>
+            <span id="calPct">0%</span>
           </div>
         </div>
 
-        <div class="sm:col-span-2">
-          <label class="text-sm font-bold text-slate-700" data-i18n="protFactor">蛋白系数 (g/kg·d)</label>
-          <input type="range" id="protPerKgInput" min="1.2" max="2.0" step="0.1" class="mt-2 w-full" />
-          <div class="flex justify-between text-xs text-slate-500">
-            <span>1.2</span>
-            <span><span data-i18n="current">当前</span>：<b id="protPerKgLabel">1.5</b></span>
-            <span>2.0</span>
+        <!-- Protein -->
+        <div class="p-4 rounded-2xl bg-white border border-slate-100">
+          <div class="flex items-center justify-between text-sm mb-2">
+            <span class="text-slate-600 font-semibold"><i class="fa-solid fa-drumstick-bite mr-2 text-brand-600"></i>蛋白质</span>
+            <span class="font-extrabold"><span id="protCurrent">0</span> / <span id="protTarget">0</span> g</span>
+          </div>
+          <div class="w-full bg-slate-100 rounded-full h-3">
+            <div id="protBar" class="bg-brand-500 h-3 rounded-full" style="width:0%"></div>
+          </div>
+          <div class="flex items-center justify-between mt-2 text-xs text-slate-500">
+            <span>💪 恢复期蛋白很关键</span>
+            <span id="protPct">0%</span>
           </div>
         </div>
       </div>
 
-      <div class="mt-6 flex flex-col sm:flex-row gap-3">
-        <button onclick="saveSettings()" class="btn-primary px-4 py-3 rounded-2xl font-extrabold flex-1">
-          <i class="fa-solid fa-floppy-disk mr-2"></i><span data-i18n="save">保存并重新计算</span>
+      <!-- Quick actions -->
+      <div class="mt-5 grid sm:grid-cols-3 gap-3">
+        <button id="btnAddCustom" class="py-3 rounded-2xl bg-white border border-slate-100 font-semibold hover:bg-slate-50">
+          ➕ 记录自定义食物
         </button>
-        <button onclick="restoreDefaults()" class="btn-ghost px-4 py-3 rounded-2xl font-extrabold flex-1">
-          <i class="fa-solid fa-wand-magic-sparkles mr-2"></i><span data-i18n="defaults">恢复默认</span>
+        <button id="btnImport" class="py-3 rounded-2xl bg-white border border-slate-100 font-semibold hover:bg-slate-50">
+          📥 导入数据库(JSON)
+        </button>
+        <button id="btnResetDay" class="py-3 rounded-2xl bg-white border border-slate-100 font-semibold hover:bg-slate-50">
+          🔄 清空今日记录
         </button>
       </div>
-    </div>
-  </div>
 
-  <!-- Toast -->
-  <div class="toast hidden" id="toast">
-    <div>
-      <i class="fa-solid fa-circle-check text-green-400"></i>
-      <span id="toastMsg">已加入记录</span>
-    </div>
-  </div>
+      <!-- Source note -->
+      <div class="mt-4 text-xs text-slate-500">
+        信息来源：胰腺癌营养治疗专家共识（2022）与 Whipple 术后饮食建议（中文译版）。详情见设置里的“来源说明”。
+      </div>
+    </section>
 
-<script>
-/** =========================
- *  0) i18n (中英切换)
- *  ========================= */
-const i18n = {
-  zh: {
-    dailyGoalsTitle:"每日目标",
-    targetWeight:"目标体重",
-    guideLabel:"食物安全分级",
-    calories:"热量",
-    protein:"蛋白质",
-    proteinTip:"术后/治疗期间常强调高蛋白以帮助恢复；具体以个体耐受与医嘱为准。",
-    askAI:"问 AI 助手",
-    searchWeb:"网页检索",
-    reset:"清空今日",
-    foodGuideTitle:"食物安全指南",
-    searchHint:"输入中文或英文：例如“鸡蛋羹 / 小米粥 / banana / steak”。支持别名匹配。",
-    all:"全部",
-    safe:"推荐",
-    caution:"谨慎",
-    avoid:"避免",
-    notFoundTitle:"未在本地临床食物库中找到。",
-    notFoundDesc:"你可以点击“问 AI 助手”，把你的具体情况（术后周数、症状、是否腹泻/脂肪泻、是否在用胰酶）一起描述，会更准确。",
-    disclaimer:"免责声明：本工具用于健康教育与自我记录，不能替代医生/营养师诊疗。若出现持续呕吐、无法进食、明显腹痛、黑便/便血、快速体重下降等，请及时就医。",
-    settingsTitle:"个性化设置",
-    settingsDesc:"目标按体重估算；你可在建议区间内调整热量/蛋白系数，并保存到本机（localStorage）。",
-    weightLabel:"体重 (kg)",
-    weightTip:"用于估算每日能量与蛋白目标。",
-    modeLabel:"模式",
-    modeTip:"模式会影响“避免/谨慎”的提示文案（不替代个体化医嘱）。",
-    calFactor:"热量系数 (kcal/kg·d)",
-    protFactor:"蛋白系数 (g/kg·d)",
-    current:"当前",
-    save:"保存并重新计算",
-    defaults:"恢复默认",
-    toastAdded:"已加入记录",
-    toastAvoid:"该食物标记为“避免”，未加入记录",
-    toastReset:"已清空今日记录",
-    toastSaved:"设置已保存"
-  },
-  en: {
-    dailyGoalsTitle:"Daily Goals",
-    targetWeight:"Target weight",
-    guideLabel:"Food safety tiers",
-    calories:"Calories",
-    protein:"Protein",
-    proteinTip:"Higher protein is often emphasized during recovery; tailor to tolerance and clinician advice.",
-    askAI:"Ask AI",
-    searchWeb:"Search Web",
-    reset:"Reset Today",
-    foodGuideTitle:"Food Safety Guide",
-    searchHint:"Type Chinese or English, e.g., congee / steamed fish / yogurt. Alias matching supported.",
-    all:"All",
-    safe:"Recommended",
-    caution:"Use caution",
-    avoid:"Avoid",
-    notFoundTitle:"Not found in local clinical food list.",
-    notFoundDesc:"Use “Ask AI” and include your context (post-op weeks, symptoms, diarrhea/steatorrhea, enzymes) for better guidance.",
-    disclaimer:"Disclaimer: Education & self-tracking only; not medical advice. Seek care for severe/persistent symptoms.",
-    settingsTitle:"Personal Settings",
-    settingsDesc:"Targets are weight-based estimates. Adjust calorie/protein factors within typical ranges and save locally.",
-    weightLabel:"Weight (kg)",
-    weightTip:"Used to estimate calorie and protein targets.",
-    modeLabel:"Mode",
-    modeTip:"Mode changes caution messaging (does not replace individualized advice).",
-    calFactor:"Calorie factor (kcal/kg·day)",
-    protFactor:"Protein factor (g/kg·day)",
-    current:"Current",
-    save:"Save & Recalculate",
-    defaults:"Restore Defaults",
-    toastAdded:"Added to today",
-    toastAvoid:"Marked as Avoid — not added",
-    toastReset:"Today reset",
-    toastSaved:"Settings saved"
-  }
-};
+    <!-- Search -->
+    <section class="card shadow-soft p-5">
+      <div class="flex items-center justify-between gap-3">
+        <h3 class="text-lg font-bold">食物安全查询 🔎</h3>
+        <div class="text-xs text-slate-500">支持：中文 / 拼音 / 英文别名</div>
+      </div>
 
-let lang = localStorage.getItem("pcare_lang") || "zh";
-function applyLang(){
-  document.querySelectorAll("[data-i18n]").forEach(el=>{
-    const key = el.getAttribute("data-i18n");
-    el.textContent = i18n[lang][key] || el.textContent;
-  });
-  document.getElementById("langLabel").textContent = (lang==="zh" ? "中文" : "EN");
-  document.getElementById("foodSearch").placeholder = (lang==="zh"
-    ? "我能吃…（如：小米粥 / 蒸鱼 / yogurt）"
-    : "Can I eat… (e.g., congee / steamed fish / yogurt)");
-}
+      <div class="mt-3 relative">
+        <input id="foodSearch" type="text" placeholder="我能吃什么？例如：香蕉 / 小米粥 / 鸡胸肉 / 豆腐" class="w-full p-4 pr-12 rounded-2xl border border-slate-100 shadow-sm focus:ring-4 focus:ring-brand-100 outline-none"/>
+        <i class="fa-solid fa-magnifying-glass absolute right-4 top-5 text-slate-400"></i>
+      </div>
 
-/** =========================
- *  1) Food DB（中英+别名）
- *  status: safe | caution | avoid
- *  stage: early | stable | both（用于模式提示）
- *  ========================= */
-const foodDB = [
-  // —— 半流质/软食/易消化（更偏“推荐”）——
-  { nameZh:"小米粥", nameEn:"Millet congee", status:"safe", stage:"early", cal:110, protein:3,
-    aliases:["小米稀饭","粥","米粥","稀饭","millet","congee"],
-    noteZh:"少量多餐，温热更易耐受；可逐步增加浓稠度。",
-    noteEn:"Small frequent meals; warm and thin texture is usually better tolerated early on."
-  },
-  { nameZh:"大米粥/白粥", nameEn:"Rice congee", status:"safe", stage:"early", cal:120, protein:2,
-    aliases:["白粥","大米稀饭","稀粥","rice congee","congee"],
-    noteZh:"低纤维、易消化；早期常更合适。",
-    noteEn:"Low fiber and easy to digest; often preferred early."
-  },
-  { nameZh:"面汤/清汤面（少油）", nameEn:"Noodle soup (low oil)", status:"safe", stage:"early", cal:180, protein:6,
-    aliases:["面汤","汤面","清汤面","挂面","noodle soup","noodles"],
-    noteZh:"选择少油、少刺激调味；慢慢吃。",
-    noteEn:"Keep it low oil and non-spicy; eat slowly."
-  },
-  { nameZh:"鸡蛋羹/蒸蛋", nameEn:"Steamed egg custard", status:"safe", stage:"early", cal:90, protein:7,
-    aliases:["蒸蛋","蛋羹","鸡蛋羹","custard","steamed egg","egg"],
-    noteZh:"优质蛋白，口感软；避免过多油脂。",
-    noteEn:"Soft texture and good protein; avoid heavy oil."
-  },
-  { nameZh:"水煮/清蒸鸡胸肉", nameEn:"Boiled/steamed chicken breast", status:"safe", stage:"both", cal:165, protein:31,
-    aliases:["鸡胸肉","清蒸鸡","白切鸡(去皮)","boiled chicken","chicken breast"],
-    noteZh:"瘦肉高蛋白；尽量去皮、避免油炸。",
-    noteEn:"Lean high-protein; remove skin and avoid frying."
-  },
-  { nameZh:"清蒸白肉鱼（鳕鱼/鲈鱼）", nameEn:"Steamed white fish", status:"safe", stage:"both", cal:120, protein:22,
-    aliases:["清蒸鱼","蒸鱼","白肉鱼","鳕鱼","鲈鱼","cod","sea bass","fish"],
-    noteZh:"低脂高蛋白；清蒸更容易耐受。",
-    noteEn:"Low fat, high-quality protein; steaming is usually well tolerated."
-  },
-  { nameZh:"嫩豆腐/豆腐脑（少卤）", nameEn:"Soft tofu", status:"safe", stage:"both", cal:90, protein:8,
-    aliases:["豆腐","嫩豆腐","豆腐脑","tofu","bean curd"],
-    noteZh:"植物蛋白，质地软；避免重口味/辛辣卤汁。",
-    noteEn:"Soft plant protein; avoid spicy/heavy seasoning."
-  },
-  { nameZh:"虾滑/鱼丸汤（清淡）", nameEn:"Shrimp paste / fish ball soup (light)", status:"safe", stage:"early", cal:140, protein:12,
-    aliases:["虾滑","鱼丸","鱼丸汤","清汤鱼丸","shrimp paste","fish balls"],
-    noteZh:"质地软、易吞咽；注意盐分与油脂。",
-    noteEn:"Soft texture; keep it light in salt and oil."
-  },
-  { nameZh:"酸奶（低脂/无乳糖优先）", nameEn:"Yogurt (low-fat)", status:"caution", stage:"both", cal:90, protein:8,
-    aliases:["酸奶","无乳糖酸奶","yogurt"],
-    noteZh:"若乳糖不耐/腹泻需谨慎，可选无乳糖。",
-    noteEn:"Use caution with lactose intolerance/diarrhea; consider lactose-free."
-  },
+      <div class="mt-4 flex flex-wrap gap-2">
+        <button data-filter="all" class="filterBtn px-3 py-2 rounded-xl bg-brand-50 text-brand-700 border border-brand-100 font-semibold">全部</button>
+        <button data-filter="safe" class="filterBtn px-3 py-2 rounded-xl bg-white border border-slate-100 font-semibold">✅ 适合</button>
+        <button data-filter="caution" class="filterBtn px-3 py-2 rounded-xl bg-white border border-slate-100 font-semibold">⚠️ 谨慎</button>
+        <button data-filter="avoid" class="filterBtn px-3 py-2 rounded-xl bg-white border border-slate-100 font-semibold">⛔ 避免</button>
+      </div>
 
-  // —— 产气/高纤维/刺激性（谨慎）——
-  { nameZh:"西兰花/卷心菜/菜花", nameEn:"Broccoli/cabbage/cauliflower", status:"caution", stage:"early", cal:35, protein:3,
-    aliases:["西兰花","花椰菜","菜花","卷心菜","包菜","broccoli","cabbage","cauliflower"],
-    noteZh:"易产气胀；早期更常不耐受，建议后期少量尝试。",
-    noteEn:"Gas-producing; often poorly tolerated early. Reintroduce slowly later."
-  },
-  { nameZh:"洋葱（尤其生）", nameEn:"Onion (especially raw)", status:"caution", stage:"early", cal:40, protein:1,
-    aliases:["洋葱","生洋葱","onion","raw onion"],
-    noteZh:"易胀气/刺激；早期更建议避免。",
-    noteEn:"Can cause gas/irritation; avoid early."
-  },
-  { nameZh:"坚果（整颗）", nameEn:"Whole nuts", status:"caution", stage:"both", cal:170, protein:6,
-    aliases:["坚果","花生","核桃","杏仁","nuts","peanuts","almond","walnut"],
-    noteZh:"偏硬且脂肪高，易不耐受；可考虑少量顺滑坚果酱。",
-    noteEn:"Hard and higher-fat; consider small amounts of smooth nut butter."
-  },
+      <div id="foodList" class="mt-4 space-y-3"></div>
 
-  // —— 建议避免（高脂、油炸、辛辣、碳酸、生冷高纤维等）——
-  { nameZh:"油炸食物（炸鸡/薯条）", nameEn:"Fried foods (fried chicken/fries)", status:"avoid", stage:"both", cal:320, protein:15,
-    aliases:["油炸","炸鸡","薯条","fried","fries","fried chicken"],
-    noteZh:"高脂难消化，胰腺相关人群更易不适。",
-    noteEn:"High fat and harder to digest."
-  },
-  { nameZh:"辛辣刺激（辣火锅/麻辣/辣豆腐）", nameEn:"Spicy foods", status:"avoid", stage:"both", cal:200, protein:8,
-    aliases:["辛辣","麻辣","火锅","辣","spicy","hot pot"],
-    noteZh:"刺激性强，可能加重不适。",
-    noteEn:"Can aggravate GI discomfort."
-  },
-  { nameZh:"生冷蔬菜/沙拉", nameEn:"Raw vegetables/salad", status:"avoid", stage:"early", cal:20, protein:2,
-    aliases:["沙拉","生菜","生冷","raw salad","salad","raw vegetables"],
-    noteZh:"纤维高、早期更难耐受；建议充分煮熟再尝试。",
-    noteEn:"High fiber; often poorly tolerated early. Prefer well-cooked vegetables."
-  },
-  { nameZh:"碳酸饮料", nameEn:"Carbonated drinks", status:"avoid", stage:"both", cal:140, protein:0,
-    aliases:["汽水","可乐","苏打水","气泡水","carbonated","soda","sparkling water"],
-    noteZh:"易胀气、早饱感更明显。",
-    noteEn:"Can increase gas and fullness."
-  },
-  { nameZh:"甜点/高糖蛋糕", nameEn:"Sugary desserts/cake", status:"avoid", stage:"both", cal:260, protein:3,
-    aliases:["蛋糕","甜点","奶茶(高糖)","dessert","cake","sweet"],
-    noteZh:"高糖可能加重血糖波动与不适；更建议分次、低糖替代。",
-    noteEn:"High sugar may worsen glucose swings and symptoms."
-  },
-  { nameZh:"肥肉/高脂红肉（肥牛肥羊/五花肉）", nameEn:"Fatty red meat", status:"avoid", stage:"both", cal:320, protein:20,
-    aliases:["红肉","牛排(肥)","五花肉","肥肉","fatty pork","fatty beef","steak"],
-    noteZh:"脂肪高更难消化；优先选择鱼/禽类瘦肉。",
-    noteEn:"Higher fat and harder to digest; prefer lean poultry/fish."
-  }
-];
+      <div id="notFound" class="hidden mt-4 p-6 rounded-2xl bg-slate-50 border border-slate-100 text-center">
+        <div class="text-2xl">🤔</div>
+        <p class="mt-2 text-slate-700 font-semibold">数据库里暂时没有这个食物</p>
+        <p class="mt-1 text-sm text-slate-500">你可以先用“自定义食物”记录，或者导入更多文献整理后的 JSON。</p>
+      </div>
+    </section>
 
-/** =========================
- *  2) State
- *  ========================= */
-const LS = {
-  weight: "pcare_weight",
-  calPerKg: "pcare_cal_perkg",
-  protPerKg: "pcare_prot_perkg",
-  mode: "pcare_mode",
-  stats: "pcare_today_stats",
-  lang: "pcare_lang"
-};
+    <!-- Footer helper -->
+    <section class="p-1">
+      <div class="text-xs text-slate-500 text-center">
+        ⚠️ 本工具用于营养记录与科普，不替代医生/营养师建议；有吞咽困难、持续腹泻、严重腹胀/呕吐请及时就医。
+      </div>
+    </section>
+  </main>
 
-let userWeight = 60;
-let calPerKg = 30;     // default in common guideline band
-let protPerKg = 1.5;   // within 1.2–2.0 band
-let mode = "sensitive";
-let dailyStats = { cal: 0, prot: 0 };
-let filterStatus = "all";
+  <!-- SETTINGS MODAL -->
+  <div id="settingsModal" class="fixed inset-0 bg-black/40 hidden items-center justify-center z-50">
+    <div class="w-[92vw] max-w-lg bg-white rounded-3xl shadow-soft border border-slate-100 overflow-hidden">
+      <div class="px-5 py-4 border-b border-slate-100 flex items-center justify-between">
+        <div class="font-extrabold text-lg">设置 ⚙️</div>
+        <button class="closeModal w-10 h-10 rounded-xl hover:bg-slate-50"><i class="fa-solid fa-xmark"></i></button>
+      </div>
 
-/** =========================
- *  3) Helpers
- *  ========================= */
-function showToast(message, type="ok"){
-  const toast = document.getElementById("toast");
-  const msg = document.getElementById("toastMsg");
-  const icon = toast.querySelector("i");
-  msg.textContent = message;
-
-  icon.className = "fa-solid " + (type==="warn" ? "fa-triangle-exclamation text-amber-300"
-    : type==="bad" ? "fa-circle-xmark text-red-300"
-    : "fa-circle-check text-green-300");
-
-  toast.classList.remove("hidden");
-  clearTimeout(showToast._t);
-  showToast._t = setTimeout(()=> toast.classList.add("hidden"), 2200);
-}
-
-function normalize(s){
-  return (s||"").toString().trim().toLowerCase();
-}
-
-function getDisplayName(item){
-  return (lang==="zh") ? item.nameZh : item.nameEn;
-}
-function getNote(item){
-  return (lang==="zh") ? item.noteZh : item.noteEn;
-}
-function statusBadge(status){
-  if(status==="safe") return `<span class="badge badge-safe">${lang==="zh"?"推荐":"Recommended"}</span>`;
-  if(status==="caution") return `<span class="badge badge-caution">${lang==="zh"?"谨慎":"Caution"}</span>`;
-  return `<span class="badge badge-avoid">${lang==="zh"?"避免":"Avoid"}</span>`;
-}
-function leftClass(status){
-  if(status==="safe") return "food-left-safe";
-  if(status==="caution") return "food-left-caution";
-  return "food-left-avoid";
-}
-
-/** =========================
- *  4) Rendering
- *  ========================= */
-function updateDashboard(){
-  const calTarget = Math.round(userWeight * calPerKg);
-  const protTarget = Math.round(userWeight * protPerKg);
-
-  document.getElementById("targetWeightDisplay").textContent = userWeight;
-  document.getElementById("calTarget").textContent = calTarget;
-  document.getElementById("protTarget").textContent = protTarget;
-
-  document.getElementById("calCurrent").textContent = dailyStats.cal;
-  document.getElementById("protCurrent").textContent = dailyStats.prot;
-
-  document.getElementById("calBar").style.width = Math.min((dailyStats.cal / calTarget) * 100, 100) + "%";
-  document.getElementById("protBar").style.width = Math.min((dailyStats.prot / protTarget) * 100, 100) + "%";
-
-  document.getElementById("mealModeLabel").textContent = (mode==="sensitive"
-    ? (lang==="zh" ? "术后/消化敏感" : "Post-op / sensitive")
-    : (lang==="zh" ? "相对稳定" : "More stable")
-  );
-}
-
-function renderFoods(list){
-  const container = document.getElementById("foodList");
-  container.innerHTML = "";
-
-  if(list.length === 0){
-    document.getElementById("notFound").classList.remove("hidden");
-    return;
-  }
-  document.getElementById("notFound").classList.add("hidden");
-
-  list.forEach(item=>{
-    const status = item.status;
-    const icon = status==="safe" ? "fa-circle-check text-green-600"
-      : status==="caution" ? "fa-triangle-exclamation text-amber-600"
-      : "fa-circle-xmark text-red-600";
-
-    const canAdd = status !== "avoid";
-    const btn = canAdd
-      ? `<button class="btn-ghost px-3 py-2 rounded-xl text-sm font-extrabold"
-                 onclick="addFood('${escapeQuotes(getDisplayName(item))}', ${item.cal}, ${item.protein}, '${status}')">
-            <i class="fa-solid fa-plus mr-2"></i>${lang==="zh"?"加入":"Add"}
-         </button>`
-      : `<span class="text-xs font-extrabold uppercase text-red-500">${lang==="zh"?"避免":"AVOID"}</span>`;
-
-    const stageHint = (mode==="sensitive" && item.stage==="stable")
-      ? (lang==="zh" ? "（更偏后期）" : "(later stage)")
-      : "";
-
-    const div = document.createElement("div");
-    div.className = `card ${leftClass(status)} p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3`;
-    div.innerHTML = `
-      <div class="flex-1">
-        <div class="flex items-start gap-3">
-          <i class="fa-solid ${icon} text-lg mt-0.5"></i>
+      <div class="p-5 space-y-5">
+        <div class="grid grid-cols-2 gap-3">
           <div>
-            <div class="flex flex-wrap items-center gap-2">
-              <h4 class="font-extrabold text-slate-900">${getDisplayName(item)} ${stageHint}</h4>
-              ${statusBadge(status)}
-            </div>
-            <p class="text-sm text-slate-600 mt-1">${getNote(item)}</p>
-            <p class="text-xs text-slate-500 mt-2 flex flex-wrap gap-x-4 gap-y-1">
-              <span>🔥 ${item.cal} kcal</span>
-              <span>🥩 ${item.protein} g</span>
-              <span class="text-slate-400">${lang==="zh"?"别名":"Aliases"}: ${(item.aliases||[]).slice(0,4).join(" / ")}${(item.aliases||[]).length>4?"…":""}</span>
+            <label class="block text-sm font-bold text-slate-700 mb-2">体重 (kg)</label>
+            <input id="weightInput" type="number" min="20" max="200" class="w-full p-3 rounded-xl border border-slate-200 focus:ring-4 focus:ring-brand-100 outline-none" value="60"/>
+          </div>
+          <div>
+            <label class="block text-sm font-bold text-slate-700 mb-2">模式</label>
+            <select id="dietMode" class="w-full p-3 rounded-xl border border-slate-200 focus:ring-4 focus:ring-brand-100 outline-none">
+              <option value="postop">术后/消化友好（默认）</option>
+              <option value="chemo">放化疗中（更偏向高蛋白/易消化）</option>
+              <option value="general">一般随访（更均衡）</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-sm font-bold text-slate-700 mb-2">热量系数 kcal/kg/天</label>
+            <input id="calPerKg" type="number" step="1" min="15" max="45" class="w-full p-3 rounded-xl border border-slate-200 focus:ring-4 focus:ring-brand-100 outline-none"/>
+            <p class="text-xs text-slate-500 mt-2">胰腺癌共识推荐 25–30；有并发症可到 30–35。</p>
+          </div>
+          <div>
+            <label class="block text-sm font-bold text-slate-700 mb-2">蛋白系数 g/kg/天</label>
+            <input id="protPerKg" type="number" step="0.1" min="0.6" max="2.5" class="w-full p-3 rounded-xl border border-slate-200 focus:ring-4 focus:ring-brand-100 outline-none"/>
+            <p class="text-xs text-slate-500 mt-2">胰腺癌共识推荐 1.2–2.0。</p>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100">
+          <div class="font-bold">WHO 参考（一般成人）🌍</div>
+          <ul class="mt-2 text-sm text-slate-600 list-disc pl-5 space-y-1">
+            <li>总脂肪：&lt; 30% 能量；饱和脂肪 &lt; 10% 能量；反式脂肪 &lt; 1% 能量（一般健康建议）。</li>
+            <li>添加糖：&lt; 10% 能量（更理想 &lt; 5%）。</li>
+            <li>食盐：&lt; 5g/天（约 2g 钠）。</li>
+            <li>果蔬：≥ 400g/天。</li>
+          </ul>
+          <p class="text-xs text-slate-500 mt-2">
+            说明：以上是“人群一般建议”。胰腺癌/术后个体需求差异很大，请以临床团队建议为准。
+          </p>
+        </div>
+
+        <details class="p-4 rounded-2xl bg-white border border-slate-100">
+          <summary class="cursor-pointer font-bold text-slate-800">信息来源说明（你上传的文献）</summary>
+          <div class="mt-3 text-sm text-slate-600 space-y-2">
+            <p>
+              • 胰腺癌营养治疗专家共识（2022）：能量 25–30 kcal/(kg·d)，蛋白质 1.2–2.0 g/(kg·d)，并发症可 30–35 kcal/(kg·d)。
+            </p>
+            <p>
+              • Whipple 术后饮食：少量多餐（每 2–3 小时一次）、以蛋白质为主、避免高脂油炸、碳酸饮料，以及部分易产气食物（如卷心菜、花椰菜、豆类等）。
             </p>
           </div>
+        </details>
+
+        <div class="flex gap-3">
+          <button id="saveSettings" class="flex-1 py-3 rounded-2xl bg-brand-600 hover:bg-brand-700 text-white font-extrabold">保存并重算 ✅</button>
+          <button class="closeModal flex-1 py-3 rounded-2xl bg-white border border-slate-100 font-bold hover:bg-slate-50">取消</button>
         </div>
       </div>
-      <div class="shrink-0 flex items-center justify-end">
-        ${btn}
+    </div>
+  </div>
+
+  <!-- ANALYSIS MODAL -->
+  <div id="analysisModal" class="fixed inset-0 bg-black/40 hidden items-center justify-center z-50">
+    <div class="w-[92vw] max-w-3xl bg-white rounded-3xl shadow-soft border border-slate-100 overflow-hidden">
+      <div class="px-5 py-4 border-b border-slate-100 flex items-center justify-between">
+        <div class="font-extrabold text-lg">今日分析 📊</div>
+        <button class="closeAnalysis w-10 h-10 rounded-xl hover:bg-slate-50"><i class="fa-solid fa-xmark"></i></button>
       </div>
-    `;
-    container.appendChild(div);
-  });
-}
 
-function escapeQuotes(s){
-  return (s||"").replace(/'/g,"\\'").replace(/"/g,'&quot;');
-}
+      <div class="p-5 grid md:grid-cols-2 gap-5">
+        <div class="card p-4">
+          <div class="font-bold mb-2">完成度</div>
+          <div class="space-y-3">
+            <div>
+              <div class="flex justify-between text-sm mb-1">
+                <span class="text-slate-600">热量</span>
+                <span class="font-extrabold"><span id="aCalPct">0</span>%</span>
+              </div>
+              <div class="w-full bg-slate-100 rounded-full h-3">
+                <div id="aCalBar" class="bg-orange-400 h-3 rounded-full" style="width:0%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm mb-1">
+                <span class="text-slate-600">蛋白质</span>
+                <span class="font-extrabold"><span id="aProtPct">0</span>%</span>
+              </div>
+              <div class="w-full bg-slate-100 rounded-full h-3">
+                <div id="aProtBar" class="bg-brand-500 h-3 rounded-full" style="width:0%"></div>
+              </div>
+            </div>
 
-/** =========================
- *  5) Search / Filter
- *  ========================= */
-function matchFood(item, q){
-  if(!q) return true;
-  const hay = [
-    item.nameZh, item.nameEn,
-    ...(item.aliases || [])
-  ].map(normalize).join(" ");
-  return hay.includes(q);
-}
+            <div class="p-3 rounded-2xl bg-slate-50 border border-slate-100 text-sm text-slate-600">
+              <div class="font-bold text-slate-800">今日摄入</div>
+              <div class="mt-1">🔥 <span id="aCalNow">0</span> kcal</div>
+              <div>🥩 <span id="aProtNow">0</span> g</div>
+              <div class="mt-2 text-xs text-slate-500">提示：如果一天吃不下，尝试把蛋白拆成更多小份（粥+鸡蛋/豆腐/鱼等）。</div>
+            </div>
+          </div>
+        </div>
 
-function refresh(){
-  const q = normalize(document.getElementById("foodSearch").value);
-  const list = foodDB
-    .filter(item => (filterStatus==="all" ? true : item.status===filterStatus))
-    .filter(item => matchFood(item, q));
+        <div class="card p-4">
+          <div class="font-bold mb-2">宏量营养比例（估算） 🍚🥩🥑</div>
+          <p class="text-xs text-slate-500 mb-3">来自你记录的食物（若某食物缺少脂肪/碳水数据，则比例可能偏差）。</p>
+          <div class="h-64">
+            <canvas id="macroChart"></canvas>
+          </div>
+          <div class="mt-3 grid grid-cols-3 gap-2 text-center text-sm">
+            <div class="p-2 rounded-2xl bg-slate-50 border border-slate-100">
+              <div class="text-xs text-slate-500">碳水</div>
+              <div class="font-extrabold" id="carbNow">0 g</div>
+            </div>
+            <div class="p-2 rounded-2xl bg-slate-50 border border-slate-100">
+              <div class="text-xs text-slate-500">蛋白</div>
+              <div class="font-extrabold" id="protNow">0 g</div>
+            </div>
+            <div class="p-2 rounded-2xl bg-slate-50 border border-slate-100">
+              <div class="text-xs text-slate-500">脂肪</div>
+              <div class="font-extrabold" id="fatNow">0 g</div>
+            </div>
+          </div>
+        </div>
 
-  renderFoods(list);
-}
+        <div class="md:col-span-2 card p-4">
+          <div class="flex items-center justify-between">
+            <div class="font-bold">今日记录明细 🧾</div>
+            <button id="exportDay" class="px-3 py-2 rounded-xl bg-white border border-slate-100 font-semibold hover:bg-slate-50">
+              ⬇️ 导出(JSON)
+            </button>
+          </div>
+          <div id="logList" class="mt-3 space-y-2"></div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-function setFilter(status){
-  filterStatus = status;
-  ["fltAll","fltSafe","fltCaution","fltAvoid"].forEach(id=>{
-    document.getElementById(id).classList.remove("ring-2","ring-blue-200");
-  });
-  const map = {all:"fltAll", safe:"fltSafe", caution:"fltCaution", avoid:"fltAvoid"};
-  document.getElementById(map[status]).classList.add("ring-2","ring-blue-200");
-  refresh();
-}
+  <!-- Hidden file input -->
+  <input id="importFile" type="file" accept="application/json" class="hidden"/>
 
-/** =========================
- *  6) Actions
- *  ========================= */
-function addFood(name, cal, prot, status){
-  if(status==="avoid"){
-    showToast(i18n[lang].toastAvoid, "bad");
-    return;
-  }
-  dailyStats.cal += cal;
-  dailyStats.prot += prot;
-  localStorage.setItem(LS.stats, JSON.stringify(dailyStats));
-  updateDashboard();
-  showToast(`${i18n[lang].toastAdded}: ${name}`);
-}
-
-function resetToday(){
-  dailyStats = { cal: 0, prot: 0 };
-  localStorage.setItem(LS.stats, JSON.stringify(dailyStats));
-  updateDashboard();
-  showToast(i18n[lang].toastReset, "warn");
-}
-
-/** =========================
- *  7) AI / Search
- *  ========================= */
-function askAI(){
-  const query = document.getElementById("foodSearch").value.trim() || (lang==="zh" ? "这个食物" : "this item");
-  const contextZh = "我/家人是胰腺癌或胰腺术后患者。请根据循证患者教育要点给出是否适合食用、建议份量、做法（少油、软烂、少量多餐）、以及可能不耐受风险（高脂、高纤维、产气、辛辣、碳酸、乳糖等）。如需胰酶/腹泻/脂肪泻提示也请说明。";
-  const contextEn = "I am (or my family is) a pancreatic cancer patient or post-pancreatic surgery patient. Please advise if it is safe, portion size, cooking method (low oil, soft texture, small frequent meals), and intolerance risks (fat, fiber, gas, spicy, carbonated, lactose). Mention enzyme/diarrhea/steatorrhea considerations if relevant.";
-  const prompt = (lang==="zh")
-    ? `${contextZh}\n问题：${query} 可以吃吗？`
-    : `${contextEn}\nQuestion: Is ${query} safe to eat?`;
-
-  if(confirm((lang==="zh"?"打开 AI 助手并带入问题？":"Open AI with the prompt?") + `\n\n${prompt}`)){
-    window.open(`https://chatgpt.com/?q=${encodeURIComponent(prompt)}`, "_blank");
-  }
-}
-
-function googleSearch(){
-  const query = document.getElementById("foodSearch").value.trim() || (lang==="zh"?"胰腺术后 饮食":"pancreatic post-op diet");
-  const finalQuery = (lang==="zh")
-    ? `胰腺 手术 后 饮食 ${query} 能不能吃`
-    : `pancreatic surgery diet can I eat ${query}`;
-  window.open(`https://www.google.com/search?q=${encodeURIComponent(finalQuery)}`, "_blank");
-}
-
-/** =========================
- *  8) Settings
- *  ========================= */
-function openSettings(){
-  document.getElementById("settingsModal").classList.remove("hidden");
-  document.getElementById("settingsModal").classList.add("flex");
-}
-function closeSettings(){
-  document.getElementById("settingsModal").classList.add("hidden");
-  document.getElementById("settingsModal").classList.remove("flex");
-}
-
-function syncSettingsUI(){
-  document.getElementById("weightInput").value = userWeight;
-  document.getElementById("calPerKgInput").value = calPerKg;
-  document.getElementById("protPerKgInput").value = protPerKg;
-  document.getElementById("modeInput").value = mode;
-
-  document.getElementById("calPerKgLabel").textContent = calPerKg;
-  document.getElementById("protPerKgLabel").textContent = protPerKg.toFixed(1);
-}
-
-function saveSettings(){
-  const w = parseFloat(document.getElementById("weightInput").value);
-  const c = parseFloat(document.getElementById("calPerKgInput").value);
-  const p = parseFloat(document.getElementById("protPerKgInput").value);
-  const m = document.getElementById("modeInput").value;
-
-  if(!w || w<20 || w>200){
-    showToast(lang==="zh" ? "请输入合理体重（20–200kg）" : "Enter a valid weight (20–200kg)", "warn");
-    return;
-  }
-  userWeight = Math.round(w);
-  calPerKg = Math.round(c);
-  protPerKg = Math.round(p*10)/10;
-  mode = m;
-
-  localStorage.setItem(LS.weight, userWeight);
-  localStorage.setItem(LS.calPerKg, calPerKg);
-  localStorage.setItem(LS.protPerKg, protPerKg);
-  localStorage.setItem(LS.mode, mode);
-
-  updateDashboard();
-  closeSettings();
-  showToast(i18n[lang].toastSaved);
-}
-
-function restoreDefaults(){
-  userWeight = 60;
-  calPerKg = 30;
-  protPerKg = 1.5;
-  mode = "sensitive";
-  syncSettingsUI();
-  updateDashboard();
-}
-
-/** =========================
- *  9) Init
- *  ========================= */
-function init(){
-  // Load persisted state
-  const sw = localStorage.getItem(LS.weight);
-  const sc = localStorage.getItem(LS.calPerKg);
-  const sp = localStorage.getItem(LS.protPerKg);
-  const sm = localStorage.getItem(LS.mode);
-  const ss = localStorage.getItem(LS.stats);
-
-  if(sw) userWeight = parseInt(sw,10);
-  if(sc) calPerKg = parseInt(sc,10);
-  if(sp) protPerKg = parseFloat(sp);
-  if(sm) mode = sm;
-  if(ss) {
-    try{ dailyStats = JSON.parse(ss) || dailyStats; }catch(e){}
-  }
-
-  // Settings sliders label update
-  document.getElementById("calPerKgInput").addEventListener("input", e=>{
-    document.getElementById("calPerKgLabel").textContent = e.target.value;
-  });
-  document.getElementById("protPerKgInput").addEventListener("input", e=>{
-    document.getElementById("protPerKgLabel").textContent = parseFloat(e.target.value).toFixed(1);
-  });
-
-  // Enter key quick-add
-  document.getElementById("foodSearch").addEventListener("keydown", (e)=>{
-    if(e.key==="Enter"){
-      const q = normalize(document.getElementById("foodSearch").value);
-      const list = foodDB
-        .filter(item => (filterStatus==="all" ? true : item.status===filterStatus))
-        .filter(item => matchFood(item, q));
-      if(list.length>0){
-        const item = list[0];
-        addFood(getDisplayName(item), item.cal, item.protein, item.status);
-      }
-    }
-  });
-
-  // Language toggle
-  document.getElementById("btnLang").addEventListener("click", ()=>{
-    lang = (lang==="zh") ? "en" : "zh";
-    localStorage.setItem(LS.lang, lang);
-    applyLang();
-    refresh();
-    updateDashboard();
-  });
-
-  applyLang();
-  syncSettingsUI();
-  updateDashboard();
-  setFilter("all");
-  refresh();
-}
-
-init();
-</script>
+  <script src="./app.js"></script>
 </body>
 </html>
