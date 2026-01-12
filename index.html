@@ -3,120 +3,97 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>P‑Care | Pancreatic Nutrition</title>
+  <title>P‑Care | Pancreatic Nutrition & Evidence Library</title>
+
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50:  '#ecfdf5',
+              100: '#d1fae5',
+              200: '#a7f3d0',
+              300: '#6ee7b7',
+              400: '#34d399',
+              500: '#10b981',
+              600: '#059669',
+              700: '#047857',
+              800: '#065f46',
+              900: '#064e3b'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+
   <style>
-    body{font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; background:#F0F4F8;}
-    .card{background:#fff;border-radius:16px;box-shadow:0 4px 15px rgba(0,0,0,.06);}
-    .food-item{border-left:5px solid;}
-    .safe{border-color:#22c55e;background:#F0FFF4;}
-    .caution{border-color:#f59e0b;background:#FFFFF0;}
-    .avoid{border-color:#ef4444;background:#FFF5F5;}
-    .btn-ai{background:linear-gradient(135deg,#10b981 0%,#22c55e 100%);color:white;}
-    .chip{background:#ecfeff;border:1px solid #cffafe;border-radius:999px;padding:.15rem .6rem;font-size:.75rem;color:#155e75;}
+    body { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji"; background: #F3F7F6; }
+    .card { background: white; border-radius: 18px; box-shadow: 0 10px 25px rgba(2, 44, 34, 0.08); border: 1px solid rgba(16,185,129,0.08); }
+    .pill { border-radius: 9999px; padding: 2px 10px; font-size: 12px; }
+    .food-item { border-left: 6px solid; }
+    .safe { border-color: #10b981; background: #ecfdf5; }
+    .caution { border-color: #f59e0b; background: #fffbeb; }
+    .avoid { border-color: #ef4444; background: #fef2f2; }
+    .info { border-color: #3b82f6; background: #eff6ff; }
+    .btn-brand { background: linear-gradient(135deg, #10b981 0%, #22c55e 100%); color: white; }
+    .btn-ghost { background: white; border: 1px solid rgba(2,44,34,0.10); }
+    .nav-active { color: #065f46; background: rgba(16,185,129,0.10); }
+    .kbd { font-size: 12px; border: 1px solid rgba(0,0,0,0.15); padding: 1px 6px; border-radius: 8px; background: rgba(255,255,255,0.9); }
   </style>
 </head>
 <body class="pb-24">
-  <!-- Header -->
-  <div class="bg-white p-6 sticky top-0 z-50 shadow-sm">
-    <div class="flex justify-between items-center">
-      <div>
-        <h1 class="text-2xl font-bold text-gray-800">P‑Care</h1>
-        <p class="text-xs text-gray-500">Nutrition + Food Safety + Evidence Library (ZH/EN)</p>
-      </div>
+
+  <!-- Top bar -->
+  <header class="sticky top-0 z-40 bg-white/80 backdrop-blur border-b border-emerald-100">
+    <div class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between gap-3">
       <div class="flex items-center gap-3">
-        <button id="langBtn" class="text-xs font-bold px-3 py-2 rounded-xl border border-gray-200 hover:bg-gray-50">🌏 中/EN</button>
-        <button onclick="PCare.openSettings()" class="text-gray-400 hover:text-emerald-600" title="Settings">⚙️</button>
+        <div class="h-10 w-10 rounded-2xl bg-brand-100 grid place-items-center text-brand-700 shadow-sm">
+          <i class="fa-solid fa-seedling"></i>
+        </div>
+        <div>
+          <h1 class="text-xl font-extrabold text-slate-900 leading-tight">P‑Care <span class="text-sm font-semibold text-brand-700">🍀</span></h1>
+          <p class="text-xs text-slate-500" id="subtitle">Pancreatic nutrition + evidence library</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <button id="langBtn" class="btn-ghost px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:bg-slate-50" title="Language / 语言">
+          🌏 <span class="hidden sm:inline" id="langBtnLabel">中文</span>
+        </button>
+        <button onclick="PCare.openSettings()" class="btn-ghost px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:bg-slate-50" title="Settings">
+          <i class="fa-solid fa-sliders"></i>
+        </button>
       </div>
     </div>
-    <div class="mt-4 flex gap-2">
-      <button class="tabBtn px-4 py-2 rounded-xl bg-emerald-50 text-emerald-700 font-bold" data-tab="home">Home</button>
-      <button class="tabBtn px-4 py-2 rounded-xl bg-white border border-gray-100 text-gray-700 font-bold" data-tab="analysis">Analysis</button>
-      <button class="tabBtn px-4 py-2 rounded-xl bg-white border border-gray-100 text-gray-700 font-bold" data-tab="evidence">Evidence</button>
+  </header>
+
+  <!-- Main -->
+  <main class="max-w-5xl mx-auto px-4 py-6 space-y-5">
+
+    <!-- Alerts -->
+    <div id="banner" class="card p-4 hidden">
+      <div class="flex gap-3">
+        <div class="h-10 w-10 rounded-2xl bg-amber-100 text-amber-700 grid place-items-center">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+        </div>
+        <div class="flex-1">
+          <p class="font-bold text-slate-900" id="bannerTitle">Safety note</p>
+          <p class="text-sm text-slate-600" id="bannerText">Educational content only.</p>
+        </div>
+        <button class="text-slate-400 hover:text-slate-700" onclick="PCare.hideBanner()"><i class="fa-solid fa-xmark"></i></button>
+      </div>
     </div>
-  </div>
 
-  <main class="p-5 max-w-5xl mx-auto space-y-6">
-    <!-- HOME TAB -->
-    <section id="tab-home" class="space-y-6">
-      <div class="grid md:grid-cols-3 gap-5">
-        <div class="card p-5 md:col-span-2">
-          <h2 class="text-lg font-semibold mb-3">
-            <span data-i18n="daily_goals">Daily Goals</span>
-            <span class="text-xs text-gray-400 font-normal">(<span data-i18n="target">Target</span>: <span id="targetWeightDisplay">--</span>kg)</span>
-          </h2>
+    <!-- Router views -->
+    <section id="view-home" class="space-y-5"></section>
+    <section id="view-analysis" class="space-y-5 hidden"></section>
+    <section id="view-evidence" class="space-y-5 hidden"></section>
 
-          <div class="mb-4">
-            <div class="flex justify-between text-sm mb-1">
-              <span class="text-gray-600">🔥 <span data-i18n="calories">Calories</span></span>
-              <span class="font-bold"><span id="calCurrent">0</span> / <span id="calTarget">0</span> kcal</span>
-            </div>
-            <div class="w-full bg-gray-200 rounded-full h-2.5">
-              <div id="calBar" class="bg-orange-400 h-2.5 rounded-full" style="width:0%"></div>
-            </div>
-          </div>
-
-          <div class="mb-4">
-            <div class="flex justify-between text-sm mb-1">
-              <span class="text-gray-600">🥩 <span data-i18n="protein">Protein</span></span>
-              <span class="font-bold"><span id="protCurrent">0</span> / <span id="protTarget">0</span> g</span>
-            </div>
-            <div class="w-full bg-gray-200 rounded-full h-2.5">
-              <div id="protBar" class="bg-emerald-500 h-2.5 rounded-full" style="width:0%"></div>
-            </div>
-            <p class="text-xs text-emerald-600 mt-2">* 1.2–2.0 g/kg/day (individualised)</p>
-          </div>
-
-          <div class="flex gap-3">
-            <button id="askBtn" class="btn-ai flex-1 py-3 rounded-xl shadow-md font-semibold text-center flex items-center justify-center gap-2">
-              🤖 <span data-i18n="ask_ai">Ask AI Assistant</span>
-            </button>
-            <button id="googleBtn" class="bg-white flex-1 py-3 rounded-xl shadow-md font-semibold text-gray-700 text-center border border-gray-100 flex items-center justify-center gap-2">
-              🔎 <span data-i18n="search_web">Search Web</span>
-            </button>
-          </div>
-        </div>
-
-        <div class="card p-5">
-          <h3 class="text-lg font-bold mb-2">🧾 <span data-i18n="quick_tips">Quick tips</span></h3>
-          <div class="text-sm text-gray-600 space-y-1">
-            <div>✅ <span data-i18n="tip1">Small frequent meals</span></div>
-            <div>✅ <span data-i18n="tip2">Low‑fat cooking (steam/boil/stew)</span></div>
-            <div>⚠️ <span data-i18n="tip3">Persistent weight loss/diarrhea/jaundice → clinician review</span></div>
-          </div>
-
-          <div class="mt-4 p-4 rounded-2xl bg-emerald-50">
-            <div class="text-sm font-bold text-emerald-900">🇦🇺 <span data-i18n="au_ref">AU daily serves (ref)</span></div>
-            <div class="text-xs text-emerald-900/80 mt-1" id="auRefText">—</div>
-          </div>
-
-          <button id="resetBtn" class="mt-4 w-full py-2 rounded-xl border border-gray-200 font-bold text-gray-700 hover:bg-gray-50">♻️ <span data-i18n="reset">Reset today</span></button>
-        </div>
-      </div>
-
-      <!-- Food Finder -->
-      <div class="card p-5">
-        <div class="flex items-center justify-between">
-          <h3 class="text-xl font-bold text-gray-800">🍽️ <span data-i18n="food_finder">Food Finder</span></h3>
-          <div class="flex gap-2">
-            <span class="chip">中文</span><span class="chip">English</span><span class="chip">aliases</span>
-          </div>
-        </div>
-
-        <div class="relative mt-4">
-          <input type="text" id="foodSearch" placeholder="Search foods… (e.g., 香蕉 / banana / 鸡胸肉)" class="w-full p-4 rounded-xl border-none shadow-sm focus:ring-2 focus:ring-emerald-200 outline-none">
-          <span class="absolute right-4 top-4 text-gray-400">✨</span>
-        </div>
-
-        <div id="foodList" class="space-y-3 mt-4"></div>
-
-        <div id="notFound" class="hidden text-center p-8 text-gray-500">
-          <p class="mb-3" data-i18n="not_found">Item not found in database.</p>
-          <button id="askBtn2" class="text-emerald-700 font-bold underline">🤖 <span data-i18n="ask_ai_safe">Ask AI if safe</span></button>
-        </div>
-      </div>
-
-      <!-- Manual Add (NEW) -->
+    <!-- Manual Add (NEW) -->
       <div class="card p-5">
         <div class="flex items-center justify-between">
           <h3 class="text-xl font-bold text-gray-800">✍️ <span data-i18n="manual_add">Manual Add</span></h3>
@@ -161,22 +138,24 @@
         </div>
       </div>
     </section>
-
-    <!-- ANALYSIS TAB -->
-    <section id="tab-analysis" class="hidden space-y-5">
-      <div class="card p-5">
-        <div class="flex items-center justify-between">
-          <h2 class="text-xl font-bold">📊 <span data-i18n="analysis">Analysis</span></h2>
-          <span class="text-xs text-gray-500" data-i18n="last7">Last 7 days</span>
-        </div>
-        <div id="weekWrap" class="mt-4 space-y-3"></div>
-        <div class="mt-4 text-xs text-gray-500" data-i18n="analysis_hint">
-          This shows calories and protein trends. We can extend to macro nutrients later.
-        </div>
-      </div>
-    </section>
-
-    <!-- EVIDENCE TAB -->
+  </main>
+  
+ <!-- Bottom nav -->
+  <nav class="fixed bottom-0 inset-x-0 z-50 bg-white/90 backdrop-blur border-t border-emerald-100">
+    <div class="max-w-5xl mx-auto px-4 py-3 grid grid-cols-3 gap-2">
+      <a href="#home" id="tab-home" class="px-3 py-2 rounded-2xl text-sm font-bold text-slate-700 flex items-center justify-center gap-2 hover:bg-slate-50">
+        🍽️ <span id="navHome">Home</span>
+      </a>
+      <a href="#analysis" id="tab-analysis" class="px-3 py-2 rounded-2xl text-sm font-bold text-slate-700 flex items-center justify-center gap-2 hover:bg-slate-50">
+        📊 <span id="navAnalysis">Analysis</span>
+      </a>
+      <a href="#evidence" id="tab-evidence" class="px-3 py-2 rounded-2xl text-sm font-bold text-slate-700 flex items-center justify-center gap-2 hover:bg-slate-50">
+        🌿 <span id="navEvidence">Evidence</span>
+      </a>
+    </div>
+  </nav>
+  
+  <!-- EVIDENCE TAB -->
     <section id="tab-evidence" class="hidden space-y-5">
       <div class="card p-5">
         <div class="flex items-start justify-between gap-4">
@@ -214,29 +193,56 @@
         <div id="evList" class="space-y-3 mt-5"></div>
       </div>
     </section>
-  </main>
+  
+    <!-- Settings modal -->
+  <div id="settingsModal" class="fixed inset-0 bg-black/40 hidden items-center justify-center z-50">
+    <div class="bg-white w-11/12 max-w-lg rounded-3xl p-6 shadow-2xl border border-emerald-100">
+      <div class="flex items-start justify-between gap-3">
+        <div>
+          <h3 class="text-lg font-extrabold text-slate-900" id="settingsTitle">Personalize targets</h3>
+          <p class="text-sm text-slate-600 mt-1" id="settingsSub">Set weight, phase, and guideline profile.</p>
+        </div>
+        <button class="text-slate-400 hover:text-slate-700" onclick="PCare.closeSettings()"><i class="fa-solid fa-xmark text-xl"></i></button>
+      </div>
 
-  <!-- Settings Modal -->
-  <div id="settingsModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
-    <div class="bg-white p-6 rounded-2xl w-11/12 max-w-sm">
-      <h3 class="text-lg font-bold mb-4" data-i18n="settings">Personalize Targets</h3>
-      <p class="text-sm text-gray-500 mb-4" data-i18n="settings_hint">Targets are estimates; adjust with your clinician.</p>
+      <div class="grid sm:grid-cols-2 gap-4 mt-5">
+        <div>
+          <label class="block text-sm font-bold text-slate-700 mb-2" id="lblWeight">Current weight (kg)</label>
+          <input type="number" id="weightInput" class="w-full p-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-brand-200 outline-none" value="60" min="30" max="200" />
+        </div>
+        <div>
+          <label class="block text-sm font-bold text-slate-700 mb-2" id="lblProfile">Guideline profile</label>
+          <select id="profileSelect" class="w-full p-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-brand-200 outline-none">
+            <option value="adult_female">Adult female (AU serves)</option>
+            <option value="adult_male">Adult male (AU serves)</option>
+          </select>
+        </div>
+        <div class="sm:col-span-2">
+          <label class="block text-sm font-bold text-slate-700 mb-2" id="lblPhase">Care phase</label>
+          <select id="phaseSelect" class="w-full p-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-brand-200 outline-none">
+            <option value="postop">Post‑op early (first weeks)</option>
+            <option value="chemo">During chemo/radiation</option>
+            <option value="recovery">Recovery / stable</option>
+            <option value="diarrhea">Diarrhea / steatorrhea focus</option>
+          </select>
+          <p class="text-xs text-slate-500 mt-2" id="phaseHint">Used for food recommendations (not a medical diagnosis).</p>
+        </div>
+      </div>
 
-      <label class="block text-sm font-bold text-gray-700 mb-2" data-i18n="weight">Current Weight (kg)</label>
-      <input type="number" id="weightInput" class="w-full p-3 border rounded-lg mb-4" value="60">
+      <div class="mt-6 flex gap-3">
+        <button onclick="PCare.saveSettings()" class="btn-brand flex-1 py-3 rounded-2xl font-extrabold shadow-md">Save ✅</button>
+        <button onclick="PCare.closeSettings()" class="btn-ghost flex-1 py-3 rounded-2xl font-extrabold text-slate-700">Cancel</button>
+      </div>
 
-      <label class="block text-sm font-bold text-gray-700 mb-2">AU profile</label>
-      <select id="auProfile" class="w-full p-3 border rounded-lg mb-6">
-        <option value="female">Adult Female</option>
-        <option value="male">Adult Male</option>
-      </select>
-
-      <button id="saveSettingsBtn" class="w-full bg-emerald-600 text-white py-3 rounded-xl font-bold">Save</button>
+      <div class="mt-5 p-4 rounded-2xl bg-brand-50 border border-brand-100 text-sm text-slate-700">
+        <p class="font-bold mb-1">Tip 💡</p>
+        <p id="settingsTip">Targets here are estimation helpers. Clinical needs vary (symptoms, surgery type, enzymes, diabetes, etc.).</p>
+      </div>
     </div>
   </div>
-
-  <!-- Evidence Modal -->
-  <div id="evModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+  
+  <!-- Evidence modal -->
+<div id="evModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
     <div class="bg-white p-6 rounded-2xl w-11/12 max-w-2xl">
       <div class="flex items-center justify-between">
         <h3 id="evModalTitle" class="text-lg font-bold">—</h3>
@@ -246,6 +252,6 @@
     </div>
   </div>
 
-  <script src="./app.js"></script>
+  <script src="./app_v3.js"></script>
 </body>
 </html>
