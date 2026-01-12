@@ -1,0 +1,1887 @@
+{
+  "schema_version": 2,
+  "updated": "2026-01-12",
+  "categories": [
+    "syndrome",
+    "formula",
+    "herb",
+    "compound",
+    "therapy"
+  ],
+  "refs_library": [
+    {
+      "id": "ref_wu2024_molcancer_hbp",
+      "title_en": "Traditional Chinese medicine for the treatment of cancers of hepatobiliary system: from clinical evidence to drug discovery",
+      "title_zh": "中医药治疗肝胆胰系统肿瘤：从临床证据到药物发现（综述）",
+      "journal": "Molecular Cancer",
+      "year": 2024,
+      "doi": "10.1186/s12943-024-02136-2",
+      "url": "https://doi.org/10.1186/s12943-024-02136-2"
+    },
+    {
+      "id": "ref_vella2025_cancers_sr",
+      "title_en": "Unconventional Treatments for Pancreatic Cancer: A Systematic Review",
+      "title_zh": "胰腺癌的非常规/补充疗法：系统综述",
+      "journal": "Cancers (MDPI)",
+      "year": 2025,
+      "doi": "10.3390/cancers17091437",
+      "url": "https://www.mdpi.com/2072-6694/17/9/1437",
+      "doi_url": "https://doi.org/10.3390/cancers17091437"
+    },
+    {
+      "id": "ref_frontiers2023_phagepeptide_pc",
+      "title_en": "Phage-based peptides for pancreatic cancer diagnosis and treatment: alternative approach",
+      "title_zh": "噬菌体展示肽用于胰腺癌诊断与治疗：一种替代性思路",
+      "journal": "Frontiers in Microbiology",
+      "year": 2023,
+      "doi": "10.3389/fmicb.2023.1231503",
+      "url": "https://www.frontiersin.org/articles/10.3389/fmicb.2023.1231503/full",
+      "doi_url": "https://doi.org/10.3389/fmicb.2023.1231503"
+    },
+    {
+      "id": "ref_shi32_adv_pc_tcm",
+      "title_en": "Clinical Study of 32 Patients with Advanced Pancreatic Cancer Treated with TCM",
+      "title_zh": "晚期胰腺癌32例中医药治疗临床观察（上传PDF）",
+      "journal": "(uploaded PDF)",
+      "year": null,
+      "doi": null,
+      "url": null,
+      "file": "Clinical_Study_of_32_Patients_.pdf"
+    }
+  ],
+  "items": [
+    {
+      "id": "tcm_syndrome_4types",
+      "type": "syndrome",
+      "evidence_level": "textbook/clinical experience",
+      "name_zh": "中医辨证分型（示例：四型）",
+      "name_en": "TCM pattern differentiation (example: 4 types)",
+      "summary_zh": "部分资料将胰腺癌相关证候分为多种类型，用于指导治法与方药选择。",
+      "summary_en": "Some sources describe multiple TCM patterns to guide treatment principles and formulas.",
+      "key_points": [
+        {
+          "pattern": {
+            "zh": "痰浊瘀结",
+            "en": "Phlegm-turbidity with blood stasis"
+          },
+          "principle": {
+            "zh": "和解少阳，内泻热结",
+            "en": "Harmonize Shaoyang; purge internal heat-congestion"
+          },
+          "formula": {
+            "zh": "大柴胡汤合血府逐瘀汤加减",
+            "en": "Da Chai Hu Tang + Xue Fu Zhu Yu Tang (modified)"
+          },
+          "notes": {
+            "zh": "症状描述见来源；需注册中医师辨证。",
+            "en": "Symptoms are source-described; requires qualified TCM clinician."
+          }
+        }
+      ],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "zh": "仅用于健康教育；不替代个体化诊疗。",
+          "en": "Educational only; not a substitute for individualized care."
+        }
+      ],
+      "interactions": [],
+      "refs": [
+        {
+          "label": "TCM article (html)",
+          "citation": "turn9file2:L1-L1"
+        }
+      ]
+    },
+    {
+      "id": "tcm_patterns_jaundice",
+      "type": "syndrome",
+      "evidence_level": "clinical guidance (experience-based)",
+      "name_zh": "肝胆湿热证（胰头癌伴黄疸）",
+      "name_en": "Liver–gallbladder damp-heat pattern (jaundice)",
+      "summary_zh": "资料提到胰头癌伴黄疸、舌红苔黄腻等，可辨为肝胆湿热证，治以清肝利胆、祛湿降浊，方药茵陈蒿汤加减。",
+      "summary_en": "Source describes jaundice presentation mapped to damp-heat; Yin Chen Hao Tang modifications suggested.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "zh": "含大黄等泻下药，腹泻/肠梗阻风险者需谨慎并遵医嘱。",
+          "en": "Contains purgative herbs (e.g., Da Huang); caution with diarrhea/obstruction risks; clinician supervision needed."
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "tcm_patterns_midlate",
+      "type": "formula",
+      "evidence_level": "clinical guidance (experience-based)",
+      "name_zh": "中晚期常见：脾虚湿阻 / 肝阴亏虚",
+      "name_en": "Common mid–late patterns: spleen deficiency with dampness / liver yin deficiency",
+      "summary_zh": "资料提到中晚期可见脾虚湿阻及肝阴亏虚证，分别可用陈夏六君汤加减与一贯煎合二至丸加减，并列出常用药材。",
+      "summary_en": "Source notes these patterns and suggests Chenxia Liu Jun Tang or Yiguan Jian + Erzhi Wan modifications with example herbs.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "zh": "化疗期间如需中药，应关注相互作用；可考虑以针灸等方式减轻不适，避免中药与化疗冲突。",
+          "en": "During chemotherapy, consider interaction risk; source suggests acupuncture for symptom relief to avoid herb–chemo conflict."
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "integrative_rct_observational",
+      "type": "herb",
+      "evidence_level": "secondary summary; heterogeneous studies",
+      "name_zh": "中药联合化疗/放疗：部分研究观察结果",
+      "name_en": "Herbal medicine combined with chemo/radiotherapy: selected observational findings",
+      "summary_zh": "一篇综述/文献汇总提到，部分研究报道中药方联合化疗或放疗在疾病控制率/有效率、KPS等方面优于单纯治疗（具体方药与研究设计需逐条核对原文）。",
+      "summary_en": "A review-style source reports some studies where herbal formulas plus chemo/radiotherapy showed higher response/control rates and better KPS; details require checking each original study.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "zh": "证据质量可能不一；需强调“与主治团队沟通、避免延误标准治疗”。",
+          "en": "Evidence quality varies; emphasize coordination with oncology team and not delaying standard care."
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "integrative_workflow",
+      "type": "herb",
+      "evidence_level": "expert opinion / clinical experience",
+      "name_zh": "中西医协作与风险管理（实践建议）",
+      "name_en": "Integrative workflow & risk management (practical guidance)",
+      "summary_zh": "来源提到在患者担忧化疗副作用时，可在化疗前以中药增体质，化疗期间优先用针灸等减少不适以避免“中药与化疗冲突”，化疗后再中药调理。",
+      "summary_en": "Source suggests: use herbs pre-chemo for conditioning; prefer acupuncture during chemo to reduce side effects and avoid herb–chemo conflicts; resume herbs post-chemo.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "zh": "任何中药/补充剂应记录并与肿瘤科/药师核对潜在相互作用。",
+          "en": "Record all herbs/supplements; cross-check interactions with oncology/pharmacy."
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "integrative_principles",
+      "type": "herb",
+      "evidence_level": "consensus/clinical safety",
+      "name_zh": "如何安全使用中医/整合医学信息",
+      "name_en": "How to use integrative/TCM info safely",
+      "summary_zh": "中医/整合医学建议仅作为支持治疗信息，不可替代标准肿瘤治疗。",
+      "summary_en": "Use TCM/integrative approaches as supportive care, not a replacement for standard oncology treatment.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Educational only; not medical advice.",
+          "zh": "仅供健康教育，不构成医疗建议。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "support_nausea",
+      "type": "herb",
+      "evidence_level": "mixed (varies by method)",
+      "name_zh": "支持治疗：恶心呕吐",
+      "name_en": "Supportive care: Nausea / vomiting",
+      "summary_zh": "支持治疗中部分非药物方法（如姜、针灸）有一定证据。",
+      "summary_en": "moderate evidence exists for some non-drug options (e.g., ginger, acupuncture) in supportive care.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Seek urgent care for dehydration, fever, blood in stool, or worsening jaundice.",
+          "zh": "出现脱水、发热、便血或黄疸加重等需及时就医。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "support_diarrhea",
+      "type": "herb",
+      "evidence_level": "mixed (varies by method)",
+      "name_zh": "支持治疗：腹泻/脂肪泻",
+      "name_en": "Supportive care: Diarrhea / steatorrhea",
+      "summary_zh": "优先补液、低脂饮食；与医生讨论胰酶与感染等原因。",
+      "summary_en": "Prioritize hydration, low-fat meals; discuss pancreatic enzymes and infections with clinician.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Seek urgent care for dehydration, fever, blood in stool, or worsening jaundice.",
+          "zh": "出现脱水、发热、便血或黄疸加重等需及时就医。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "support_appetite",
+      "type": "herb",
+      "evidence_level": "mixed (varies by method)",
+      "name_zh": "支持治疗：食欲差/体重下降",
+      "name_en": "Supportive care: Poor appetite / weight loss",
+      "summary_zh": "营养支持（少量多餐+高蛋白）是核心；草药仅在医生知情下讨论。",
+      "summary_en": "Nutrition support (high-protein, small frequent meals) is first-line; herbs may be discussed only with clinicians.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Seek urgent care for dehydration, fever, blood in stool, or worsening jaundice.",
+          "zh": "出现脱水、发热、便血或黄疸加重等需及时就医。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "support_pain",
+      "type": "herb",
+      "evidence_level": "mixed (varies by method)",
+      "name_zh": "支持治疗：疼痛管理",
+      "name_en": "Supportive care: Pain management",
+      "summary_zh": "镇痛以医学方案为主；可在适当时用身心疗法/针灸辅助舒缓。",
+      "summary_en": "Medical pain control is primary; integrative options may support comfort (mind-body, acupuncture) where appropriate.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Seek urgent care for dehydration, fever, blood in stool, or worsening jaundice.",
+          "zh": "出现脱水、发热、便血或黄疸加重等需及时就医。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "herb_astragalus",
+      "type": "herb",
+      "evidence_level": "low",
+      "name_zh": "药材概览：黄芪",
+      "name_en": "Herb profile: Astragalus (Huangqi)",
+      "summary_zh": "常用于支持调理；证据质量不一。",
+      "summary_en": "Commonly used in supportive care; evidence quality varies.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "May interact with immune therapies; monitor liver enzymes.",
+          "zh": "免疫治疗期间需谨慎；关注肝功能。"
+        },
+        {
+          "en": "Use only with clinician oversight.",
+          "zh": "务必在医生知情下使用。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "herb_ginseng",
+      "type": "herb",
+      "evidence_level": "low",
+      "name_zh": "药材概览：人参/党参",
+      "name_en": "Herb profile: Ginseng / Codonopsis",
+      "summary_zh": "用于乏力/食欲差的讨论较多；证据有限。",
+      "summary_en": "Used for fatigue and appetite in some contexts; evidence limited.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "May affect blood sugar or anticoagulants in some people.",
+          "zh": "可能影响血糖或与抗凝相关；个体差异大。"
+        },
+        {
+          "en": "Avoid unknown products.",
+          "zh": "避免来源不明制剂。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "herb_ginger",
+      "type": "herb",
+      "evidence_level": "moderate",
+      "name_zh": "药材概览：生姜",
+      "name_en": "Herb profile: Ginger",
+      "summary_zh": "部分证据支持缓解恶心；耐受因人而异。",
+      "summary_en": "Some evidence for nausea relief; individual tolerance varies.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Can irritate reflux/ulcer in sensitive people.",
+          "zh": "反酸/溃疡者可能刺激。"
+        },
+        {
+          "en": "Be cautious with anticoagulants at high supplemental doses.",
+          "zh": "大剂量补充剂与抗凝合用需谨慎。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "herb_licorice",
+      "type": "herb",
+      "evidence_level": "low",
+      "name_zh": "药材概览：甘草",
+      "name_en": "Herb profile: Licorice (Gancao)",
+      "summary_zh": "方剂常见；高剂量可能有副作用。",
+      "summary_en": "Often used in formulas; watch side effects with high intake.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "May raise blood pressure / lower potassium with excessive use.",
+          "zh": "过量可能升血压/低钾。"
+        },
+        {
+          "en": "Discuss if on diuretics or heart meds.",
+          "zh": "利尿剂/心血管用药者先咨询。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "herb_turmeric",
+      "type": "compound",
+      "evidence_level": "very low",
+      "name_zh": "药材概览：姜黄/姜黄素补充剂",
+      "name_en": "Herb profile: Turmeric/Curcumin supplements",
+      "summary_zh": "多为机制/前临床研究；临床获益不明确。",
+      "summary_en": "Preclinical interest; clinical benefit unclear.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "High-dose supplements may increase bleeding risk.",
+          "zh": "高剂量可能增加出血风险。"
+        },
+        {
+          "en": "Avoid self-prescribing high doses during chemo/surgery.",
+          "zh": "化疗/手术期避免自行大剂量。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "therapy_acupuncture",
+      "type": "therapy",
+      "evidence_level": "moderate",
+      "name_zh": "疗法：针灸",
+      "name_en": "Therapy: Acupuncture",
+      "summary_zh": "部分场景对恶心/疼痛/焦虑有支持性证据。",
+      "summary_en": "Supportive evidence exists for nausea/pain/anxiety in some settings.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Assess bleeding risk (low platelets/anticoagulants).",
+          "zh": "血小板低/抗凝者评估出血风险。"
+        },
+        {
+          "en": "Use licensed practitioners & sterile technique.",
+          "zh": "选择正规机构与无菌操作。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "therapy_mindfulness",
+      "type": "therapy",
+      "evidence_level": "moderate",
+      "name_zh": "疗法：身心疗法（放松/正念）",
+      "name_en": "Therapy: Mind-body (relaxation, mindfulness)",
+      "summary_zh": "有助减压/睡眠/应对；相对安全。",
+      "summary_en": "May help stress, sleep and coping; safe adjunct.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Does not replace medical care.",
+          "zh": "不可替代医疗。"
+        },
+        {
+          "en": "Stop if it increases distress.",
+          "zh": "若加重焦虑不适则停止。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "formula_liujunzi",
+      "type": "formula",
+      "evidence_level": "clinical experience",
+      "name_zh": "方剂概览：香砂六君子汤（加减）",
+      "name_en": "Formula overview: Xiangsha Liujunzi Tang (modified)",
+      "summary_zh": "常用于食欲差、腹胀、便溏等的讨论；需辨证个体化。",
+      "summary_en": "Often discussed for appetite/bloating/loose stool patterns; must be individualized.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Herb–drug interactions are possible (anticoagulants, chemo, immunotherapy).",
+          "zh": "可能存在药物相互作用（抗凝、化疗、免疫治疗）。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "formula_shenling",
+      "type": "formula",
+      "evidence_level": "clinical experience",
+      "name_zh": "方剂概览：参苓白术散（加减）",
+      "name_en": "Formula overview: Shenling Baizhu San (modified)",
+      "summary_zh": "用于久泻乏力等讨论；需排除感染/梗阻。",
+      "summary_en": "Discussed for chronic loose stools and fatigue patterns; rule out infection/obstruction.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Herb–drug interactions are possible (anticoagulants, chemo, immunotherapy).",
+          "zh": "可能存在药物相互作用（抗凝、化疗、免疫治疗）。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "formula_xuefu",
+      "type": "formula",
+      "evidence_level": "clinical experience",
+      "name_zh": "方剂概览：血府逐瘀汤（加减）",
+      "name_en": "Formula overview: Xue Fu Zhu Yu Tang (modified)",
+      "summary_zh": "涉及活血化瘀思路时需重点评估出血风险。",
+      "summary_en": "When 'blood stasis' approach is considered, bleeding risk must be reviewed carefully.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Herb–drug interactions are possible (anticoagulants, chemo, immunotherapy).",
+          "zh": "可能存在药物相互作用（抗凝、化疗、免疫治疗）。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "formula_yinchen",
+      "type": "formula",
+      "evidence_level": "clinical experience",
+      "name_zh": "方剂概览：茵陈蒿汤（加减）",
+      "name_en": "Formula overview: Yinchenhao Tang (modified)",
+      "summary_zh": "黄疸/湿热讨论较多；胆道梗阻需优先医学评估。",
+      "summary_en": "Discussed in jaundice/damp-heat contexts; medical evaluation for biliary obstruction is critical.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Herb–drug interactions are possible (anticoagulants, chemo, immunotherapy).",
+          "zh": "可能存在药物相互作用（抗凝、化疗、免疫治疗）。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "check_bleeding",
+      "type": "herb",
+      "evidence_level": "clinical safety",
+      "name_zh": "出血风险清单",
+      "name_en": "Bleeding risk checklist",
+      "summary_zh": "若使用抗凝/血小板低/手术前后，涉及“活血化瘀”药材需医生评估后再考虑。",
+      "summary_en": "If on anticoagulants, have low platelets, or around surgery, avoid 'blood-invigorating' herbs unless clinician approves.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "If you develop rash, swelling, breathing issues—seek emergency care.",
+          "zh": "出现皮疹、肿胀、呼吸困难等需紧急就医。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "check_liverkidney",
+      "type": "herb",
+      "evidence_level": "clinical safety",
+      "name_zh": "肝肾监测清单",
+      "name_en": "Liver/kidney monitoring",
+      "summary_zh": "不少补充剂经肝肾代谢；建议监测化验，异常需停用并就医。",
+      "summary_en": "Many supplements are metabolized by liver/kidney. Monitor labs and stop if abnormalities occur.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "If you develop rash, swelling, breathing issues—seek emergency care.",
+          "zh": "出现皮疹、肿胀、呼吸困难等需紧急就医。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "check_quality",
+      "type": "herb",
+      "evidence_level": "clinical safety",
+      "name_zh": "产品质量与污染",
+      "name_en": "Product quality & contamination",
+      "summary_zh": "优先第三方检测产品；警惕重金属/掺假。",
+      "summary_en": "Prefer products with third‑party testing; beware heavy metals and adulteration.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "If you develop rash, swelling, breathing issues—seek emergency care.",
+          "zh": "出现皮疹、肿胀、呼吸困难等需紧急就医。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "check_sugar",
+      "type": "compound",
+      "evidence_level": "clinical safety",
+      "name_zh": "糖醇与胃肠反应",
+      "name_en": "Sugar alcohols and GI symptoms",
+      "summary_zh": "一些“健康产品”含糖醇，可能加重腹泻/胀气。",
+      "summary_en": "Some 'health' products contain sugar alcohols that worsen diarrhea/bloating.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "If you develop rash, swelling, breathing issues—seek emergency care.",
+          "zh": "出现皮疹、肿胀、呼吸困难等需紧急就医。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "herb_poria",
+      "type": "herb",
+      "evidence_level": "low",
+      "name_zh": "药材概览：茯苓",
+      "name_en": "Herb profile: Poria (Fuling)",
+      "summary_zh": "常用药材；通常耐受较好。",
+      "summary_en": "Often used in formulas; generally well tolerated.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Allergy possible; stop if rash.",
+          "zh": "可能过敏；皮疹停用。"
+        },
+        {
+          "en": "Discuss if kidney disease.",
+          "zh": "肾病者先咨询。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "herb_atractylodes",
+      "type": "herb",
+      "evidence_level": "low",
+      "name_zh": "药材概览：白术",
+      "name_en": "Herb profile: Atractylodes (Baizhu)",
+      "summary_zh": "健脾常用；证据有限。",
+      "summary_en": "Common digestive support herb in formulas; evidence limited.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Monitor for GI upset.",
+          "zh": "注意胃肠不适。"
+        },
+        {
+          "en": "Use under clinician guidance.",
+          "zh": "在医师指导下使用。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "herb_chenpi",
+      "type": "herb",
+      "evidence_level": "experience",
+      "name_zh": "药材概览：陈皮",
+      "name_en": "Herb profile: Dried tangerine peel (Chenpi)",
+      "summary_zh": "传统用于胀满恶心；证据多为经验。",
+      "summary_en": "Traditionally used for bloating and nausea; evidence mostly traditional.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "May worsen reflux in some.",
+          "zh": "部分人反酸加重。"
+        },
+        {
+          "en": "Avoid high doses.",
+          "zh": "避免大剂量。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "herb_banxia",
+      "type": "herb",
+      "evidence_level": "experience",
+      "name_zh": "药材概览：半夏（炮制）",
+      "name_en": "Herb profile: Pinellia (processed)",
+      "summary_zh": "用于止呕化痰；需规范炮制，勿自行用生品。",
+      "summary_en": "Used for nausea/phlegm; must be properly processed; not for self-use.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Raw herb can be toxic/irritating.",
+          "zh": "生品有毒/刺激。"
+        },
+        {
+          "en": "Pregnancy contraindications apply.",
+          "zh": "孕期禁忌需遵循。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "herb_danshen",
+      "type": "herb",
+      "evidence_level": "low",
+      "name_zh": "药材概览：丹参",
+      "name_en": "Herb profile: Danshen",
+      "summary_zh": "用于活血相关讨论；与抗凝相互作用需警惕。",
+      "summary_en": "Sometimes discussed for circulation; interaction concerns with anticoagulants.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Bleeding risk with anticoagulants.",
+          "zh": "抗凝合用出血风险↑。"
+        },
+        {
+          "en": "Stop before surgery unless advised.",
+          "zh": "手术前按医嘱停用。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "faq_31",
+      "type": "herb",
+      "evidence_level": "clinical safety",
+      "name_zh": "关于补充剂/中药，应该问医生什么？",
+      "name_en": "Questions to ask your clinician about supplements",
+      "summary_zh": "用这些问题降低使用补充剂/中药的风险。",
+      "summary_en": "Use these questions to reduce risk when considering supplements/herbs.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Do not start multiple new products at once.",
+          "zh": "不要一次同时新增多个产品。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "faq_32",
+      "type": "herb",
+      "evidence_level": "clinical safety",
+      "name_zh": "关于补充剂/中药，应该问医生什么？",
+      "name_en": "Questions to ask your clinician about supplements",
+      "summary_zh": "用这些问题降低使用补充剂/中药的风险。",
+      "summary_en": "Use these questions to reduce risk when considering supplements/herbs.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Do not start multiple new products at once.",
+          "zh": "不要一次同时新增多个产品。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "faq_33",
+      "type": "herb",
+      "evidence_level": "clinical safety",
+      "name_zh": "关于补充剂/中药，应该问医生什么？",
+      "name_en": "Questions to ask your clinician about supplements",
+      "summary_zh": "用这些问题降低使用补充剂/中药的风险。",
+      "summary_en": "Use these questions to reduce risk when considering supplements/herbs.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Do not start multiple new products at once.",
+          "zh": "不要一次同时新增多个产品。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "faq_34",
+      "type": "herb",
+      "evidence_level": "clinical safety",
+      "name_zh": "关于补充剂/中药，应该问医生什么？",
+      "name_en": "Questions to ask your clinician about supplements",
+      "summary_zh": "用这些问题降低使用补充剂/中药的风险。",
+      "summary_en": "Use these questions to reduce risk when considering supplements/herbs.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Do not start multiple new products at once.",
+          "zh": "不要一次同时新增多个产品。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "faq_35",
+      "type": "herb",
+      "evidence_level": "clinical safety",
+      "name_zh": "关于补充剂/中药，应该问医生什么？",
+      "name_en": "Questions to ask your clinician about supplements",
+      "summary_zh": "用这些问题降低使用补充剂/中药的风险。",
+      "summary_en": "Use these questions to reduce risk when considering supplements/herbs.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Do not start multiple new products at once.",
+          "zh": "不要一次同时新增多个产品。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "faq_36",
+      "type": "herb",
+      "evidence_level": "clinical safety",
+      "name_zh": "关于补充剂/中药，应该问医生什么？",
+      "name_en": "Questions to ask your clinician about supplements",
+      "summary_zh": "用这些问题降低使用补充剂/中药的风险。",
+      "summary_en": "Use these questions to reduce risk when considering supplements/herbs.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Do not start multiple new products at once.",
+          "zh": "不要一次同时新增多个产品。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "faq_37",
+      "type": "herb",
+      "evidence_level": "clinical safety",
+      "name_zh": "关于补充剂/中药，应该问医生什么？",
+      "name_en": "Questions to ask your clinician about supplements",
+      "summary_zh": "用这些问题降低使用补充剂/中药的风险。",
+      "summary_en": "Use these questions to reduce risk when considering supplements/herbs.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Do not start multiple new products at once.",
+          "zh": "不要一次同时新增多个产品。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "faq_38",
+      "type": "herb",
+      "evidence_level": "clinical safety",
+      "name_zh": "关于补充剂/中药，应该问医生什么？",
+      "name_en": "Questions to ask your clinician about supplements",
+      "summary_zh": "用这些问题降低使用补充剂/中药的风险。",
+      "summary_en": "Use these questions to reduce risk when considering supplements/herbs.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Do not start multiple new products at once.",
+          "zh": "不要一次同时新增多个产品。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "faq_39",
+      "type": "herb",
+      "evidence_level": "clinical safety",
+      "name_zh": "关于补充剂/中药，应该问医生什么？",
+      "name_en": "Questions to ask your clinician about supplements",
+      "summary_zh": "用这些问题降低使用补充剂/中药的风险。",
+      "summary_en": "Use these questions to reduce risk when considering supplements/herbs.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Do not start multiple new products at once.",
+          "zh": "不要一次同时新增多个产品。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "faq_40",
+      "type": "herb",
+      "evidence_level": "clinical safety",
+      "name_zh": "关于补充剂/中药，应该问医生什么？",
+      "name_en": "Questions to ask your clinician about supplements",
+      "summary_zh": "用这些问题降低使用补充剂/中药的风险。",
+      "summary_en": "Use these questions to reduce risk when considering supplements/herbs.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Do not start multiple new products at once.",
+          "zh": "不要一次同时新增多个产品。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "faq_41",
+      "type": "herb",
+      "evidence_level": "clinical safety",
+      "name_zh": "关于补充剂/中药，应该问医生什么？",
+      "name_en": "Questions to ask your clinician about supplements",
+      "summary_zh": "用这些问题降低使用补充剂/中药的风险。",
+      "summary_en": "Use these questions to reduce risk when considering supplements/herbs.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Do not start multiple new products at once.",
+          "zh": "不要一次同时新增多个产品。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "faq_42",
+      "type": "herb",
+      "evidence_level": "clinical safety",
+      "name_zh": "关于补充剂/中药，应该问医生什么？",
+      "name_en": "Questions to ask your clinician about supplements",
+      "summary_zh": "用这些问题降低使用补充剂/中药的风险。",
+      "summary_en": "Use these questions to reduce risk when considering supplements/herbs.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Do not start multiple new products at once.",
+          "zh": "不要一次同时新增多个产品。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "faq_43",
+      "type": "herb",
+      "evidence_level": "clinical safety",
+      "name_zh": "关于补充剂/中药，应该问医生什么？",
+      "name_en": "Questions to ask your clinician about supplements",
+      "summary_zh": "用这些问题降低使用补充剂/中药的风险。",
+      "summary_en": "Use these questions to reduce risk when considering supplements/herbs.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Do not start multiple new products at once.",
+          "zh": "不要一次同时新增多个产品。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "faq_44",
+      "type": "herb",
+      "evidence_level": "clinical safety",
+      "name_zh": "关于补充剂/中药，应该问医生什么？",
+      "name_en": "Questions to ask your clinician about supplements",
+      "summary_zh": "用这些问题降低使用补充剂/中药的风险。",
+      "summary_en": "Use these questions to reduce risk when considering supplements/herbs.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Do not start multiple new products at once.",
+          "zh": "不要一次同时新增多个产品。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "faq_45",
+      "type": "herb",
+      "evidence_level": "clinical safety",
+      "name_zh": "关于补充剂/中药，应该问医生什么？",
+      "name_en": "Questions to ask your clinician about supplements",
+      "summary_zh": "用这些问题降低使用补充剂/中药的风险。",
+      "summary_en": "Use these questions to reduce risk when considering supplements/herbs.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Do not start multiple new products at once.",
+          "zh": "不要一次同时新增多个产品。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "faq_46",
+      "type": "herb",
+      "evidence_level": "clinical safety",
+      "name_zh": "关于补充剂/中药，应该问医生什么？",
+      "name_en": "Questions to ask your clinician about supplements",
+      "summary_zh": "用这些问题降低使用补充剂/中药的风险。",
+      "summary_en": "Use these questions to reduce risk when considering supplements/herbs.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Do not start multiple new products at once.",
+          "zh": "不要一次同时新增多个产品。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "faq_47",
+      "type": "herb",
+      "evidence_level": "clinical safety",
+      "name_zh": "关于补充剂/中药，应该问医生什么？",
+      "name_en": "Questions to ask your clinician about supplements",
+      "summary_zh": "用这些问题降低使用补充剂/中药的风险。",
+      "summary_en": "Use these questions to reduce risk when considering supplements/herbs.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Do not start multiple new products at once.",
+          "zh": "不要一次同时新增多个产品。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "faq_48",
+      "type": "herb",
+      "evidence_level": "clinical safety",
+      "name_zh": "关于补充剂/中药，应该问医生什么？",
+      "name_en": "Questions to ask your clinician about supplements",
+      "summary_zh": "用这些问题降低使用补充剂/中药的风险。",
+      "summary_en": "Use these questions to reduce risk when considering supplements/herbs.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Do not start multiple new products at once.",
+          "zh": "不要一次同时新增多个产品。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "faq_49",
+      "type": "herb",
+      "evidence_level": "clinical safety",
+      "name_zh": "关于补充剂/中药，应该问医生什么？",
+      "name_en": "Questions to ask your clinician about supplements",
+      "summary_zh": "用这些问题降低使用补充剂/中药的风险。",
+      "summary_en": "Use these questions to reduce risk when considering supplements/herbs.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Do not start multiple new products at once.",
+          "zh": "不要一次同时新增多个产品。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "faq_50",
+      "type": "herb",
+      "evidence_level": "clinical safety",
+      "name_zh": "关于补充剂/中药，应该问医生什么？",
+      "name_en": "Questions to ask your clinician about supplements",
+      "summary_zh": "用这些问题降低使用补充剂/中药的风险。",
+      "summary_en": "Use these questions to reduce risk when considering supplements/herbs.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Do not start multiple new products at once.",
+          "zh": "不要一次同时新增多个产品。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "faq_51",
+      "type": "herb",
+      "evidence_level": "clinical safety",
+      "name_zh": "关于补充剂/中药，应该问医生什么？",
+      "name_en": "Questions to ask your clinician about supplements",
+      "summary_zh": "用这些问题降低使用补充剂/中药的风险。",
+      "summary_en": "Use these questions to reduce risk when considering supplements/herbs.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Do not start multiple new products at once.",
+          "zh": "不要一次同时新增多个产品。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "faq_52",
+      "type": "herb",
+      "evidence_level": "clinical safety",
+      "name_zh": "关于补充剂/中药，应该问医生什么？",
+      "name_en": "Questions to ask your clinician about supplements",
+      "summary_zh": "用这些问题降低使用补充剂/中药的风险。",
+      "summary_en": "Use these questions to reduce risk when considering supplements/herbs.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Do not start multiple new products at once.",
+          "zh": "不要一次同时新增多个产品。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "faq_53",
+      "type": "herb",
+      "evidence_level": "clinical safety",
+      "name_zh": "关于补充剂/中药，应该问医生什么？",
+      "name_en": "Questions to ask your clinician about supplements",
+      "summary_zh": "用这些问题降低使用补充剂/中药的风险。",
+      "summary_en": "Use these questions to reduce risk when considering supplements/herbs.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Do not start multiple new products at once.",
+          "zh": "不要一次同时新增多个产品。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "faq_54",
+      "type": "herb",
+      "evidence_level": "clinical safety",
+      "name_zh": "关于补充剂/中药，应该问医生什么？",
+      "name_en": "Questions to ask your clinician about supplements",
+      "summary_zh": "用这些问题降低使用补充剂/中药的风险。",
+      "summary_en": "Use these questions to reduce risk when considering supplements/herbs.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Do not start multiple new products at once.",
+          "zh": "不要一次同时新增多个产品。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "faq_55",
+      "type": "herb",
+      "evidence_level": "clinical safety",
+      "name_zh": "关于补充剂/中药，应该问医生什么？",
+      "name_en": "Questions to ask your clinician about supplements",
+      "summary_zh": "用这些问题降低使用补充剂/中药的风险。",
+      "summary_en": "Use these questions to reduce risk when considering supplements/herbs.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Do not start multiple new products at once.",
+          "zh": "不要一次同时新增多个产品。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "faq_56",
+      "type": "herb",
+      "evidence_level": "clinical safety",
+      "name_zh": "关于补充剂/中药，应该问医生什么？",
+      "name_en": "Questions to ask your clinician about supplements",
+      "summary_zh": "用这些问题降低使用补充剂/中药的风险。",
+      "summary_en": "Use these questions to reduce risk when considering supplements/herbs.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Do not start multiple new products at once.",
+          "zh": "不要一次同时新增多个产品。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "faq_57",
+      "type": "herb",
+      "evidence_level": "clinical safety",
+      "name_zh": "关于补充剂/中药，应该问医生什么？",
+      "name_en": "Questions to ask your clinician about supplements",
+      "summary_zh": "用这些问题降低使用补充剂/中药的风险。",
+      "summary_en": "Use these questions to reduce risk when considering supplements/herbs.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Do not start multiple new products at once.",
+          "zh": "不要一次同时新增多个产品。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "faq_58",
+      "type": "herb",
+      "evidence_level": "clinical safety",
+      "name_zh": "关于补充剂/中药，应该问医生什么？",
+      "name_en": "Questions to ask your clinician about supplements",
+      "summary_zh": "用这些问题降低使用补充剂/中药的风险。",
+      "summary_en": "Use these questions to reduce risk when considering supplements/herbs.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Do not start multiple new products at once.",
+          "zh": "不要一次同时新增多个产品。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "faq_59",
+      "type": "herb",
+      "evidence_level": "clinical safety",
+      "name_zh": "关于补充剂/中药，应该问医生什么？",
+      "name_en": "Questions to ask your clinician about supplements",
+      "summary_zh": "用这些问题降低使用补充剂/中药的风险。",
+      "summary_en": "Use these questions to reduce risk when considering supplements/herbs.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Do not start multiple new products at once.",
+          "zh": "不要一次同时新增多个产品。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "faq_60",
+      "type": "herb",
+      "evidence_level": "clinical safety",
+      "name_zh": "关于补充剂/中药，应该问医生什么？",
+      "name_en": "Questions to ask your clinician about supplements",
+      "summary_zh": "用这些问题降低使用补充剂/中药的风险。",
+      "summary_en": "Use these questions to reduce risk when considering supplements/herbs.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Do not start multiple new products at once.",
+          "zh": "不要一次同时新增多个产品。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "faq_61",
+      "type": "herb",
+      "evidence_level": "clinical safety",
+      "name_zh": "关于补充剂/中药，应该问医生什么？",
+      "name_en": "Questions to ask your clinician about supplements",
+      "summary_zh": "用这些问题降低使用补充剂/中药的风险。",
+      "summary_en": "Use these questions to reduce risk when considering supplements/herbs.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Do not start multiple new products at once.",
+          "zh": "不要一次同时新增多个产品。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "faq_62",
+      "type": "herb",
+      "evidence_level": "clinical safety",
+      "name_zh": "关于补充剂/中药，应该问医生什么？",
+      "name_en": "Questions to ask your clinician about supplements",
+      "summary_zh": "用这些问题降低使用补充剂/中药的风险。",
+      "summary_en": "Use these questions to reduce risk when considering supplements/herbs.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Do not start multiple new products at once.",
+          "zh": "不要一次同时新增多个产品。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "faq_63",
+      "type": "herb",
+      "evidence_level": "clinical safety",
+      "name_zh": "关于补充剂/中药，应该问医生什么？",
+      "name_en": "Questions to ask your clinician about supplements",
+      "summary_zh": "用这些问题降低使用补充剂/中药的风险。",
+      "summary_en": "Use these questions to reduce risk when considering supplements/herbs.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Do not start multiple new products at once.",
+          "zh": "不要一次同时新增多个产品。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "faq_64",
+      "type": "herb",
+      "evidence_level": "clinical safety",
+      "name_zh": "关于补充剂/中药，应该问医生什么？",
+      "name_en": "Questions to ask your clinician about supplements",
+      "summary_zh": "用这些问题降低使用补充剂/中药的风险。",
+      "summary_en": "Use these questions to reduce risk when considering supplements/herbs.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Do not start multiple new products at once.",
+          "zh": "不要一次同时新增多个产品。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "faq_65",
+      "type": "herb",
+      "evidence_level": "clinical safety",
+      "name_zh": "关于补充剂/中药，应该问医生什么？",
+      "name_en": "Questions to ask your clinician about supplements",
+      "summary_zh": "用这些问题降低使用补充剂/中药的风险。",
+      "summary_en": "Use these questions to reduce risk when considering supplements/herbs.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Do not start multiple new products at once.",
+          "zh": "不要一次同时新增多个产品。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "faq_66",
+      "type": "herb",
+      "evidence_level": "clinical safety",
+      "name_zh": "关于补充剂/中药，应该问医生什么？",
+      "name_en": "Questions to ask your clinician about supplements",
+      "summary_zh": "用这些问题降低使用补充剂/中药的风险。",
+      "summary_en": "Use these questions to reduce risk when considering supplements/herbs.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Do not start multiple new products at once.",
+          "zh": "不要一次同时新增多个产品。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "faq_67",
+      "type": "herb",
+      "evidence_level": "clinical safety",
+      "name_zh": "关于补充剂/中药，应该问医生什么？",
+      "name_en": "Questions to ask your clinician about supplements",
+      "summary_zh": "用这些问题降低使用补充剂/中药的风险。",
+      "summary_en": "Use these questions to reduce risk when considering supplements/herbs.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Do not start multiple new products at once.",
+          "zh": "不要一次同时新增多个产品。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "faq_68",
+      "type": "herb",
+      "evidence_level": "clinical safety",
+      "name_zh": "关于补充剂/中药，应该问医生什么？",
+      "name_en": "Questions to ask your clinician about supplements",
+      "summary_zh": "用这些问题降低使用补充剂/中药的风险。",
+      "summary_en": "Use these questions to reduce risk when considering supplements/herbs.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Do not start multiple new products at once.",
+          "zh": "不要一次同时新增多个产品。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "faq_69",
+      "type": "herb",
+      "evidence_level": "clinical safety",
+      "name_zh": "关于补充剂/中药，应该问医生什么？",
+      "name_en": "Questions to ask your clinician about supplements",
+      "summary_zh": "用这些问题降低使用补充剂/中药的风险。",
+      "summary_en": "Use these questions to reduce risk when considering supplements/herbs.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Do not start multiple new products at once.",
+          "zh": "不要一次同时新增多个产品。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "faq_70",
+      "type": "herb",
+      "evidence_level": "clinical safety",
+      "name_zh": "关于补充剂/中药，应该问医生什么？",
+      "name_en": "Questions to ask your clinician about supplements",
+      "summary_zh": "用这些问题降低使用补充剂/中药的风险。",
+      "summary_en": "Use these questions to reduce risk when considering supplements/herbs.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Do not start multiple new products at once.",
+          "zh": "不要一次同时新增多个产品。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "faq_71",
+      "type": "herb",
+      "evidence_level": "clinical safety",
+      "name_zh": "关于补充剂/中药，应该问医生什么？",
+      "name_en": "Questions to ask your clinician about supplements",
+      "summary_zh": "用这些问题降低使用补充剂/中药的风险。",
+      "summary_en": "Use these questions to reduce risk when considering supplements/herbs.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Do not start multiple new products at once.",
+          "zh": "不要一次同时新增多个产品。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "faq_72",
+      "type": "herb",
+      "evidence_level": "clinical safety",
+      "name_zh": "关于补充剂/中药，应该问医生什么？",
+      "name_en": "Questions to ask your clinician about supplements",
+      "summary_zh": "用这些问题降低使用补充剂/中药的风险。",
+      "summary_en": "Use these questions to reduce risk when considering supplements/herbs.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Do not start multiple new products at once.",
+          "zh": "不要一次同时新增多个产品。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "faq_73",
+      "type": "herb",
+      "evidence_level": "clinical safety",
+      "name_zh": "关于补充剂/中药，应该问医生什么？",
+      "name_en": "Questions to ask your clinician about supplements",
+      "summary_zh": "用这些问题降低使用补充剂/中药的风险。",
+      "summary_en": "Use these questions to reduce risk when considering supplements/herbs.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Do not start multiple new products at once.",
+          "zh": "不要一次同时新增多个产品。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "faq_74",
+      "type": "herb",
+      "evidence_level": "clinical safety",
+      "name_zh": "关于补充剂/中药，应该问医生什么？",
+      "name_en": "Questions to ask your clinician about supplements",
+      "summary_zh": "用这些问题降低使用补充剂/中药的风险。",
+      "summary_en": "Use these questions to reduce risk when considering supplements/herbs.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Do not start multiple new products at once.",
+          "zh": "不要一次同时新增多个产品。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "faq_75",
+      "type": "herb",
+      "evidence_level": "clinical safety",
+      "name_zh": "关于补充剂/中药，应该问医生什么？",
+      "name_en": "Questions to ask your clinician about supplements",
+      "summary_zh": "用这些问题降低使用补充剂/中药的风险。",
+      "summary_en": "Use these questions to reduce risk when considering supplements/herbs.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Do not start multiple new products at once.",
+          "zh": "不要一次同时新增多个产品。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "faq_76",
+      "type": "herb",
+      "evidence_level": "clinical safety",
+      "name_zh": "关于补充剂/中药，应该问医生什么？",
+      "name_en": "Questions to ask your clinician about supplements",
+      "summary_zh": "用这些问题降低使用补充剂/中药的风险。",
+      "summary_en": "Use these questions to reduce risk when considering supplements/herbs.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Do not start multiple new products at once.",
+          "zh": "不要一次同时新增多个产品。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "faq_77",
+      "type": "herb",
+      "evidence_level": "clinical safety",
+      "name_zh": "关于补充剂/中药，应该问医生什么？",
+      "name_en": "Questions to ask your clinician about supplements",
+      "summary_zh": "用这些问题降低使用补充剂/中药的风险。",
+      "summary_en": "Use these questions to reduce risk when considering supplements/herbs.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Do not start multiple new products at once.",
+          "zh": "不要一次同时新增多个产品。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "faq_78",
+      "type": "herb",
+      "evidence_level": "clinical safety",
+      "name_zh": "关于补充剂/中药，应该问医生什么？",
+      "name_en": "Questions to ask your clinician about supplements",
+      "summary_zh": "用这些问题降低使用补充剂/中药的风险。",
+      "summary_en": "Use these questions to reduce risk when considering supplements/herbs.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Do not start multiple new products at once.",
+          "zh": "不要一次同时新增多个产品。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "faq_79",
+      "type": "herb",
+      "evidence_level": "clinical safety",
+      "name_zh": "关于补充剂/中药，应该问医生什么？",
+      "name_en": "Questions to ask your clinician about supplements",
+      "summary_zh": "用这些问题降低使用补充剂/中药的风险。",
+      "summary_en": "Use these questions to reduce risk when considering supplements/herbs.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Do not start multiple new products at once.",
+          "zh": "不要一次同时新增多个产品。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "faq_80",
+      "type": "herb",
+      "evidence_level": "clinical safety",
+      "name_zh": "关于补充剂/中药，应该问医生什么？",
+      "name_en": "Questions to ask your clinician about supplements",
+      "summary_zh": "用这些问题降低使用补充剂/中药的风险。",
+      "summary_en": "Use these questions to reduce risk when considering supplements/herbs.",
+      "key_points": [],
+      "use_cases": [],
+      "stage": [],
+      "components": {},
+      "risks": [
+        {
+          "en": "Do not start multiple new products at once.",
+          "zh": "不要一次同时新增多个产品。"
+        }
+      ],
+      "interactions": [],
+      "refs": []
+    },
+    {
+      "id": "therapy_integrative_chemo_tcm_overview",
+      "type": "therapy",
+      "evidence_level": "moderate",
+      "name_zh": "中医药联合化疗（整合肿瘤支持治疗）",
+      "name_en": "TCM as an adjunct to chemotherapy (integrative oncology supportive care)",
+      "summary_zh": "系统综述与部分临床研究提示：在规范化肿瘤治疗基础上，部分中医药干预作为辅助治疗可能改善生活质量（QoL/KPS）并减轻化疗相关不良反应；证据质量与干预类型差异较大，需在肿瘤团队知情与监测下使用。",
+      "summary_en": "Reviews and some clinical studies suggest certain TCM interventions, when used alongside standard oncology care, may improve QoL/KPS and reduce chemotherapy-related adverse effects; evidence quality varies by intervention and requires oncology-team oversight.",
+      "key_points": [
+        "以“支持治疗/整合医学”定位：不替代标准治疗",
+        "优先选择有质量控制与临床证据的制剂/干预（并记录具体成分与剂量）",
+        "目标更偏向：QoL、食欲、疲劳、化疗相关毒副反应管理"
+      ],
+      "use_cases": [
+        "化疗期支持治疗",
+        "QoL/KPS改善",
+        "化疗毒性管理（在监测下）"
+      ],
+      "stage": [
+        "chemo"
+      ],
+      "components": {},
+      "risks": [
+        "不可替代标准治疗；避免自行停用/延迟化疗",
+        "制剂来源与质量控制差异大（尤其注射剂/复方）",
+        "肝肾功能异常、黄疸、感染或血小板低下时需谨慎/暂停并先就医"
+      ],
+      "interactions": [
+        "可能影响肝药酶/凝血（与抗凝/抗血小板药并用需监测）",
+        "免疫治疗期间需谨慎（潜在免疫调节作用）"
+      ],
+      "refs": [
+        {
+          "ref_id": "ref_wu2024_molcancer_hbp"
+        },
+        {
+          "ref_id": "ref_vella2025_cancers_sr"
+        },
+        {
+          "ref_id": "ref_shi32_adv_pc_tcm"
+        }
+      ]
+    },
+    {
+      "id": "therapy_tcm_chemo_safety_checklist",
+      "type": "therapy",
+      "evidence_level": "low",
+      "name_zh": "化疗合并中医药：安全性核对清单",
+      "name_en": "Safety checklist for combining TCM with chemotherapy",
+      "summary_zh": "给临床沟通用的安全核对要点：明确所用中药/成分/剂型；评估出血风险、肝肾功能、感染风险；记录所有补充剂与草药；出现黄疸加重、持续腹泻/呕吐、发热或出血倾向时需立即就医并暂停补充疗法。",
+      "summary_en": "A practical safety checklist for clinical communication when combining TCM/supplements with chemotherapy.",
+      "key_points": [
+        "每次化疗前复核：草药/补充剂清单（名称、剂型、剂量、品牌）",
+        "监测：肝肾功能、凝血/血小板、白细胞/感染风险",
+        "出现严重不良反应（发热、出血、黄疸加重、脱水）立即停用并就医"
+      ],
+      "use_cases": [
+        "门诊沟通",
+        "用药核对",
+        "不良反应早期识别"
+      ],
+      "stage": [
+        "chemo"
+      ],
+      "components": {},
+      "risks": [
+        "潜在药物相互作用（CYP/凝血/免疫）",
+        "部分草药/补充剂存在肝毒性或肾毒性风险",
+        "未经标准化的制剂可能导致成分与剂量不明"
+      ],
+      "interactions": [
+        "抗凝/抗血小板药：出血风险",
+        "免疫治疗：潜在免疫调节影响",
+        "糖皮质激素/止吐药等：可能有叠加影响（需医生评估）"
+      ],
+      "refs": [
+        {
+          "ref_id": "ref_vella2025_cancers_sr"
+        }
+      ]
+    }
+  ]
+}
