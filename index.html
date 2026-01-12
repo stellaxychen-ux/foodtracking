@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>P‑Care | Pancreatic Nutrition</title>
+
+  <!-- Tailwind + FontAwesome -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
+
+  <style>
+    :root{
+      --brand:#16a34a; /* vivid green */
+      --brand2:#22c55e;
+      --ink:#0f172a;
+      --bg:#f7fbf8;
+    }
+    body{ font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji"; background:var(--bg); color:var(--ink); }
+    .card{ background:#fff; border-radius:18px; border:1px solid rgba(15,23,42,.06); box-shadow: 0 10px 30px rgba(2,6,23,.06); }
+    .chip{ border:1px solid rgba(15,23,42,.08); }
+    .tab-active{ color: white !important; background: linear-gradient(135deg,var(--brand),var(--brand2)); box-shadow:0 10px 24px rgba(34,197,94,.25); }
+    .pill{ background: rgba(34,197,94,.10); color: #166534; border:1px solid rgba(34,197,94,.25); }
+    .safe{ border-left:6px solid #22c55e; background: #f0fdf4; }
+    .caution{ border-left:6px solid #f59e0b; background: #fffbeb; }
+    .avoid{ border-left:6px solid #ef4444; background: #fef2f2; }
+    .btn-brand{ background: linear-gradient(135deg,var(--brand),var(--brand2)); color:white; }
+    .btn-ghost{ background:white; border:1px solid rgba(15,23,42,.10); }
+    .link{ color: var(--brand); text-decoration: underline; text-underline-offset: 3px; }
+    .tiny{ font-size: 12px; }
+    .progress{ height: 10px; border-radius: 999px; background: rgba(15,23,42,.08); overflow:hidden; }
+    .progress > div{ height:100%; border-radius:999px; background: linear-gradient(135deg,var(--brand),var(--brand2)); width:0%; }
+    .muted{ color: rgba(15,23,42,.65); }
+    .kbd{ font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace; font-size: 12px; padding: 2px 6px; border-radius: 8px; border:1px solid rgba(15,23,42,.12); background: rgba(15,23,42,.04);}
+  </style>
+</head>
+
+<body class="pb-24">
+  <!-- Top bar -->
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-slate-100">
+    <div class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <div class="h-11 w-11 rounded-2xl flex items-center justify-center text-white shadow"
+             style="background: linear-gradient(135deg,var(--brand),var(--brand2));">
+          <span class="text-xl">🥗</span>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <h1 class="text-xl font-extrabold tracking-tight">P‑Care</h1>
+            <span class="pill px-2 py-0.5 rounded-full tiny font-semibold" id="langPill">EN</span>
+          </div>
+          <p class="tiny muted" id="subtitle">Pancreatic nutrition helper (patient-facing)</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <button class="btn-ghost rounded-xl px-3 py-2 text-sm font-semibold hover:bg-slate-50"
+                id="langToggleBtn" title="Toggle language">
+          🌏 <span id="langToggleText">中文</span>
+        </button>
+        <button class="btn-ghost rounded-xl px-3 py-2 text-sm font-semibold hover:bg-slate-50"
+                onclick="PCare.openSettings()" title="Settings">
+          <i class="fa-solid fa-gear"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Content -->
+  <main class="max-w-5xl mx-auto px-4 pt-5 space-y-5" id="app">
+
+    <!-- Tabs -->
+    <nav class="card p-2 flex gap-2">
+      <button class="flex-1 rounded-xl py-2.5 font-bold text-sm hover:bg-slate-50 tab-active" data-tab="home" onclick="PCare.switchTab('home')">
+        🏠 <span data-i18n="tab_home">Home</span>
+      </button>
+      <button class="flex-1 rounded-xl py-2.5 font-bold text-sm hover:bg-slate-50" data-tab="phases" onclick="PCare.switchTab('phases')">
+        🧭 <span data-i18n="tab_phases">Stages</span>
+      </button>
+      <button class="flex-1 rounded-xl py-2.5 font-bold text-sm hover:bg-slate-50" data-tab="analysis" onclick="PCare.switchTab('analysis')">
+        📊 <span data-i18n="tab_analysis">Analysis</span>
+      </button>
+      <button class="flex-1 rounded-xl py-2.5 font-bold text-sm hover:bg-slate-50" data-tab="info" onclick="PCare.switchTab('info')">
+        📚 <span data-i18n="tab_info">Notes</span>
+      </button>
+    </nav>
+
+    <!-- HOME -->
+    <section id="tab-home" class="space-y-5">
+      <!-- Goals card -->
+      <div class="card p-5">
+        <div class="flex items-start justify-between gap-3">
+          <div>
+            <h2 class="text-lg font-extrabold tracking-tight">
+              🎯 <span data-i18n="daily_goals">Daily goals</span>
+              <span class="tiny muted font-semibold">
+                (<span data-i18n="target_weight">Target weight</span>: <span id="targetWeightDisplay">--</span> kg)
+              </span>
+            </h2>
+            <p class="tiny muted mt-1" id="goalHint"></p>
+          </div>
+          <button class="btn-ghost rounded-xl px-3 py-2 text-sm font-semibold hover:bg-slate-50" onclick="PCare.resetToday()">
+            ♻️ <span data-i18n="reset_today">Reset today</span>
+          </button>
+        </div>
+
+        <div class="mt-4 space-y-4">
+          <div>
+            <div class="flex justify-between items-center text-sm mb-1">
+              <span class="font-semibold"><i class="fa-solid fa-fire text-orange-500 mr-2"></i><span data-i18n="calories">Calories</span></span>
+              <span class="font-extrabold"><span id="calCurrent">0</span> / <span id="calTarget">0</span> kcal</span>
+            </div>
+            <div class="progress"><div id="calBar"></div></div>
+          </div>
+
+          <div>
+            <div class="flex justify-between items-center text-sm mb-1">
+              <span class="font-semibold"><i class="fa-solid fa-drumstick-bite text-sky-600 mr-2"></i><span data-i18n="protein">Protein</span></span>
+              <span class="font-extrabold"><span id="protCurrent">0</span> / <span id="protTarget">0</span> g</span>
+            </div>
+            <div class="progress"><div id="protBar"></div></div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-3">
+            <div class="card p-4 border border-slate-100 shadow-none">
+              <div class="flex items-center justify-between">
+                <div class="font-extrabold">🍎 <span data-i18n="fruit_veg">Fruit & Veg</span></div>
+                <div class="tiny muted"><span id="fvCurrent">0</span> / <span id="fvTarget">400</span> g</div>
+              </div>
+              <div class="progress mt-2"><div id="fvBar"></div></div>
+              <div class="tiny muted mt-2" data-i18n="who_hint">WHO suggests ≥400g/day of fruit & vegetables.</div>
+            </div>
+
+            <div class="card p-4 border border-slate-100 shadow-none">
+              <div class="flex items-center justify-between">
+                <div class="font-extrabold">💧 <span data-i18n="water">Fluids</span></div>
+                <div class="tiny muted"><span id="waterCurrent">0</span> / <span id="waterTarget">2000</span> ml</div>
+              </div>
+              <div class="progress mt-2"><div id="waterBar"></div></div>
+              <div class="tiny muted mt-2" data-i18n="water_hint">If you have restrictions, follow your clinician’s advice.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="grid md:grid-cols-3 gap-3">
+        <button onclick="PCare.askAI()" class="btn-brand rounded-2xl py-3 font-extrabold shadow flex items-center justify-center gap-2">
+          🤖 <span data-i18n="ask_ai">Ask AI Assistant</span>
+        </button>
+        <button onclick="PCare.googleSearch()" class="btn-ghost rounded-2xl py-3 font-extrabold shadow flex items-center justify-center gap-2 hover:bg-slate-50">
+          🔎 <span data-i18n="search_web">Search Web</span>
+        </button>
+        <button onclick="PCare.openTCM()" class="btn-ghost rounded-2xl py-3 font-extrabold shadow flex items-center justify-center gap-2 hover:bg-slate-50">
+          🌿 <span data-i18n="tcm_btn">Alt/TCM Research Notes</span>
+        </button>
+      </div>
+
+      <!-- Search -->
+      <div class="card p-5">
+        <div class="flex items-start justify-between gap-3">
+          <div>
+            <h3 class="text-lg font-extrabold">🧾 <span data-i18n="food_guide">Food safety guide</span></h3>
+            <p class="tiny muted mt-1" data-i18n="food_guide_hint">Search in Chinese or English (e.g., “鸡胸肉”, “banana”).</p>
+          </div>
+          <div class="flex gap-2">
+            <span class="chip px-2 py-1 rounded-full tiny font-semibold bg-emerald-50 text-emerald-700">✅ <span data-i18n="safe">Safe</span></span>
+            <span class="chip px-2 py-1 rounded-full tiny font-semibold bg-amber-50 text-amber-700">⚠️ <span data-i18n="caution">Caution</span></span>
+            <span class="chip px-2 py-1 rounded-full tiny font-semibold bg-rose-50 text-rose-700">⛔ <span data-i18n="avoid">Avoid</span></span>
+          </div>
+        </div>
+
+        <div class="relative mt-4">
+          <input id="foodSearch" type="text" class="w-full p-4 rounded-2xl border border-slate-200 focus:ring-2 focus:ring-emerald-200 outline-none"
+                 placeholder="Can I eat... (e.g., 鸡胸肉 / Banana)" oninput="PCare.filterFoods()" />
+          <div class="absolute right-4 top-4 text-slate-400"><i class="fa-solid fa-magnifying-glass"></i></div>
+        </div>
+
+        <div class="mt-4 flex flex-wrap gap-2">
+          <button class="btn-ghost rounded-xl px-3 py-2 text-sm font-bold hover:bg-slate-50" onclick="PCare.quickFilter('safe')">✅ <span data-i18n="filter_safe">Safe first</span></button>
+          <button class="btn-ghost rounded-xl px-3 py-2 text-sm font-bold hover:bg-slate-50" onclick="PCare.quickFilter('caution')">⚠️ <span data-i18n="filter_caution">Caution</span></button>
+          <button class="btn-ghost rounded-xl px-3 py-2 text-sm font-bold hover:bg-slate-50" onclick="PCare.quickFilter('avoid')">⛔ <span data-i18n="filter_avoid">Avoid</span></button>
+          <button class="btn-ghost rounded-xl px-3 py-2 text-sm font-bold hover:bg-slate-50" onclick="PCare.quickFilter('all')">🗂️ <span data-i18n="filter_all">All</span></button>
+        </div>
+
+        <div id="foodList" class="mt-4 space-y-3"></div>
+
+        <div id="notFound" class="hidden text-center p-8 text-slate-500">
+          <p class="mb-3" data-i18n="not_found">Item not found in database.</p>
+          <button onclick="PCare.askAI()" class="link font-extrabold">🤖 <span data-i18n="ask_ai_check">Ask AI if it’s safe</span></button>
+        </div>
+      </div>
+
+      <!-- Quick add (manual) -->
+      <div class="card p-5">
+        <h3 class="text-lg font-extrabold">➕ <span data-i18n="manual_add">Manual add</span></h3>
+        <p class="tiny muted mt-1" data-i18n="manual_add_hint">If you ate something not in the list, add an estimate.</p>
+
+        <div class="mt-4 grid md:grid-cols-5 gap-3">
+          <input id="mName" class="md:col-span-2 p-3 rounded-xl border border-slate-200" placeholder="Food name / 食物名称" />
+          <input id="mCal" type="number" class="p-3 rounded-xl border border-slate-200" placeholder="kcal" />
+          <input id="mProt" type="number" class="p-3 rounded-xl border border-slate-200" placeholder="prot (g)" />
+          <button class="btn-brand rounded-xl font-extrabold" onclick="PCare.manualAdd()">✅ <span data-i18n="add">Add</span></button>
+        </div>
+
+        <div class="mt-3 grid md:grid-cols-5 gap-3">
+          <div class="md:col-span-2"></div>
+          <input id="mFVG" type="number" class="p-3 rounded-xl border border-slate-200" placeholder="fruit&veg (g)" />
+          <input id="mWater" type="number" class="p-3 rounded-xl border border-slate-200" placeholder="water (ml)" />
+          <div class="tiny muted flex items-center" data-i18n="manual_add_tip">Tip: fruit+veg grams & water are optional.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PHASES -->
+    <section id="tab-phases" class="hidden space-y-5">
+      <div class="card p-5">
+        <h2 class="text-lg font-extrabold">🧭 <span data-i18n="phases_title">Food recommendations by stage</span></h2>
+        <p class="tiny muted mt-1" data-i18n="phases_hint">Pick a stage to see practical food ideas. Always follow your surgical/oncology team’s instructions.</p>
+
+        <div class="mt-4 flex flex-wrap gap-2">
+          <button class="btn-ghost rounded-xl px-3 py-2 text-sm font-bold hover:bg-slate-50" onclick="PCare.setStage('postop_early')">🏥 <span data-i18n="stage_postop_early">Post‑op (early)</span></button>
+          <button class="btn-ghost rounded-xl px-3 py-2 text-sm font-bold hover:bg-slate-50" onclick="PCare.setStage('postop_late')">🩹 <span data-i18n="stage_postop_late">Post‑op (later)</span></button>
+          <button class="btn-ghost rounded-xl px-3 py-2 text-sm font-bold hover:bg-slate-50" onclick="PCare.setStage('chemo')">💊 <span data-i18n="stage_chemo">During chemo</span></button>
+          <button class="btn-ghost rounded-xl px-3 py-2 text-sm font-bold hover:bg-slate-50" onclick="PCare.setStage('diabetes')">🩸 <span data-i18n="stage_diabetes">With diabetes</span></button>
+        </div>
+
+        <div id="stagePanel" class="mt-4 grid md:grid-cols-2 gap-3"></div>
+      </div>
+    </section>
+
+    <!-- ANALYSIS -->
+    <section id="tab-analysis" class="hidden space-y-5">
+      <div class="card p-5">
+        <div class="flex items-start justify-between gap-3">
+          <div>
+            <h2 class="text-lg font-extrabold">📊 <span data-i18n="analysis_title">Daily analysis</span></h2>
+            <p class="tiny muted mt-1" data-i18n="analysis_hint">See today’s progress against targets. You can also view AU/WHO reference targets below.</p>
+          </div>
+          <button class="btn-ghost rounded-xl px-3 py-2 text-sm font-semibold hover:bg-slate-50" onclick="PCare.exportDay()">
+            ⬇️ <span data-i18n="export_day">Export today (JSON)</span>
+          </button>
+        </div>
+
+        <div class="mt-4 grid md:grid-cols-2 gap-3">
+          <div class="card p-4 border border-slate-100 shadow-none">
+            <div class="flex items-center justify-between">
+              <div class="font-extrabold">🔥 <span data-i18n="calories">Calories</span></div>
+              <div class="tiny muted"><span id="aCalPct">0%</span></div>
+            </div>
+            <div class="progress mt-2"><div id="aCalBar"></div></div>
+            <div class="tiny muted mt-2"><span id="aCalText"></span></div>
+          </div>
+
+          <div class="card p-4 border border-slate-100 shadow-none">
+            <div class="flex items-center justify-between">
+              <div class="font-extrabold">🥩 <span data-i18n="protein">Protein</span></div>
+              <div class="tiny muted"><span id="aProtPct">0%</span></div>
+            </div>
+            <div class="progress mt-2"><div id="aProtBar"></div></div>
+            <div class="tiny muted mt-2"><span id="aProtText"></span></div>
+          </div>
+
+          <div class="card p-4 border border-slate-100 shadow-none">
+            <div class="flex items-center justify-between">
+              <div class="font-extrabold">🍎 <span data-i18n="fruit_veg">Fruit & Veg</span></div>
+              <div class="tiny muted"><span id="aFVPct">0%</span></div>
+            </div>
+            <div class="progress mt-2"><div id="aFVBar"></div></div>
+            <div class="tiny muted mt-2"><span id="aFVText"></span></div>
+          </div>
+
+          <div class="card p-4 border border-slate-100 shadow-none">
+            <div class="flex items-center justify-between">
+              <div class="font-extrabold">💧 <span data-i18n="water">Fluids</span></div>
+              <div class="tiny muted"><span id="aWaterPct">0%</span></div>
+            </div>
+            <div class="progress mt-2"><div id="aWaterBar"></div></div>
+            <div class="tiny muted mt-2"><span id="aWaterText"></span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card p-5">
+        <h3 class="text-lg font-extrabold">🇦🇺 <span data-i18n="au_ref">Australia reference (general population)</span></h3>
+        <p class="tiny muted mt-1" id="auRefText"></p>
+
+        <div class="mt-4 grid md:grid-cols-2 gap-3">
+          <div class="card p-4 border border-slate-100 shadow-none">
+            <div class="font-extrabold">🥦 <span data-i18n="au_serves">Recommended serves/day (adults)</span></div>
+            <div class="tiny muted mt-2" id="auServes"></div>
+          </div>
+          <div class="card p-4 border border-slate-100 shadow-none">
+            <div class="font-extrabold">🥩 <span data-i18n="au_protein">Protein RDI (adults)</span></div>
+            <div class="tiny muted mt-2" id="auProtein"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card p-5">
+        <h3 class="text-lg font-extrabold">🌍 <span data-i18n="who_ref">WHO reference</span></h3>
+        <div class="tiny muted mt-2" id="whoRef"></div>
+      </div>
+    </section>
+
+    <!-- NOTES -->
+    <section id="tab-info" class="hidden space-y-5">
+      <div class="card p-5">
+        <h2 class="text-lg font-extrabold">📚 <span data-i18n="notes_title">Clinical notes</span></h2>
+        <div class="mt-3 text-sm leading-relaxed muted space-y-2" id="notesBody"></div>
+      </div>
+
+      <div class="card p-5">
+        <h2 class="text-lg font-extrabold">🗃️ <span data-i18n="db_title">Database</span></h2>
+        <p class="tiny muted mt-1" data-i18n="db_hint">Food items are stored in <span class="kbd">fooddb.json</span>. You can update that file and re‑deploy on GitHub Pages.</p>
+        <div class="mt-3 flex flex-wrap gap-2">
+          <button class="btn-ghost rounded-xl px-3 py-2 text-sm font-bold hover:bg-slate-50" onclick="PCare.downloadDB()">⬇️ <span data-i18n="download_db">Download food database (JSON)</span></button>
+          <button class="btn-ghost rounded-xl px-3 py-2 text-sm font-bold hover:bg-slate-50 hidden" id="adminImportBtn" onclick="PCare.openImport()">🛠️ <span data-i18n="import_db">Import/merge database (admin)</span></button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Settings modal -->
+  <div id="settingsModal" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50 p-4">
+    <div class="card w-full max-w-md p-6">
+      <div class="flex items-start justify-between gap-3">
+        <h3 class="text-lg font-extrabold">⚙️ <span data-i18n="settings">Settings</span></h3>
+        <button class="btn-ghost rounded-xl px-3 py-2" onclick="PCare.closeSettings()">✖️</button>
+      </div>
+
+      <p class="tiny muted mt-2" data-i18n="settings_hint">
+        Patient targets are weight‑based (commonly 25–30 kcal/kg/day and 1.2–2.0 g protein/kg/day in oncology nutrition practice).
+      </p>
+
+      <div class="mt-4 space-y-3">
+        <label class="block text-sm font-bold" data-i18n="current_weight">Current weight (kg)</label>
+        <input type="number" id="weightInput" class="w-full p-3 border rounded-xl" min="20" max="200" />
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-sm font-bold" data-i18n="cal_perkg">Calories (kcal/kg)</label>
+            <input type="number" id="calPerKgInput" class="w-full p-3 border rounded-xl" step="0.1" />
+          </div>
+          <div>
+            <label class="block text-sm font-bold" data-i18n="prot_perkg">Protein (g/kg)</label>
+            <input type="number" id="protPerKgInput" class="w-full p-3 border rounded-xl" step="0.1" />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-sm font-bold" data-i18n="fv_target">Fruit & veg target (g)</label>
+            <input type="number" id="fvTargetInput" class="w-full p-3 border rounded-xl" />
+          </div>
+          <div>
+            <label class="block text-sm font-bold" data-i18n="water_target">Fluids target (ml)</label>
+            <input type="number" id="waterTargetInput" class="w-full p-3 border rounded-xl" />
+          </div>
+        </div>
+
+        <button class="w-full btn-brand py-3 rounded-2xl font-extrabold" onclick="PCare.saveSettings()">
+          ✅ <span data-i18n="save_recalc">Save & recalculate</span>
+        </button>
+
+        <div class="tiny muted">
+          <span data-i18n="admin_tip">Admin import (hidden): open with</span> <span class="kbd">?admin=1</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TCM modal -->
+  <div id="tcmModal" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50 p-4">
+    <div class="card w-full max-w-2xl p-6">
+      <div class="flex items-start justify-between gap-3">
+        <h3 class="text-lg font-extrabold">🌿 <span data-i18n="tcm_title">Alternative / Chinese medicine (research notes)</span></h3>
+        <button class="btn-ghost rounded-xl px-3 py-2" onclick="PCare.closeTCM()">✖️</button>
+      </div>
+      <div class="mt-3 text-sm leading-relaxed muted space-y-3" id="tcmBody"></div>
+      <div class="mt-4 flex items-center justify-end gap-2">
+        <button class="btn-brand rounded-xl px-4 py-2 font-extrabold" onclick="PCare.closeTCM()">👌 <span data-i18n="got_it">Got it</span></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Import modal (admin) -->
+  <div id="importModal" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50 p-4">
+    <div class="card w-full max-w-lg p-6">
+      <div class="flex items-start justify-between gap-3">
+        <h3 class="text-lg font-extrabold">🛠️ <span data-i18n="import_title">Import / merge database</span></h3>
+        <button class="btn-ghost rounded-xl px-3 py-2" onclick="PCare.closeImport()">✖️</button>
+      </div>
+      <p class="tiny muted mt-2" data-i18n="import_hint">Select a JSON file with the same schema as <span class="kbd">fooddb.json</span>. It will merge by <span class="kbd">id</span>.</p>
+
+      <input type="file" id="importFile" accept="application/json" class="mt-4 w-full" />
+      <div class="mt-4 flex gap-2">
+        <button class="flex-1 btn-brand rounded-xl py-2.5 font-extrabold" onclick="PCare.importDB()">✅ <span data-i18n="import_merge">Import & merge</span></button>
+        <button class="flex-1 btn-ghost rounded-xl py-2.5 font-extrabold hover:bg-slate-50" onclick="PCare.closeImport()">Cancel</button>
+      </div>
+
+      <div class="tiny muted mt-3" data-i18n="import_note">Note: this only updates your local browser cache. To update GitHub Pages, also replace the repository’s <span class="kbd">fooddb.json</span> file.</div>
+    </div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>

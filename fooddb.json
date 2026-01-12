@@ -1,0 +1,364 @@
+{
+  "schema_version": 1,
+  "updated": "2026-01-12",
+  "units": {
+    "calories": "kcal",
+    "protein": "g",
+    "fv": "g",
+    "water": "ml"
+  },
+  "items": [
+    {
+      "id": "chicken_breast",
+      "name_en": "Chicken breast (boiled/baked)",
+      "name_zh": "鸡胸肉（水煮/烤）",
+      "status": "safe",
+      "cal": 165,
+      "protein": 31,
+      "fv": 0,
+      "water": 0,
+      "tags": [
+        "lean-protein"
+      ],
+      "note_en": "Lean protein. Avoid frying/heavy oil.",
+      "note_zh": "优质低脂蛋白。避免油炸/重油。",
+      "emoji": "🍗"
+    },
+    {
+      "id": "white_fish",
+      "name_en": "White fish (steamed)",
+      "name_zh": "清蒸白鱼",
+      "status": "safe",
+      "cal": 110,
+      "protein": 22,
+      "fv": 0,
+      "water": 0,
+      "tags": [
+        "lean-protein"
+      ],
+      "note_en": "High-quality protein, typically easier to digest.",
+      "note_zh": "高质量蛋白，相对易消化。",
+      "emoji": "🐟"
+    },
+    {
+      "id": "eggs",
+      "name_en": "Eggs (boiled/scrambled)",
+      "name_zh": "鸡蛋（水煮/炒蛋少油）",
+      "status": "safe",
+      "cal": 70,
+      "protein": 6,
+      "fv": 0,
+      "water": 0,
+      "tags": [
+        "protein"
+      ],
+      "note_en": "Good protein. Keep oil minimal.",
+      "note_zh": "蛋白质好来源，少油更友好。",
+      "emoji": "🥚"
+    },
+    {
+      "id": "tofu_soft",
+      "name_en": "Tofu (soft)",
+      "name_zh": "豆腐（嫩豆腐/豆花）",
+      "status": "safe",
+      "cal": 76,
+      "protein": 8,
+      "fv": 0,
+      "water": 0,
+      "tags": [
+        "plant-protein"
+      ],
+      "note_en": "Gentle plant protein.",
+      "note_zh": "温和的植物蛋白。",
+      "emoji": "🧈"
+    },
+    {
+      "id": "congee_rice",
+      "name_en": "Rice congee (plain)",
+      "name_zh": "白米粥（清淡）",
+      "status": "safe",
+      "cal": 120,
+      "protein": 2,
+      "fv": 0,
+      "water": 200,
+      "tags": [
+        "easy-digest"
+      ],
+      "note_en": "Easy to digest, good early-stage base.",
+      "note_zh": "易消化，适合早期过渡。",
+      "emoji": "🥣"
+    },
+    {
+      "id": "millet_congee",
+      "name_en": "Millet congee (well-cooked)",
+      "name_zh": "小米粥（煮烂）",
+      "status": "caution",
+      "cal": 140,
+      "protein": 4,
+      "fv": 0,
+      "water": 200,
+      "tags": [
+        "easy-digest"
+      ],
+      "note_en": "Can be OK if well-cooked; watch fibre/gas.",
+      "note_zh": "煮烂更友好；注意纤维/胀气。",
+      "emoji": "🥣"
+    },
+    {
+      "id": "white_rice",
+      "name_en": "White rice / soft noodles",
+      "name_zh": "白米饭/软面条",
+      "status": "safe",
+      "cal": 180,
+      "protein": 4,
+      "fv": 0,
+      "water": 0,
+      "tags": [
+        "carb"
+      ],
+      "note_en": "Often easier than wholegrains early on.",
+      "note_zh": "早期通常比全谷更好消化。",
+      "emoji": "🍚"
+    },
+    {
+      "id": "mantou",
+      "name_en": "Steamed bun (plain)",
+      "name_zh": "馒头（清淡）",
+      "status": "safe",
+      "cal": 220,
+      "protein": 7,
+      "fv": 0,
+      "water": 0,
+      "tags": [
+        "carb"
+      ],
+      "note_en": "Choose plain; avoid fried or sugary fillings.",
+      "note_zh": "选原味；避免油炸/甜馅。",
+      "emoji": "🥟"
+    },
+    {
+      "id": "banana",
+      "name_en": "Banana (ripe)",
+      "name_zh": "香蕉（熟）",
+      "status": "safe",
+      "cal": 105,
+      "protein": 1,
+      "fv": 120,
+      "water": 0,
+      "tags": [
+        "fruit"
+      ],
+      "note_en": "Soft fruit, potassium source.",
+      "note_zh": "软质水果，富含钾。",
+      "emoji": "🍌"
+    },
+    {
+      "id": "apple_sauce",
+      "name_en": "Apple sauce / mashed apple",
+      "name_zh": "苹果泥/蒸苹果",
+      "status": "safe",
+      "cal": 90,
+      "protein": 0,
+      "fv": 120,
+      "water": 0,
+      "tags": [
+        "fruit"
+      ],
+      "note_en": "Try cooked/mashed if sensitive.",
+      "note_zh": "肠胃敏感可优先蒸/泥。",
+      "emoji": "🍎"
+    },
+    {
+      "id": "pumpkin",
+      "name_en": "Pumpkin (cooked)",
+      "name_zh": "南瓜（熟）",
+      "status": "safe",
+      "cal": 60,
+      "protein": 1,
+      "fv": 150,
+      "water": 0,
+      "tags": [
+        "veg"
+      ],
+      "note_en": "Soft cooked veg is usually better tolerated.",
+      "note_zh": "软烂熟蔬菜更易耐受。",
+      "emoji": "🎃"
+    },
+    {
+      "id": "carrot",
+      "name_en": "Carrot (cooked)",
+      "name_zh": "胡萝卜（熟）",
+      "status": "safe",
+      "cal": 50,
+      "protein": 1,
+      "fv": 120,
+      "water": 0,
+      "tags": [
+        "veg"
+      ],
+      "note_en": "Cooked is easier than raw.",
+      "note_zh": "熟的通常比生的好消化。",
+      "emoji": "🥕"
+    },
+    {
+      "id": "yogurt",
+      "name_en": "Yogurt (low fat)",
+      "name_zh": "酸奶（低脂）",
+      "status": "caution",
+      "cal": 90,
+      "protein": 6,
+      "fv": 0,
+      "water": 0,
+      "tags": [
+        "dairy"
+      ],
+      "note_en": "Caution if lactose intolerant; consider lactose-free.",
+      "note_zh": "乳糖不耐受者谨慎，可选无乳糖。",
+      "emoji": "🥛"
+    },
+    {
+      "id": "broccoli",
+      "name_en": "Broccoli / cabbage",
+      "name_zh": "西兰花/卷心菜",
+      "status": "caution",
+      "cal": 35,
+      "protein": 3,
+      "fv": 150,
+      "water": 0,
+      "tags": [
+        "veg"
+      ],
+      "note_en": "May cause gas/bloating; cook well.",
+      "note_zh": "可能胀气；尽量煮熟煮软。",
+      "emoji": "🥦"
+    },
+    {
+      "id": "onion_raw",
+      "name_en": "Onion (raw)",
+      "name_zh": "生洋葱",
+      "status": "caution",
+      "cal": 40,
+      "protein": 1,
+      "fv": 50,
+      "water": 0,
+      "tags": [
+        "gas"
+      ],
+      "note_en": "Higher risk of gas/irritation.",
+      "note_zh": "更易胀气/刺激。",
+      "emoji": "🧅"
+    },
+    {
+      "id": "nuts_whole",
+      "name_en": "Nuts (whole)",
+      "name_zh": "坚果（整颗）",
+      "status": "caution",
+      "cal": 170,
+      "protein": 6,
+      "fv": 0,
+      "water": 0,
+      "tags": [
+        "fat"
+      ],
+      "note_en": "Harder to digest; smooth nut butter may be better.",
+      "note_zh": "较难消化；可考虑坚果酱更安全。",
+      "emoji": "🥜"
+    },
+    {
+      "id": "fried_foods",
+      "name_en": "Fried foods (fried chicken/fries/youtiao)",
+      "name_zh": "油炸食物（炸鸡/薯条/油条）",
+      "status": "avoid",
+      "cal": 350,
+      "protein": 12,
+      "fv": 0,
+      "water": 0,
+      "tags": [
+        "high-fat"
+      ],
+      "note_en": "High fat can worsen symptoms and be hard to digest.",
+      "note_zh": "高脂更难消化，可能加重不适。",
+      "emoji": "🍟"
+    },
+    {
+      "id": "hotpot_spicy",
+      "name_en": "Spicy hotpot / very spicy foods",
+      "name_zh": "麻辣火锅/重辣",
+      "status": "avoid",
+      "cal": 400,
+      "protein": 15,
+      "fv": 0,
+      "water": 0,
+      "tags": [
+        "irritant"
+      ],
+      "note_en": "Spice + fat often irritate; consider mild soup base.",
+      "note_zh": "辛辣+高脂易刺激；可选清汤微辣。",
+      "emoji": "🌶️"
+    },
+    {
+      "id": "raw_salad",
+      "name_en": "Raw salad / raw vegetables",
+      "name_zh": "生冷沙拉/生蔬菜",
+      "status": "avoid",
+      "cal": 30,
+      "protein": 2,
+      "fv": 150,
+      "water": 0,
+      "tags": [
+        "high-fibre"
+      ],
+      "note_en": "Raw fibre can be difficult early; choose cooked veg.",
+      "note_zh": "生纤维早期难消化；优先熟蔬菜。",
+      "emoji": "🥗"
+    },
+    {
+      "id": "sugary_dessert",
+      "name_en": "Sugary desserts / cake",
+      "name_zh": "甜点/蛋糕",
+      "status": "avoid",
+      "cal": 300,
+      "protein": 3,
+      "fv": 0,
+      "water": 0,
+      "tags": [
+        "sugar"
+      ],
+      "note_en": "May spike blood sugar and worsen GI symptoms.",
+      "note_zh": "易升高血糖并加重胃肠不适。",
+      "emoji": "🍰"
+    },
+    {
+      "id": "soft_drink",
+      "name_en": "Carbonated drinks / soft drinks",
+      "name_zh": "碳酸饮料",
+      "status": "avoid",
+      "cal": 140,
+      "protein": 0,
+      "fv": 0,
+      "water": 0,
+      "tags": [
+        "gas"
+      ],
+      "note_en": "Can cause bloating/fullness.",
+      "note_zh": "易胀气、早饱。",
+      "emoji": "🥤"
+    },
+    {
+      "id": "fatty_red_meat",
+      "name_en": "Fatty red meat (steak/fatty pork)",
+      "name_zh": "肥牛排/肥猪肉",
+      "status": "avoid",
+      "cal": 280,
+      "protein": 22,
+      "fv": 0,
+      "water": 0,
+      "tags": [
+        "high-fat"
+      ],
+      "note_en": "Harder to digest; prefer lean poultry/fish.",
+      "note_zh": "较难消化；优先禽肉/鱼类偏瘦。",
+      "emoji": "🥩"
+    }
+  ]
+}
