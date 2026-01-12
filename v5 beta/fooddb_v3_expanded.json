@@ -1,0 +1,4908 @@
+{
+  "meta": {
+    "version": "3.0",
+    "lang": [
+      "en",
+      "zh"
+    ],
+    "notes": "Add new foods by appending items. Use aliases for Chinese/English search.",
+    "updated": "2026-01-12",
+    "count": 175,
+    "schema": "fooddb_v3",
+    "notes_en": "Expanded to 150+ Chinese-friendly foods; nutrition values are per-entry placeholders for tracking.",
+    "notes_zh": "已扩充至150+条，包含中文别名/标签/阶段推荐；营养值用于记录的近似占位，可后续用权威数据替换。"
+  },
+  "foods": [
+    {
+      "id": "chicken_breast",
+      "name": {
+        "en": "Chicken breast (boiled/baked)",
+        "zh": "鸡胸肉（水煮/烤）"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 165,
+        "protein_g": 31,
+        "fat_g": 3.6,
+        "fiber_g": null
+      },
+      "note": {
+        "en": "Lean protein. Prefer boiled/steamed/baked; avoid deep-frying.",
+        "zh": "优质低脂蛋白。建议水煮/清蒸/烤，避免油炸。"
+      },
+      "aliases": [
+        "鸡胸",
+        "鸡肉",
+        "烤鸡胸",
+        "boiled chicken",
+        "steamed chicken"
+      ],
+      "tags": [
+        "protein"
+      ],
+      "phases": [
+        "recovery",
+        "chemo",
+        "postop"
+      ]
+    },
+    {
+      "id": "fish_white",
+      "name": {
+        "en": "White fish (steamed)",
+        "zh": "白肉鱼（清蒸）"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 90,
+        "protein_g": 20,
+        "fat_g": 1.0,
+        "fiber_g": null
+      },
+      "note": {
+        "en": "High-quality protein, usually low fat.",
+        "zh": "高质量蛋白，通常脂肪较低。"
+      },
+      "aliases": [
+        "鳕鱼",
+        "多利鱼",
+        "鲈鱼",
+        "清蒸鱼",
+        "white fish",
+        "cod"
+      ],
+      "tags": [
+        "protein",
+        "low-fat"
+      ],
+      "phases": [
+        "recovery",
+        "chemo",
+        "postop"
+      ]
+    },
+    {
+      "id": "egg_boiled",
+      "name": {
+        "en": "Egg (boiled/scrambled, light oil)",
+        "zh": "鸡蛋（水煮/少油炒）"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 70,
+        "protein_g": 6,
+        "fat_g": 5,
+        "fiber_g": null
+      },
+      "note": {
+        "en": "Good protein; go easy on oil/butter.",
+        "zh": "优质蛋白来源，注意少油少黄油。"
+      },
+      "aliases": [
+        "鸡蛋",
+        "水煮蛋",
+        "炒蛋",
+        "egg"
+      ],
+      "tags": [
+        "protein"
+      ],
+      "phases": [
+        "recovery",
+        "chemo",
+        "postop"
+      ]
+    },
+    {
+      "id": "tofu_soft",
+      "name": {
+        "en": "Soft tofu / bean curd",
+        "zh": "嫩豆腐/豆腐脑"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 76,
+        "protein_g": 8,
+        "fat_g": 4.8,
+        "fiber_g": null
+      },
+      "note": {
+        "en": "Gentle plant protein.",
+        "zh": "温和的植物蛋白。"
+      },
+      "aliases": [
+        "豆腐",
+        "嫩豆腐",
+        "豆腐脑",
+        "tofu"
+      ],
+      "tags": [
+        "protein"
+      ],
+      "phases": [
+        "recovery",
+        "chemo",
+        "postop"
+      ]
+    },
+    {
+      "id": "shrimp",
+      "name": {
+        "en": "Shrimp (steamed)",
+        "zh": "虾（清蒸/水煮）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 99,
+        "protein_g": 24,
+        "fat_g": 0.3,
+        "fiber_g": null
+      },
+      "note": {
+        "en": "Lean protein; caution if allergy/high uric acid history.",
+        "zh": "低脂蛋白；如有过敏/高尿酸史需谨慎。"
+      },
+      "aliases": [
+        "虾仁",
+        "shrimp"
+      ],
+      "tags": [
+        "protein"
+      ],
+      "phases": [
+        "recovery",
+        "chemo"
+      ]
+    },
+    {
+      "id": "rice_white",
+      "name": {
+        "en": "White rice / congee",
+        "zh": "白米饭/白粥"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 130,
+        "protein_g": 3,
+        "fat_g": 0.3,
+        "fiber_g": null
+      },
+      "note": {
+        "en": "Easy to digest; good early on.",
+        "zh": "易消化，早期较合适。"
+      },
+      "aliases": [
+        "米饭",
+        "白粥",
+        "稀饭",
+        "congee",
+        "porridge",
+        "rice"
+      ],
+      "tags": [
+        "easy-digest"
+      ],
+      "phases": [
+        "postop",
+        "diarrhea"
+      ]
+    },
+    {
+      "id": "toast",
+      "name": {
+        "en": "Toast / plain bread",
+        "zh": "吐司/白面包"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 80,
+        "protein_g": 3,
+        "fat_g": 1.0,
+        "fiber_g": null
+      },
+      "note": {
+        "en": "Choose plain; avoid heavy butter.",
+        "zh": "选原味，避免厚黄油。"
+      },
+      "aliases": [
+        "面包",
+        "吐司",
+        "bread",
+        "toast"
+      ],
+      "tags": [
+        "easy-digest"
+      ],
+      "phases": [
+        "postop",
+        "diarrhea"
+      ]
+    },
+    {
+      "id": "noodles_plain",
+      "name": {
+        "en": "Plain noodles",
+        "zh": "清汤面/白面"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 138,
+        "protein_g": 5,
+        "fat_g": null,
+        "fiber_g": null
+      },
+      "note": {
+        "en": "Soft noodles can be easier than whole grains early on.",
+        "zh": "早期清淡软面更易耐受。"
+      },
+      "aliases": [
+        "面条",
+        "清汤面",
+        "noodles"
+      ],
+      "tags": [
+        "easy-digest"
+      ],
+      "phases": [
+        "postop",
+        "diarrhea"
+      ]
+    },
+    {
+      "id": "banana_ripe",
+      "name": {
+        "en": "Banana (ripe)",
+        "zh": "香蕉（熟）"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 105,
+        "protein_g": 1.3,
+        "fat_g": null,
+        "fiber_g": 3.1
+      },
+      "note": {
+        "en": "Soft fruit; good when appetite is low.",
+        "zh": "软水果，食欲差时较容易入口。"
+      },
+      "aliases": [
+        "香蕉",
+        "banana"
+      ],
+      "tags": [
+        "fruit"
+      ],
+      "phases": [
+        "postop",
+        "chemo"
+      ]
+    },
+    {
+      "id": "apple_peeled",
+      "name": {
+        "en": "Apple (peeled/stewed)",
+        "zh": "苹果（去皮/蒸煮）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 95,
+        "protein_g": 0.5,
+        "fat_g": null,
+        "fiber_g": 4.4
+      },
+      "note": {
+        "en": "Raw peel can be rough; stewed is gentler.",
+        "zh": "生苹果皮纤维较粗，蒸煮更温和。"
+      },
+      "aliases": [
+        "苹果",
+        "蒸苹果",
+        "apple"
+      ],
+      "tags": [
+        "fruit"
+      ],
+      "phases": [
+        "postop",
+        "diarrhea"
+      ]
+    },
+    {
+      "id": "citrus",
+      "name": {
+        "en": "Orange / citrus",
+        "zh": "橙子/柑橘"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 62,
+        "protein_g": 1.2,
+        "fat_g": null,
+        "fiber_g": 3.1
+      },
+      "note": {
+        "en": "May irritate if mouth sores/reflux.",
+        "zh": "如口腔溃疡/反酸，可能刺激需谨慎。"
+      },
+      "aliases": [
+        "橙子",
+        "柑橘",
+        "orange",
+        "citrus"
+      ],
+      "tags": [
+        "fruit"
+      ],
+      "phases": [
+        "chemo"
+      ]
+    },
+    {
+      "id": "carrot_cooked",
+      "name": {
+        "en": "Carrot (well-cooked)",
+        "zh": "胡萝卜（熟）"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 41,
+        "protein_g": 0.9,
+        "fat_g": null,
+        "fiber_g": 2.8
+      },
+      "note": {
+        "en": "Cook until soft early on.",
+        "zh": "早期建议煮软。"
+      },
+      "aliases": [
+        "胡萝卜",
+        "carrot"
+      ],
+      "tags": [
+        "veg"
+      ],
+      "phases": [
+        "postop",
+        "recovery"
+      ]
+    },
+    {
+      "id": "pumpkin",
+      "name": {
+        "en": "Pumpkin (steamed)",
+        "zh": "南瓜（蒸/煮）"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 49,
+        "protein_g": 1.8,
+        "fat_g": null,
+        "fiber_g": 2
+      },
+      "note": {
+        "en": "Soft, gentle carbohydrate/veg.",
+        "zh": "软糯温和，适合作为主食替代。"
+      },
+      "aliases": [
+        "南瓜",
+        "pumpkin"
+      ],
+      "tags": [
+        "veg",
+        "easy-digest"
+      ],
+      "phases": [
+        "postop",
+        "diarrhea"
+      ]
+    },
+    {
+      "id": "broccoli",
+      "name": {
+        "en": "Broccoli / cabbage",
+        "zh": "西兰花/卷心菜"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 34,
+        "protein_g": 2.8,
+        "fat_g": null,
+        "fiber_g": 2.6
+      },
+      "note": {
+        "en": "Gas-producing; try small portions.",
+        "zh": "易胀气，少量尝试。"
+      },
+      "aliases": [
+        "西兰花",
+        "花椰菜",
+        "卷心菜",
+        "broccoli",
+        "cabbage"
+      ],
+      "tags": [
+        "veg",
+        "gas"
+      ],
+      "phases": [
+        "recovery"
+      ]
+    },
+    {
+      "id": "salad_raw",
+      "name": {
+        "en": "Raw salad / raw vegetables",
+        "zh": "生菜沙拉/生蔬菜"
+      },
+      "status": "avoid",
+      "nutr": {
+        "kcal": 20,
+        "protein_g": 2,
+        "fat_g": null,
+        "fiber_g": 2
+      },
+      "note": {
+        "en": "Raw fiber may be hard to tolerate early; choose cooked veg.",
+        "zh": "生纤维较难耐受，建议熟蔬菜。"
+      },
+      "aliases": [
+        "沙拉",
+        "生菜",
+        "raw salad"
+      ],
+      "tags": [
+        "avoid"
+      ],
+      "phases": [
+        "postop",
+        "diarrhea"
+      ]
+    },
+    {
+      "id": "yogurt_lowfat",
+      "name": {
+        "en": "Yogurt (low-fat)",
+        "zh": "酸奶（低脂）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 59,
+        "protein_g": 10,
+        "fat_g": 0.4,
+        "fiber_g": null
+      },
+      "note": {
+        "en": "Choose lactose-free if needed; watch for diarrhea.",
+        "zh": "如乳糖不耐受选无乳糖；腹泻时谨慎。"
+      },
+      "aliases": [
+        "酸奶",
+        "优格",
+        "yogurt"
+      ],
+      "tags": [
+        "dairy"
+      ],
+      "phases": [
+        "recovery",
+        "chemo"
+      ]
+    },
+    {
+      "id": "fried_foods",
+      "name": {
+        "en": "Fried foods (fries, fried chicken)",
+        "zh": "油炸食品（炸鸡/薯条）"
+      },
+      "status": "avoid",
+      "nutr": {
+        "kcal": 300,
+        "protein_g": 15,
+        "fat_g": 18,
+        "fiber_g": null
+      },
+      "note": {
+        "en": "High-fat foods may worsen steatorrhea and discomfort.",
+        "zh": "高脂可能加重脂肪泻与不适。"
+      },
+      "aliases": [
+        "油炸",
+        "炸鸡",
+        "薯条",
+        "fried"
+      ],
+      "tags": [
+        "high-fat"
+      ],
+      "phases": [
+        "postop",
+        "diarrhea"
+      ]
+    },
+    {
+      "id": "red_meat_fatty",
+      "name": {
+        "en": "Fatty red meat (steak, pork belly)",
+        "zh": "肥牛排/五花肉等"
+      },
+      "status": "avoid",
+      "nutr": {
+        "kcal": 250,
+        "protein_g": 25,
+        "fat_g": 18,
+        "fiber_g": null
+      },
+      "note": {
+        "en": "Harder to digest; choose lean cuts if tolerated.",
+        "zh": "相对难消化；如要吃建议选瘦肉且少量。"
+      },
+      "aliases": [
+        "牛排",
+        "五花肉",
+        "肥肉",
+        "steak",
+        "pork belly"
+      ],
+      "tags": [
+        "high-fat"
+      ],
+      "phases": [
+        "postop",
+        "diarrhea"
+      ]
+    },
+    {
+      "id": "nuts_whole",
+      "name": {
+        "en": "Nuts (whole)",
+        "zh": "坚果（整粒）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 170,
+        "protein_g": 6,
+        "fat_g": 15,
+        "fiber_g": null
+      },
+      "note": {
+        "en": "May be hard to digest; smooth nut butter is easier.",
+        "zh": "可能较难消化；可改为花生酱/坚果酱。"
+      },
+      "aliases": [
+        "坚果",
+        "花生",
+        "核桃",
+        "nuts"
+      ],
+      "tags": [
+        "fat"
+      ],
+      "phases": [
+        "recovery"
+      ]
+    },
+    {
+      "id": "water",
+      "name": {
+        "en": "Water",
+        "zh": "白开水"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 0,
+        "protein_g": 0,
+        "fat_g": null,
+        "fiber_g": null
+      },
+      "note": {
+        "en": "Stay hydrated; small sips if nauseated.",
+        "zh": "注意补水；恶心时小口多次。"
+      },
+      "aliases": [
+        "水",
+        "温水",
+        "water"
+      ],
+      "tags": [
+        "hydration"
+      ],
+      "phases": [
+        "all"
+      ]
+    },
+    {
+      "id": "carbonated",
+      "name": {
+        "en": "Carbonated drinks",
+        "zh": "碳酸饮料"
+      },
+      "status": "avoid",
+      "nutr": {
+        "kcal": 140,
+        "protein_g": 0,
+        "fat_g": null,
+        "fiber_g": null
+      },
+      "note": {
+        "en": "May increase gas/fullness.",
+        "zh": "可能增加胀气和饱胀。"
+      },
+      "aliases": [
+        "可乐",
+        "汽水",
+        "碳酸",
+        "soda"
+      ],
+      "tags": [
+        "avoid"
+      ],
+      "phases": [
+        "all"
+      ]
+    },
+    {
+      "id": "alcohol",
+      "name": {
+        "en": "Alcohol",
+        "zh": "酒精"
+      },
+      "status": "avoid",
+      "nutr": {
+        "kcal": 200,
+        "protein_g": 0,
+        "fat_g": null,
+        "fiber_g": null
+      },
+      "note": {
+        "en": "Generally discouraged; discuss with clinician.",
+        "zh": "通常不建议；请与医生沟通。"
+      },
+      "aliases": [
+        "酒",
+        "啤酒",
+        "白酒",
+        "红酒",
+        "alcohol"
+      ],
+      "tags": [
+        "avoid"
+      ],
+      "phases": [
+        "all"
+      ]
+    },
+    {
+      "id": "congee_chicken",
+      "name": {
+        "en": "Chicken congee (light)",
+        "zh": "鸡肉粥（清淡）"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 180,
+        "protein_g": 12,
+        "fat_g": 3,
+        "fiber_g": null
+      },
+      "note": {
+        "en": "Good early option; keep oil low.",
+        "zh": "早期适合；控制油脂。"
+      },
+      "aliases": [
+        "鸡肉粥",
+        "粥",
+        "congee"
+      ],
+      "tags": [
+        "easy-digest"
+      ],
+      "phases": [
+        "postop",
+        "diarrhea"
+      ]
+    },
+    {
+      "id": "steamed_egg",
+      "name": {
+        "en": "Steamed egg custard",
+        "zh": "蒸蛋"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 110,
+        "protein_g": 9,
+        "fat_g": 6,
+        "fiber_g": null
+      },
+      "note": {
+        "en": "Soft texture; easy to swallow.",
+        "zh": "口感软，容易入口。"
+      },
+      "aliases": [
+        "蒸蛋",
+        "egg custard"
+      ],
+      "tags": [
+        "protein"
+      ],
+      "phases": [
+        "postop",
+        "chemo"
+      ]
+    },
+    {
+      "id": "ginger_tea",
+      "name": {
+        "en": "Ginger tea (weak)",
+        "zh": "姜茶（淡）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 5,
+        "protein_g": 0,
+        "fat_g": null,
+        "fiber_g": null
+      },
+      "note": {
+        "en": "May help nausea for some; avoid if reflux worsens.",
+        "zh": "部分人可缓解恶心；反酸加重则停用。"
+      },
+      "aliases": [
+        "姜茶",
+        "ginger tea"
+      ],
+      "tags": [
+        "symptom"
+      ],
+      "phases": [
+        "chemo"
+      ]
+    },
+    {
+      "id": "fish_cod",
+      "name": {
+        "en": "Cod (steamed)",
+        "zh": "鳕鱼（清蒸）"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 120,
+        "protein_g": 26
+      },
+      "note": {
+        "en": "Lean, usually easy to digest.",
+        "zh": "低脂优质蛋白，通常更易消化。"
+      },
+      "aliases": [
+        "cod",
+        "white fish",
+        "鳕鱼",
+        "鱼"
+      ],
+      "tags": [
+        "lean-protein",
+        "low-fat"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "recovery",
+        "diarrhea"
+      ]
+    },
+    {
+      "id": "fish_tilapia",
+      "name": {
+        "en": "Tilapia (steamed)",
+        "zh": "罗非鱼（清蒸）"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 120,
+        "protein_g": 25
+      },
+      "note": {
+        "en": "Lean fish option; avoid frying.",
+        "zh": "低脂鱼类，避免油炸。"
+      },
+      "aliases": [
+        "tilapia",
+        "罗非鱼",
+        "鱼"
+      ],
+      "tags": [
+        "lean-protein"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "recovery",
+        "diarrhea"
+      ]
+    },
+    {
+      "id": "fish_bass",
+      "name": {
+        "en": "Sea bass (steamed)",
+        "zh": "清蒸鲈鱼"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 140,
+        "protein_g": 24
+      },
+      "note": {
+        "en": "Keep seasoning mild.",
+        "zh": "调味清淡更友好。"
+      },
+      "aliases": [
+        "鲈鱼",
+        "sea bass"
+      ],
+      "tags": [
+        "lean-protein"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "recovery"
+      ]
+    },
+    {
+      "id": "fish_sardine",
+      "name": {
+        "en": "Sardines (small)",
+        "zh": "沙丁鱼（少量）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 190,
+        "protein_g": 23
+      },
+      "note": {
+        "en": "Higher fat; try small portions.",
+        "zh": "脂肪略高，先少量。"
+      },
+      "aliases": [
+        "沙丁鱼",
+        "sardine"
+      ],
+      "tags": [
+        "omega-3",
+        "higher-fat"
+      ],
+      "phases": [
+        "recovery"
+      ]
+    },
+    {
+      "id": "chicken_shredded",
+      "name": {
+        "en": "Shredded chicken (boiled)",
+        "zh": "鸡丝（水煮）"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 170,
+        "protein_g": 30
+      },
+      "note": {
+        "en": "Good for congee/noodles.",
+        "zh": "适合配粥/汤面。"
+      },
+      "aliases": [
+        "鸡丝",
+        "boiled chicken"
+      ],
+      "tags": [
+        "lean-protein"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "recovery",
+        "diarrhea"
+      ]
+    },
+    {
+      "id": "turkey",
+      "name": {
+        "en": "Turkey (roasted, skinless)",
+        "zh": "火鸡肉（去皮烤）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 170,
+        "protein_g": 29
+      },
+      "note": {
+        "en": "Watch dryness; avoid skin.",
+        "zh": "注意口干；去皮。"
+      },
+      "aliases": [
+        "turkey",
+        "火鸡"
+      ],
+      "tags": [
+        "lean-protein"
+      ],
+      "phases": [
+        "recovery"
+      ]
+    },
+    {
+      "id": "pork_lean_mince",
+      "name": {
+        "en": "Lean pork mince (stewed)",
+        "zh": "瘦猪肉末（清炖）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 180,
+        "protein_g": 24
+      },
+      "note": {
+        "en": "Choose lean mince; avoid oily stir-fry.",
+        "zh": "选瘦肉末，避免多油。"
+      },
+      "aliases": [
+        "肉末",
+        "猪肉末",
+        "minced pork"
+      ],
+      "tags": [
+        "protein"
+      ],
+      "phases": [
+        "postop",
+        "recovery",
+        "diarrhea"
+      ]
+    },
+    {
+      "id": "beef_shank",
+      "name": {
+        "en": "Beef shank (stewed)",
+        "zh": "牛腱（炖）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 210,
+        "protein_g": 28
+      },
+      "note": {
+        "en": "Chew well; may be harder than fish/poultry.",
+        "zh": "充分咀嚼；可能比鱼禽难消化。"
+      },
+      "aliases": [
+        "牛腱",
+        "beef shank"
+      ],
+      "tags": [
+        "protein"
+      ],
+      "phases": [
+        "recovery"
+      ]
+    },
+    {
+      "id": "egg_white",
+      "name": {
+        "en": "Egg whites",
+        "zh": "蛋清"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 17,
+        "protein_g": 4
+      },
+      "note": {
+        "en": "Very low fat protein booster.",
+        "zh": "几乎无脂的蛋白补充。"
+      },
+      "aliases": [
+        "蛋白",
+        "egg white"
+      ],
+      "tags": [
+        "low-fat",
+        "protein"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "recovery",
+        "diarrhea"
+      ]
+    },
+    {
+      "id": "tofu_silken",
+      "name": {
+        "en": "Silken tofu",
+        "zh": "嫩豆腐"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 80,
+        "protein_g": 8
+      },
+      "note": {
+        "en": "Gentle plant protein; try warm.",
+        "zh": "温和植物蛋白，建议温热。"
+      },
+      "aliases": [
+        "豆腐",
+        "tofu",
+        "嫩豆腐"
+      ],
+      "tags": [
+        "plant-protein"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "recovery",
+        "diarrhea"
+      ]
+    },
+    {
+      "id": "tofu_skin",
+      "name": {
+        "en": "Tofu skin (yuba)",
+        "zh": "腐竹"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 200,
+        "protein_g": 18
+      },
+      "note": {
+        "en": "Denser; may be harder to digest.",
+        "zh": "质地较硬，可能难消化。"
+      },
+      "aliases": [
+        "腐竹",
+        "yuba"
+      ],
+      "tags": [
+        "plant-protein"
+      ],
+      "phases": [
+        "recovery"
+      ]
+    },
+    {
+      "id": "lentils",
+      "name": {
+        "en": "Lentils (well-cooked)",
+        "zh": "小扁豆（煮烂）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 230,
+        "protein_g": 18
+      },
+      "note": {
+        "en": "Higher fiber; introduce slowly.",
+        "zh": "纤维高，逐步引入。"
+      },
+      "aliases": [
+        "lentil",
+        "扁豆"
+      ],
+      "tags": [
+        "legume",
+        "fiber"
+      ],
+      "phases": [
+        "recovery"
+      ]
+    },
+    {
+      "id": "edamame",
+      "name": {
+        "en": "Edamame (soft)",
+        "zh": "毛豆（煮软）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 180,
+        "protein_g": 17
+      },
+      "note": {
+        "en": "Can cause gas; small portions.",
+        "zh": "易胀气，少量。"
+      },
+      "aliases": [
+        "毛豆",
+        "edamame"
+      ],
+      "tags": [
+        "legume",
+        "gas"
+      ],
+      "phases": [
+        "recovery"
+      ]
+    },
+    {
+      "id": "tempeh",
+      "name": {
+        "en": "Tempeh (small)",
+        "zh": "天贝（少量）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 190,
+        "protein_g": 19
+      },
+      "note": {
+        "en": "Fermented soy; may still cause gas.",
+        "zh": "发酵豆制品，仍可能胀气。"
+      },
+      "aliases": [
+        "tempeh",
+        "天贝"
+      ],
+      "tags": [
+        "plant-protein"
+      ],
+      "phases": [
+        "recovery"
+      ]
+    },
+    {
+      "id": "greek_yogurt",
+      "name": {
+        "en": "Greek yogurt (low-fat)",
+        "zh": "希腊酸奶（低脂）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 120,
+        "protein_g": 12
+      },
+      "note": {
+        "en": "If lactose sensitive choose lactose-free.",
+        "zh": "乳糖不耐可选无乳糖。"
+      },
+      "aliases": [
+        "希腊酸奶",
+        "Greek yogurt"
+      ],
+      "tags": [
+        "dairy",
+        "protein"
+      ],
+      "phases": [
+        "chemo",
+        "recovery"
+      ]
+    },
+    {
+      "id": "milk_lf",
+      "name": {
+        "en": "Lactose-free milk",
+        "zh": "无乳糖牛奶"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 110,
+        "protein_g": 8
+      },
+      "note": {
+        "en": "Often better tolerated if lactose intolerance.",
+        "zh": "乳糖不耐受者更友好。"
+      },
+      "aliases": [
+        "无乳糖牛奶",
+        "lactose free"
+      ],
+      "tags": [
+        "dairy"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "recovery"
+      ]
+    },
+    {
+      "id": "protein_shake",
+      "name": {
+        "en": "Oral nutrition supplement (ONS)",
+        "zh": "口服营养补充剂（ONS）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 250,
+        "protein_g": 12
+      },
+      "note": {
+        "en": "Discuss with dietitian; helpful if intake low.",
+        "zh": "摄入不足时可与营养师讨论。"
+      },
+      "aliases": [
+        "营养粉",
+        "ensure",
+        "ONS"
+      ],
+      "tags": [
+        "nutrition-support"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "diarrhea",
+        "recovery"
+      ]
+    },
+    {
+      "id": "congee_plain",
+      "name": {
+        "en": "Plain rice congee",
+        "zh": "白粥"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 140,
+        "protein_g": 3
+      },
+      "note": {
+        "en": "Easy base early; add protein.",
+        "zh": "早期友好，可加蛋白。"
+      },
+      "aliases": [
+        "稀饭",
+        "粥",
+        "congee"
+      ],
+      "tags": [
+        "easy-digest",
+        "carb"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "diarrhea"
+      ]
+    },
+    {
+      "id": "congee_millet",
+      "name": {
+        "en": "Millet congee (well-cooked)",
+        "zh": "小米粥（煮烂）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 160,
+        "protein_g": 4
+      },
+      "note": {
+        "en": "May cause gas for some.",
+        "zh": "部分人胀气。"
+      },
+      "aliases": [
+        "小米粥",
+        "millet congee"
+      ],
+      "tags": [
+        "carb"
+      ],
+      "phases": [
+        "recovery"
+      ]
+    },
+    {
+      "id": "congee_oat",
+      "name": {
+        "en": "Oat congee (soft)",
+        "zh": "燕麦粥（煮软）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 170,
+        "protein_g": 6
+      },
+      "note": {
+        "en": "Higher fiber; introduce later.",
+        "zh": "纤维高，后期再加。"
+      },
+      "aliases": [
+        "燕麦粥",
+        "oatmeal"
+      ],
+      "tags": [
+        "fiber"
+      ],
+      "phases": [
+        "recovery"
+      ]
+    },
+    {
+      "id": "noodle_soup",
+      "name": {
+        "en": "Noodle soup (light)",
+        "zh": "汤面（清淡）"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 300,
+        "protein_g": 10
+      },
+      "note": {
+        "en": "Prefer broth; avoid oily sauces.",
+        "zh": "清汤更友好，少油。"
+      },
+      "aliases": [
+        "汤面",
+        "面条",
+        "noodles"
+      ],
+      "tags": [
+        "easy-digest"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "recovery"
+      ]
+    },
+    {
+      "id": "rice_noodle",
+      "name": {
+        "en": "Rice noodles (light soup)",
+        "zh": "米粉/河粉（清汤）"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 280,
+        "protein_g": 6
+      },
+      "note": {
+        "en": "Usually gentle; watch portion.",
+        "zh": "通常温和，注意份量。"
+      },
+      "aliases": [
+        "米粉",
+        "河粉",
+        "rice noodle"
+      ],
+      "tags": [
+        "easy-digest"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "diarrhea",
+        "recovery"
+      ]
+    },
+    {
+      "id": "steamed_bun_plain",
+      "name": {
+        "en": "Plain steamed bun",
+        "zh": "馒头（原味）"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 220,
+        "protein_g": 7
+      },
+      "note": {
+        "en": "Avoid fried fillings.",
+        "zh": "避免油炸馅。"
+      },
+      "aliases": [
+        "馒头",
+        "包子"
+      ],
+      "tags": [
+        "carb"
+      ],
+      "phases": [
+        "postop",
+        "recovery"
+      ]
+    },
+    {
+      "id": "toast_2",
+      "name": {
+        "en": "Toast / white bread",
+        "zh": "吐司/白面包"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 90,
+        "protein_g": 3
+      },
+      "note": {
+        "en": "Often easier than wholegrain early.",
+        "zh": "早期比全麦更易耐受。"
+      },
+      "aliases": [
+        "吐司",
+        "白面包",
+        "toast"
+      ],
+      "tags": [
+        "carb"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "diarrhea"
+      ]
+    },
+    {
+      "id": "wholegrain_bread",
+      "name": {
+        "en": "Wholegrain bread",
+        "zh": "全麦面包"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 110,
+        "protein_g": 4
+      },
+      "note": {
+        "en": "More fiber; add gradually.",
+        "zh": "纤维较高，逐步添加。"
+      },
+      "aliases": [
+        "全麦",
+        "wholegrain"
+      ],
+      "tags": [
+        "fiber"
+      ],
+      "phases": [
+        "recovery"
+      ]
+    },
+    {
+      "id": "potato_mashed",
+      "name": {
+        "en": "Mashed potato",
+        "zh": "土豆泥"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 180,
+        "protein_g": 4
+      },
+      "note": {
+        "en": "Soft, low fibre option.",
+        "zh": "软烂、低纤维。"
+      },
+      "aliases": [
+        "土豆泥",
+        "mashed potato"
+      ],
+      "tags": [
+        "easy-digest"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "diarrhea",
+        "recovery"
+      ]
+    },
+    {
+      "id": "sweet_potato_steamed",
+      "name": {
+        "en": "Steamed sweet potato",
+        "zh": "红薯（蒸）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 160,
+        "protein_g": 3
+      },
+      "note": {
+        "en": "Can cause gas; small portions.",
+        "zh": "易胀气，少量。"
+      },
+      "aliases": [
+        "红薯",
+        "地瓜",
+        "sweet potato"
+      ],
+      "tags": [
+        "carb",
+        "gas"
+      ],
+      "phases": [
+        "recovery"
+      ]
+    },
+    {
+      "id": "rice_porridge_chicken",
+      "name": {
+        "en": "Chicken congee",
+        "zh": "鸡肉粥"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 260,
+        "protein_g": 18
+      },
+      "note": {
+        "en": "Protein + carbs together.",
+        "zh": "碳水+蛋白组合。"
+      },
+      "aliases": [
+        "鸡粥",
+        "鸡肉粥"
+      ],
+      "tags": [
+        "easy-digest"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "recovery"
+      ]
+    },
+    {
+      "id": "wonton_soup",
+      "name": {
+        "en": "Wonton soup (light)",
+        "zh": "馄饨汤（清淡）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 320,
+        "protein_g": 14
+      },
+      "note": {
+        "en": "Watch oil in fillings.",
+        "zh": "注意馅料油脂。"
+      },
+      "aliases": [
+        "馄饨",
+        "wonton"
+      ],
+      "tags": [
+        "carb"
+      ],
+      "phases": [
+        "recovery"
+      ]
+    },
+    {
+      "id": "dumplings_boiled",
+      "name": {
+        "en": "Boiled dumplings (lean filling)",
+        "zh": "水饺（瘦馅）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 360,
+        "protein_g": 16
+      },
+      "note": {
+        "en": "Chew well; avoid fatty fillings.",
+        "zh": "充分咀嚼，避免肥馅。"
+      },
+      "aliases": [
+        "水饺",
+        "饺子",
+        "dumplings"
+      ],
+      "tags": [
+        "carb"
+      ],
+      "phases": [
+        "recovery"
+      ]
+    },
+    {
+      "id": "pumpkin_2",
+      "name": {
+        "en": "Pumpkin (cooked)",
+        "zh": "南瓜（熟）"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 60,
+        "protein_g": 1
+      },
+      "note": {
+        "en": "Soft cooked veg option.",
+        "zh": "软烂蔬菜更易消化。"
+      },
+      "aliases": [
+        "南瓜",
+        "pumpkin"
+      ],
+      "tags": [
+        "veg",
+        "easy-digest"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "diarrhea",
+        "recovery"
+      ]
+    },
+    {
+      "id": "carrot",
+      "name": {
+        "en": "Carrot (cooked)",
+        "zh": "胡萝卜（熟）"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 55,
+        "protein_g": 1
+      },
+      "note": {
+        "en": "Cooked is easier than raw.",
+        "zh": "熟的更易耐受。"
+      },
+      "aliases": [
+        "胡萝卜",
+        "carrot"
+      ],
+      "tags": [
+        "veg"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "diarrhea",
+        "recovery"
+      ]
+    },
+    {
+      "id": "zucchini",
+      "name": {
+        "en": "Zucchini (cooked)",
+        "zh": "西葫芦（熟）"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 40,
+        "protein_g": 2
+      },
+      "note": {
+        "en": "Low fibre when peeled/cooked.",
+        "zh": "去皮煮熟更友好。"
+      },
+      "aliases": [
+        "西葫芦",
+        "zucchini"
+      ],
+      "tags": [
+        "veg",
+        "easy-digest"
+      ],
+      "phases": [
+        "postop",
+        "recovery"
+      ]
+    },
+    {
+      "id": "tomato_cooked",
+      "name": {
+        "en": "Tomato (cooked)",
+        "zh": "番茄（熟）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 40,
+        "protein_g": 2
+      },
+      "note": {
+        "en": "If reflux, reduce acidity.",
+        "zh": "反酸者减少。"
+      },
+      "aliases": [
+        "番茄",
+        "西红柿",
+        "tomato"
+      ],
+      "tags": [
+        "veg",
+        "acid"
+      ],
+      "phases": [
+        "recovery",
+        "chemo"
+      ]
+    },
+    {
+      "id": "broccoli_cooked",
+      "name": {
+        "en": "Broccoli (cooked)",
+        "zh": "西兰花（熟）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 55,
+        "protein_g": 4
+      },
+      "note": {
+        "en": "May cause gas; cook well.",
+        "zh": "可能胀气，煮软。"
+      },
+      "aliases": [
+        "西兰花",
+        "broccoli"
+      ],
+      "tags": [
+        "veg",
+        "gas"
+      ],
+      "phases": [
+        "recovery"
+      ]
+    },
+    {
+      "id": "cabbage_cooked",
+      "name": {
+        "en": "Cabbage (cooked)",
+        "zh": "卷心菜（熟）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 45,
+        "protein_g": 2
+      },
+      "note": {
+        "en": "Can cause bloating.",
+        "zh": "易胀气。"
+      },
+      "aliases": [
+        "卷心菜",
+        "包菜",
+        "cabbage"
+      ],
+      "tags": [
+        "veg",
+        "gas"
+      ],
+      "phases": [
+        "recovery"
+      ]
+    },
+    {
+      "id": "mushroom",
+      "name": {
+        "en": "Mushrooms (cooked)",
+        "zh": "蘑菇（熟）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 40,
+        "protein_g": 3
+      },
+      "note": {
+        "en": "Chew well; some find harder to digest.",
+        "zh": "充分咀嚼，部分人不耐受。"
+      },
+      "aliases": [
+        "蘑菇",
+        "香菇",
+        "mushroom"
+      ],
+      "tags": [
+        "veg"
+      ],
+      "phases": [
+        "recovery"
+      ]
+    },
+    {
+      "id": "seaweed_soup",
+      "name": {
+        "en": "Seaweed soup",
+        "zh": "海带汤"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 60,
+        "protein_g": 2
+      },
+      "note": {
+        "en": "Watch iodine if thyroid issues.",
+        "zh": "甲状腺问题注意碘。"
+      },
+      "aliases": [
+        "海带",
+        "紫菜",
+        "seaweed"
+      ],
+      "tags": [
+        "veg"
+      ],
+      "phases": [
+        "recovery"
+      ]
+    },
+    {
+      "id": "raw_veg",
+      "name": {
+        "en": "Raw vegetables / salad",
+        "zh": "生蔬菜/沙拉"
+      },
+      "status": "avoid",
+      "nutr": {
+        "kcal": 30,
+        "protein_g": 2
+      },
+      "note": {
+        "en": "Raw fiber can be hard early.",
+        "zh": "生纤维早期难消化。"
+      },
+      "aliases": [
+        "沙拉",
+        "生菜",
+        "raw"
+      ],
+      "tags": [
+        "raw",
+        "fiber"
+      ],
+      "phases": [
+        "postop",
+        "diarrhea"
+      ]
+    },
+    {
+      "id": "banana_ripe_2",
+      "name": {
+        "en": "Ripe banana",
+        "zh": "香蕉（熟）"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 105,
+        "protein_g": 1
+      },
+      "note": {
+        "en": "Soft fruit.",
+        "zh": "软质水果。"
+      },
+      "aliases": [
+        "香蕉",
+        "banana"
+      ],
+      "tags": [
+        "fruit"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "diarrhea",
+        "recovery"
+      ]
+    },
+    {
+      "id": "apple_sauce",
+      "name": {
+        "en": "Apple sauce / stewed apple",
+        "zh": "苹果泥/蒸苹果"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 90,
+        "protein_g": 0
+      },
+      "note": {
+        "en": "Cooked fruit may be easier.",
+        "zh": "蒸/泥更友好。"
+      },
+      "aliases": [
+        "蒸苹果",
+        "苹果泥",
+        "apple sauce"
+      ],
+      "tags": [
+        "fruit",
+        "easy-digest"
+      ],
+      "phases": [
+        "postop",
+        "diarrhea",
+        "recovery"
+      ]
+    },
+    {
+      "id": "pear_stewed",
+      "name": {
+        "en": "Stewed pear",
+        "zh": "蒸梨"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 95,
+        "protein_g": 0
+      },
+      "note": {
+        "en": "If diarrhea, reduce.",
+        "zh": "腹泻时减少。"
+      },
+      "aliases": [
+        "蒸梨",
+        "梨",
+        "pear"
+      ],
+      "tags": [
+        "fruit"
+      ],
+      "phases": [
+        "recovery"
+      ]
+    },
+    {
+      "id": "papaya",
+      "name": {
+        "en": "Papaya (ripe)",
+        "zh": "木瓜（熟）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 80,
+        "protein_g": 1
+      },
+      "note": {
+        "en": "Some tolerate well; watch GI.",
+        "zh": "部分人耐受好，注意反应。"
+      },
+      "aliases": [
+        "木瓜",
+        "papaya"
+      ],
+      "tags": [
+        "fruit"
+      ],
+      "phases": [
+        "recovery"
+      ]
+    },
+    {
+      "id": "watermelon",
+      "name": {
+        "en": "Watermelon (small)",
+        "zh": "西瓜（少量）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 90,
+        "protein_g": 1
+      },
+      "note": {
+        "en": "High water; may worsen diarrhea.",
+        "zh": "水分高，腹泻者少量。"
+      },
+      "aliases": [
+        "西瓜",
+        "watermelon"
+      ],
+      "tags": [
+        "fruit"
+      ],
+      "phases": [
+        "recovery"
+      ]
+    },
+    {
+      "id": "citrus_2",
+      "name": {
+        "en": "Citrus (orange/lemon)",
+        "zh": "柑橘类（橙/柠檬）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 80,
+        "protein_g": 1
+      },
+      "note": {
+        "en": "Acidic; may irritate mouth/reflux.",
+        "zh": "酸性，口腔溃疡/反酸者慎。"
+      },
+      "aliases": [
+        "橙子",
+        "柠檬",
+        "orange",
+        "lemon"
+      ],
+      "tags": [
+        "fruit",
+        "acid"
+      ],
+      "phases": [
+        "chemo",
+        "recovery"
+      ]
+    },
+    {
+      "id": "water_2",
+      "name": {
+        "en": "Water",
+        "zh": "白开水"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 0,
+        "protein_g": 0
+      },
+      "note": {
+        "en": "Sip often.",
+        "zh": "少量多次。"
+      },
+      "aliases": [
+        "水",
+        "water"
+      ],
+      "tags": [
+        "hydration"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "diarrhea",
+        "recovery"
+      ]
+    },
+    {
+      "id": "oral_rehydration",
+      "name": {
+        "en": "Oral rehydration solution (ORS)",
+        "zh": "口服补液盐（ORS）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 35,
+        "protein_g": 0
+      },
+      "note": {
+        "en": "Useful if diarrhea/vomiting; follow label.",
+        "zh": "腹泻/呕吐可用，按说明。"
+      },
+      "aliases": [
+        "补液盐",
+        "ORS"
+      ],
+      "tags": [
+        "hydration"
+      ],
+      "phases": [
+        "diarrhea",
+        "chemo"
+      ]
+    },
+    {
+      "id": "ginger_mild",
+      "name": {
+        "en": "Ginger (small)",
+        "zh": "姜（少量）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 5,
+        "protein_g": 0
+      },
+      "note": {
+        "en": "May help nausea for some; avoid if irritation.",
+        "zh": "部分人缓解恶心；刺激者避免。"
+      },
+      "aliases": [
+        "姜茶",
+        "生姜",
+        "ginger"
+      ],
+      "tags": [
+        "nausea"
+      ],
+      "phases": [
+        "chemo"
+      ]
+    },
+    {
+      "id": "green_tea_weak",
+      "name": {
+        "en": "Green tea (weak)",
+        "zh": "淡绿茶"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 5,
+        "protein_g": 0
+      },
+      "note": {
+        "en": "Caffeine may irritate; keep weak.",
+        "zh": "咖啡因可能刺激，冲淡。"
+      },
+      "aliases": [
+        "绿茶",
+        "green tea"
+      ],
+      "tags": [
+        "caffeine"
+      ],
+      "phases": [
+        "recovery"
+      ]
+    },
+    {
+      "id": "coffee",
+      "name": {
+        "en": "Coffee",
+        "zh": "咖啡"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 5,
+        "protein_g": 0
+      },
+      "note": {
+        "en": "May worsen reflux/diarrhea.",
+        "zh": "可能加重反酸/腹泻。"
+      },
+      "aliases": [
+        "咖啡",
+        "coffee"
+      ],
+      "tags": [
+        "caffeine"
+      ],
+      "phases": [
+        "recovery"
+      ]
+    },
+    {
+      "id": "alcohol_2",
+      "name": {
+        "en": "Alcohol",
+        "zh": "酒精"
+      },
+      "status": "avoid",
+      "nutr": {
+        "kcal": 140,
+        "protein_g": 0
+      },
+      "note": {
+        "en": "Avoid during treatment and pancreatic issues.",
+        "zh": "治疗期及胰腺问题建议避免。"
+      },
+      "aliases": [
+        "酒",
+        "alcohol"
+      ],
+      "tags": [
+        "alcohol"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "diarrhea",
+        "recovery"
+      ]
+    },
+    {
+      "id": "bubble_tea",
+      "name": {
+        "en": "Bubble tea",
+        "zh": "珍珠奶茶"
+      },
+      "status": "avoid",
+      "nutr": {
+        "kcal": 450,
+        "protein_g": 8
+      },
+      "note": {
+        "en": "High sugar/fat; may worsen GI.",
+        "zh": "高糖高脂，易不适。"
+      },
+      "aliases": [
+        "奶茶",
+        "珍珠",
+        "bubble tea"
+      ],
+      "tags": [
+        "sugar"
+      ],
+      "phases": [
+        "recovery"
+      ]
+    },
+    {
+      "id": "spicy_food",
+      "name": {
+        "en": "Very spicy foods",
+        "zh": "重辣/麻辣"
+      },
+      "status": "avoid",
+      "nutr": {
+        "kcal": 200,
+        "protein_g": 0
+      },
+      "note": {
+        "en": "Can irritate GI.",
+        "zh": "刺激性强。"
+      },
+      "aliases": [
+        "麻辣",
+        "辣",
+        "spicy"
+      ],
+      "tags": [
+        "irritant"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "diarrhea"
+      ]
+    },
+    {
+      "id": "fried_food",
+      "name": {
+        "en": "Fried foods",
+        "zh": "油炸食物"
+      },
+      "status": "avoid",
+      "nutr": {
+        "kcal": 350,
+        "protein_g": 10
+      },
+      "note": {
+        "en": "High fat, hard to digest.",
+        "zh": "高脂难消化。"
+      },
+      "aliases": [
+        "炸鸡",
+        "薯条",
+        "油条",
+        "fried"
+      ],
+      "tags": [
+        "high-fat"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "diarrhea",
+        "recovery"
+      ]
+    },
+    {
+      "id": "protein_hoki_steamed",
+      "name": {
+        "en": "Hoki (steamed)",
+        "zh": "无须鳕/好吉鱼（清蒸）"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 130,
+        "protein_g": 24
+      },
+      "note": {
+        "en": "Lean seafood; keep seasoning mild.",
+        "zh": "海鲜蛋白，调味清淡。"
+      },
+      "aliases": [
+        "hoki",
+        "无须鳕",
+        "鱼"
+      ],
+      "tags": [
+        "lean-protein"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "recovery",
+        "diarrhea"
+      ]
+    },
+    {
+      "id": "protein_snapper_steamed",
+      "name": {
+        "en": "Snapper (steamed)",
+        "zh": "红鲷（清蒸）"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 130,
+        "protein_g": 24
+      },
+      "note": {
+        "en": "Lean seafood; keep seasoning mild.",
+        "zh": "海鲜蛋白，调味清淡。"
+      },
+      "aliases": [
+        "snapper",
+        "红鲷",
+        "鱼"
+      ],
+      "tags": [
+        "lean-protein"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "recovery",
+        "diarrhea"
+      ]
+    },
+    {
+      "id": "protein_grouper_steamed",
+      "name": {
+        "en": "Grouper (steamed)",
+        "zh": "石斑鱼（清蒸）"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 130,
+        "protein_g": 24
+      },
+      "note": {
+        "en": "Lean seafood; keep seasoning mild.",
+        "zh": "海鲜蛋白，调味清淡。"
+      },
+      "aliases": [
+        "grouper",
+        "石斑",
+        "鱼"
+      ],
+      "tags": [
+        "lean-protein"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "recovery",
+        "diarrhea"
+      ]
+    },
+    {
+      "id": "protein_fish_fillet_poached",
+      "name": {
+        "en": "Fish fillet (poached)",
+        "zh": "水煮鱼片（清淡）"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 130,
+        "protein_g": 24
+      },
+      "note": {
+        "en": "Lean seafood; keep seasoning mild.",
+        "zh": "海鲜蛋白，调味清淡。"
+      },
+      "aliases": [
+        "鱼片",
+        "fish fillet"
+      ],
+      "tags": [
+        "lean-protein"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "recovery",
+        "diarrhea"
+      ]
+    },
+    {
+      "id": "protein_crab_meat_cooked",
+      "name": {
+        "en": "Crab meat (cooked)",
+        "zh": "蟹肉（全熟）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 140,
+        "protein_g": 20
+      },
+      "note": {
+        "en": "Ensure fully cooked; watch allergies.",
+        "zh": "务必全熟，过敏者谨慎。"
+      },
+      "aliases": [
+        "蟹肉",
+        "crab"
+      ],
+      "tags": [
+        "seafood"
+      ],
+      "phases": [
+        "recovery",
+        "chemo"
+      ]
+    },
+    {
+      "id": "protein_scallops_cooked",
+      "name": {
+        "en": "Scallops (cooked)",
+        "zh": "扇贝（全熟）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 140,
+        "protein_g": 20
+      },
+      "note": {
+        "en": "Ensure fully cooked; watch allergies.",
+        "zh": "务必全熟，过敏者谨慎。"
+      },
+      "aliases": [
+        "扇贝",
+        "scallop"
+      ],
+      "tags": [
+        "seafood"
+      ],
+      "phases": [
+        "recovery",
+        "chemo"
+      ]
+    },
+    {
+      "id": "soup_chicken_broth_skimmed",
+      "name": {
+        "en": "Chicken broth (skimmed)",
+        "zh": "鸡汤（撇油）"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 120,
+        "protein_g": 8
+      },
+      "note": {
+        "en": "Warm, light soups may be easier early.",
+        "zh": "温热清淡的汤更友好。"
+      },
+      "aliases": [
+        "鸡汤",
+        "broth"
+      ],
+      "tags": [
+        "easy-digest"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "diarrhea",
+        "recovery"
+      ]
+    },
+    {
+      "id": "soup_fish_soup_light",
+      "name": {
+        "en": "Fish soup (light)",
+        "zh": "鱼汤（清淡）"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 120,
+        "protein_g": 8
+      },
+      "note": {
+        "en": "Warm, light soups may be easier early.",
+        "zh": "温热清淡的汤更友好。"
+      },
+      "aliases": [
+        "鱼汤"
+      ],
+      "tags": [
+        "easy-digest"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "diarrhea",
+        "recovery"
+      ]
+    },
+    {
+      "id": "soup_tomato_egg_drop_soup_light",
+      "name": {
+        "en": "Tomato egg drop soup (light)",
+        "zh": "番茄蛋花汤（清淡）"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 120,
+        "protein_g": 8
+      },
+      "note": {
+        "en": "Warm, light soups may be easier early.",
+        "zh": "温热清淡的汤更友好。"
+      },
+      "aliases": [
+        "蛋花汤",
+        "番茄蛋汤"
+      ],
+      "tags": [
+        "easy-digest"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "diarrhea",
+        "recovery"
+      ]
+    },
+    {
+      "id": "soup_winter_melon_soup",
+      "name": {
+        "en": "Winter melon soup",
+        "zh": "冬瓜汤"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 120,
+        "protein_g": 8
+      },
+      "note": {
+        "en": "Warm, light soups may be easier early.",
+        "zh": "温热清淡的汤更友好。"
+      },
+      "aliases": [
+        "冬瓜汤"
+      ],
+      "tags": [
+        "easy-digest"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "diarrhea",
+        "recovery"
+      ]
+    },
+    {
+      "id": "soup_pumpkin_soup",
+      "name": {
+        "en": "Pumpkin soup",
+        "zh": "南瓜汤"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 120,
+        "protein_g": 8
+      },
+      "note": {
+        "en": "Warm, light soups may be easier early.",
+        "zh": "温热清淡的汤更友好。"
+      },
+      "aliases": [
+        "南瓜汤"
+      ],
+      "tags": [
+        "easy-digest"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "diarrhea",
+        "recovery"
+      ]
+    },
+    {
+      "id": "soup_congee_with_tofu",
+      "name": {
+        "en": "Congee with tofu",
+        "zh": "豆腐粥"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 120,
+        "protein_g": 8
+      },
+      "note": {
+        "en": "Warm, light soups may be easier early.",
+        "zh": "温热清淡的汤更友好。"
+      },
+      "aliases": [
+        "豆腐粥"
+      ],
+      "tags": [
+        "easy-digest"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "diarrhea",
+        "recovery"
+      ]
+    },
+    {
+      "id": "soup_rice_porridge_with_carrot",
+      "name": {
+        "en": "Rice porridge with carrot",
+        "zh": "胡萝卜粥"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 120,
+        "protein_g": 8
+      },
+      "note": {
+        "en": "Warm, light soups may be easier early.",
+        "zh": "温热清淡的汤更友好。"
+      },
+      "aliases": [
+        "胡萝卜粥"
+      ],
+      "tags": [
+        "easy-digest"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "diarrhea",
+        "recovery"
+      ]
+    },
+    {
+      "id": "soup_steamed_egg_custard",
+      "name": {
+        "en": "Steamed egg custard",
+        "zh": "蒸蛋/鸡蛋羹"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 120,
+        "protein_g": 8
+      },
+      "note": {
+        "en": "Warm, light soups may be easier early.",
+        "zh": "温热清淡的汤更友好。"
+      },
+      "aliases": [
+        "蒸蛋",
+        "蛋羹"
+      ],
+      "tags": [
+        "easy-digest"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "diarrhea",
+        "recovery"
+      ]
+    },
+    {
+      "id": "carb_rice_noodles_vermicelli",
+      "name": {
+        "en": "Rice noodles (vermicelli)",
+        "zh": "米线/米粉"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 220,
+        "protein_g": 6
+      },
+      "note": {
+        "en": "Choose plain/low fat; watch fibre or portion.",
+        "zh": "尽量清淡少油；注意纤维/份量。"
+      },
+      "aliases": [
+        "米线",
+        "米粉",
+        "vermicelli"
+      ],
+      "tags": [
+        "carb"
+      ],
+      "phases": [
+        "recovery",
+        "chemo"
+      ]
+    },
+    {
+      "id": "carb_rice_porridge_with_pumpkin",
+      "name": {
+        "en": "Rice porridge with pumpkin",
+        "zh": "南瓜粥"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 220,
+        "protein_g": 6
+      },
+      "note": {
+        "en": "Choose plain/low fat; watch fibre or portion.",
+        "zh": "尽量清淡少油；注意纤维/份量。"
+      },
+      "aliases": [
+        "南瓜粥"
+      ],
+      "tags": [
+        "carb"
+      ],
+      "phases": [
+        "recovery",
+        "chemo"
+      ]
+    },
+    {
+      "id": "carb_plain_rice_cake",
+      "name": {
+        "en": "Plain rice cake",
+        "zh": "年糕（少量）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 220,
+        "protein_g": 6
+      },
+      "note": {
+        "en": "Choose plain/low fat; watch fibre or portion.",
+        "zh": "尽量清淡少油；注意纤维/份量。"
+      },
+      "aliases": [
+        "年糕",
+        "rice cake"
+      ],
+      "tags": [
+        "carb"
+      ],
+      "phases": [
+        "recovery",
+        "chemo"
+      ]
+    },
+    {
+      "id": "carb_plain_crackers",
+      "name": {
+        "en": "Plain crackers",
+        "zh": "苏打饼干/干饼"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 220,
+        "protein_g": 6
+      },
+      "note": {
+        "en": "Choose plain/low fat; watch fibre or portion.",
+        "zh": "尽量清淡少油；注意纤维/份量。"
+      },
+      "aliases": [
+        "苏打饼干",
+        "crackers"
+      ],
+      "tags": [
+        "carb"
+      ],
+      "phases": [
+        "recovery",
+        "chemo"
+      ]
+    },
+    {
+      "id": "carb_pasta_plain",
+      "name": {
+        "en": "Pasta (plain)",
+        "zh": "意面（清淡）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 220,
+        "protein_g": 6
+      },
+      "note": {
+        "en": "Choose plain/low fat; watch fibre or portion.",
+        "zh": "尽量清淡少油；注意纤维/份量。"
+      },
+      "aliases": [
+        "pasta",
+        "意面"
+      ],
+      "tags": [
+        "carb"
+      ],
+      "phases": [
+        "recovery",
+        "chemo"
+      ]
+    },
+    {
+      "id": "carb_couscous_soft",
+      "name": {
+        "en": "Couscous (soft)",
+        "zh": "库斯库斯（煮软）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 220,
+        "protein_g": 6
+      },
+      "note": {
+        "en": "Choose plain/low fat; watch fibre or portion.",
+        "zh": "尽量清淡少油；注意纤维/份量。"
+      },
+      "aliases": [
+        "couscous"
+      ],
+      "tags": [
+        "carb"
+      ],
+      "phases": [
+        "recovery",
+        "chemo"
+      ]
+    },
+    {
+      "id": "carb_semolina_porridge",
+      "name": {
+        "en": "Semolina porridge",
+        "zh": "粗麦粉粥"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 220,
+        "protein_g": 6
+      },
+      "note": {
+        "en": "Choose plain/low fat; watch fibre or portion.",
+        "zh": "尽量清淡少油；注意纤维/份量。"
+      },
+      "aliases": [
+        "semolina"
+      ],
+      "tags": [
+        "carb"
+      ],
+      "phases": [
+        "recovery",
+        "chemo"
+      ]
+    },
+    {
+      "id": "veg_bok_choy_cooked",
+      "name": {
+        "en": "Bok choy (cooked)",
+        "zh": "小白菜/上海青（熟）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 50,
+        "protein_g": 2
+      },
+      "note": {
+        "en": "Cook well; start with small portions if bloating.",
+        "zh": "煮熟煮软；胀气者从少量开始。"
+      },
+      "aliases": [
+        "小白菜",
+        "青菜",
+        "bok choy"
+      ],
+      "tags": [
+        "veg"
+      ],
+      "phases": [
+        "recovery",
+        "chemo"
+      ]
+    },
+    {
+      "id": "veg_choy_sum_cooked",
+      "name": {
+        "en": "Choy sum (cooked)",
+        "zh": "菜心（熟）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 50,
+        "protein_g": 2
+      },
+      "note": {
+        "en": "Cook well; start with small portions if bloating.",
+        "zh": "煮熟煮软；胀气者从少量开始。"
+      },
+      "aliases": [
+        "菜心"
+      ],
+      "tags": [
+        "veg"
+      ],
+      "phases": [
+        "recovery",
+        "chemo"
+      ]
+    },
+    {
+      "id": "veg_chinese_spinach_cooked",
+      "name": {
+        "en": "Chinese spinach (cooked)",
+        "zh": "苋菜（熟）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 50,
+        "protein_g": 2
+      },
+      "note": {
+        "en": "Cook well; start with small portions if bloating.",
+        "zh": "煮熟煮软；胀气者从少量开始。"
+      },
+      "aliases": [
+        "苋菜"
+      ],
+      "tags": [
+        "veg"
+      ],
+      "phases": [
+        "recovery",
+        "chemo"
+      ]
+    },
+    {
+      "id": "veg_lettuce_cooked",
+      "name": {
+        "en": "Lettuce (cooked)",
+        "zh": "生菜（熟炒少油）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 50,
+        "protein_g": 2
+      },
+      "note": {
+        "en": "Cook well; start with small portions if bloating.",
+        "zh": "煮熟煮软；胀气者从少量开始。"
+      },
+      "aliases": [
+        "生菜"
+      ],
+      "tags": [
+        "veg"
+      ],
+      "phases": [
+        "recovery",
+        "chemo"
+      ]
+    },
+    {
+      "id": "veg_eggplant_cooked_less_oil",
+      "name": {
+        "en": "Eggplant (cooked, less oil)",
+        "zh": "茄子（少油熟）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 50,
+        "protein_g": 2
+      },
+      "note": {
+        "en": "Cook well; start with small portions if bloating.",
+        "zh": "煮熟煮软；胀气者从少量开始。"
+      },
+      "aliases": [
+        "茄子"
+      ],
+      "tags": [
+        "veg"
+      ],
+      "phases": [
+        "recovery",
+        "chemo"
+      ]
+    },
+    {
+      "id": "veg_cauliflower_cooked",
+      "name": {
+        "en": "Cauliflower (cooked)",
+        "zh": "菜花（熟）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 50,
+        "protein_g": 2
+      },
+      "note": {
+        "en": "Cook well; start with small portions if bloating.",
+        "zh": "煮熟煮软；胀气者从少量开始。"
+      },
+      "aliases": [
+        "菜花",
+        "cauliflower"
+      ],
+      "tags": [
+        "veg"
+      ],
+      "phases": [
+        "recovery",
+        "chemo"
+      ]
+    },
+    {
+      "id": "veg_green_beans_cooked",
+      "name": {
+        "en": "Green beans (cooked)",
+        "zh": "四季豆（熟）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 50,
+        "protein_g": 2
+      },
+      "note": {
+        "en": "Cook well; start with small portions if bloating.",
+        "zh": "煮熟煮软；胀气者从少量开始。"
+      },
+      "aliases": [
+        "四季豆",
+        "green beans"
+      ],
+      "tags": [
+        "veg"
+      ],
+      "phases": [
+        "recovery",
+        "chemo"
+      ]
+    },
+    {
+      "id": "veg_peas_cooked",
+      "name": {
+        "en": "Peas (cooked)",
+        "zh": "豌豆（熟）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 50,
+        "protein_g": 2
+      },
+      "note": {
+        "en": "Cook well; start with small portions if bloating.",
+        "zh": "煮熟煮软；胀气者从少量开始。"
+      },
+      "aliases": [
+        "豌豆",
+        "peas"
+      ],
+      "tags": [
+        "veg"
+      ],
+      "phases": [
+        "recovery",
+        "chemo"
+      ]
+    },
+    {
+      "id": "veg_beetroot_cooked",
+      "name": {
+        "en": "Beetroot (cooked)",
+        "zh": "甜菜根（熟）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 50,
+        "protein_g": 2
+      },
+      "note": {
+        "en": "Cook well; start with small portions if bloating.",
+        "zh": "煮熟煮软；胀气者从少量开始。"
+      },
+      "aliases": [
+        "甜菜根",
+        "beetroot"
+      ],
+      "tags": [
+        "veg"
+      ],
+      "phases": [
+        "recovery",
+        "chemo"
+      ]
+    },
+    {
+      "id": "veg_cucumber_cooked",
+      "name": {
+        "en": "Cucumber (cooked)",
+        "zh": "黄瓜（熟）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 50,
+        "protein_g": 2
+      },
+      "note": {
+        "en": "Cook well; start with small portions if bloating.",
+        "zh": "煮熟煮软；胀气者从少量开始。"
+      },
+      "aliases": [
+        "黄瓜"
+      ],
+      "tags": [
+        "veg"
+      ],
+      "phases": [
+        "recovery",
+        "chemo"
+      ]
+    },
+    {
+      "id": "veg_winter_melon_cooked",
+      "name": {
+        "en": "Winter melon (cooked)",
+        "zh": "冬瓜（熟）"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 70,
+        "protein_g": 2
+      },
+      "note": {
+        "en": "Soft cooked vegetables are usually better tolerated.",
+        "zh": "软烂熟蔬菜通常更耐受。"
+      },
+      "aliases": [
+        "冬瓜"
+      ],
+      "tags": [
+        "veg",
+        "easy-digest"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "diarrhea",
+        "recovery"
+      ]
+    },
+    {
+      "id": "veg_bottle_gourd_cooked",
+      "name": {
+        "en": "Bottle gourd (cooked)",
+        "zh": "葫芦瓜（熟）"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 70,
+        "protein_g": 2
+      },
+      "note": {
+        "en": "Soft cooked vegetables are usually better tolerated.",
+        "zh": "软烂熟蔬菜通常更耐受。"
+      },
+      "aliases": [
+        "葫芦瓜"
+      ],
+      "tags": [
+        "veg",
+        "easy-digest"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "diarrhea",
+        "recovery"
+      ]
+    },
+    {
+      "id": "veg_luffa_cooked",
+      "name": {
+        "en": "Luffa (cooked)",
+        "zh": "丝瓜（熟）"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 70,
+        "protein_g": 2
+      },
+      "note": {
+        "en": "Soft cooked vegetables are usually better tolerated.",
+        "zh": "软烂熟蔬菜通常更耐受。"
+      },
+      "aliases": [
+        "丝瓜"
+      ],
+      "tags": [
+        "veg",
+        "easy-digest"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "diarrhea",
+        "recovery"
+      ]
+    },
+    {
+      "id": "veg_potato_boiled",
+      "name": {
+        "en": "Potato (boiled)",
+        "zh": "土豆（水煮）"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 70,
+        "protein_g": 2
+      },
+      "note": {
+        "en": "Soft cooked vegetables are usually better tolerated.",
+        "zh": "软烂熟蔬菜通常更耐受。"
+      },
+      "aliases": [
+        "土豆"
+      ],
+      "tags": [
+        "veg",
+        "easy-digest"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "diarrhea",
+        "recovery"
+      ]
+    },
+    {
+      "id": "veg_taro_steamed_small",
+      "name": {
+        "en": "Taro (steamed, small)",
+        "zh": "芋头（少量）"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 70,
+        "protein_g": 2
+      },
+      "note": {
+        "en": "Soft cooked vegetables are usually better tolerated.",
+        "zh": "软烂熟蔬菜通常更耐受。"
+      },
+      "aliases": [
+        "芋头"
+      ],
+      "tags": [
+        "veg",
+        "easy-digest"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "diarrhea",
+        "recovery"
+      ]
+    },
+    {
+      "id": "fruit_peach_ripe_peeled",
+      "name": {
+        "en": "Peach (ripe, peeled)",
+        "zh": "桃子（熟、去皮）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 90,
+        "protein_g": 1
+      },
+      "note": {
+        "en": "If mouth sores/diarrhea, reduce acidic fruit.",
+        "zh": "口腔溃疡/腹泻时减少酸性水果。"
+      },
+      "aliases": [
+        "桃子",
+        "peach"
+      ],
+      "tags": [
+        "fruit"
+      ],
+      "phases": [
+        "recovery",
+        "chemo"
+      ]
+    },
+    {
+      "id": "fruit_mango_ripe_small",
+      "name": {
+        "en": "Mango (ripe, small)",
+        "zh": "芒果（少量）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 90,
+        "protein_g": 1
+      },
+      "note": {
+        "en": "If mouth sores/diarrhea, reduce acidic fruit.",
+        "zh": "口腔溃疡/腹泻时减少酸性水果。"
+      },
+      "aliases": [
+        "芒果",
+        "mango"
+      ],
+      "tags": [
+        "fruit"
+      ],
+      "phases": [
+        "recovery",
+        "chemo"
+      ]
+    },
+    {
+      "id": "fruit_grapes_peeled_small",
+      "name": {
+        "en": "Grapes (peeled, small)",
+        "zh": "葡萄（去皮少量）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 90,
+        "protein_g": 1
+      },
+      "note": {
+        "en": "If mouth sores/diarrhea, reduce acidic fruit.",
+        "zh": "口腔溃疡/腹泻时减少酸性水果。"
+      },
+      "aliases": [
+        "葡萄",
+        "grapes"
+      ],
+      "tags": [
+        "fruit"
+      ],
+      "phases": [
+        "recovery",
+        "chemo"
+      ]
+    },
+    {
+      "id": "fruit_kiwi_small",
+      "name": {
+        "en": "Kiwi (small)",
+        "zh": "猕猴桃（少量）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 90,
+        "protein_g": 1
+      },
+      "note": {
+        "en": "If mouth sores/diarrhea, reduce acidic fruit.",
+        "zh": "口腔溃疡/腹泻时减少酸性水果。"
+      },
+      "aliases": [
+        "猕猴桃",
+        "kiwi"
+      ],
+      "tags": [
+        "fruit"
+      ],
+      "phases": [
+        "recovery",
+        "chemo"
+      ]
+    },
+    {
+      "id": "fruit_berries_small",
+      "name": {
+        "en": "Berries (small)",
+        "zh": "莓类（少量）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 90,
+        "protein_g": 1
+      },
+      "note": {
+        "en": "If mouth sores/diarrhea, reduce acidic fruit.",
+        "zh": "口腔溃疡/腹泻时减少酸性水果。"
+      },
+      "aliases": [
+        "蓝莓",
+        "草莓",
+        "berries"
+      ],
+      "tags": [
+        "fruit"
+      ],
+      "phases": [
+        "recovery",
+        "chemo"
+      ]
+    },
+    {
+      "id": "dish_steamed_bun_plain",
+      "name": {
+        "en": "Steamed bun (plain)",
+        "zh": "馒头"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 220,
+        "protein_g": 7
+      },
+      "note": {
+        "en": "Portion and preparation matter (low-fat, mild).",
+        "zh": "关键在做法与份量（少油、清淡）。"
+      },
+      "aliases": [
+        "馒头",
+        "steamed bun"
+      ],
+      "tags": [
+        "dish"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "recovery",
+        "diarrhea"
+      ]
+    },
+    {
+      "id": "dish_plain_congee_with_minced_fish",
+      "name": {
+        "en": "Plain congee with minced fish",
+        "zh": "鱼蓉粥"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 240,
+        "protein_g": 16
+      },
+      "note": {
+        "en": "Portion and preparation matter (low-fat, mild).",
+        "zh": "关键在做法与份量（少油、清淡）。"
+      },
+      "aliases": [
+        "鱼蓉粥"
+      ],
+      "tags": [
+        "dish"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "recovery",
+        "diarrhea"
+      ]
+    },
+    {
+      "id": "dish_rice_soup_with_tofu_and_spinach",
+      "name": {
+        "en": "Rice soup with tofu and spinach",
+        "zh": "豆腐菠菜汤"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 160,
+        "protein_g": 10
+      },
+      "note": {
+        "en": "Portion and preparation matter (low-fat, mild).",
+        "zh": "关键在做法与份量（少油、清淡）。"
+      },
+      "aliases": [
+        "菠菜豆腐汤"
+      ],
+      "tags": [
+        "dish"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "recovery",
+        "diarrhea"
+      ]
+    },
+    {
+      "id": "dish_lean_beef_congee",
+      "name": {
+        "en": "Lean beef congee",
+        "zh": "牛肉粥（瘦）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 280,
+        "protein_g": 16
+      },
+      "note": {
+        "en": "Portion and preparation matter (low-fat, mild).",
+        "zh": "关键在做法与份量（少油、清淡）。"
+      },
+      "aliases": [
+        "牛肉粥"
+      ],
+      "tags": [
+        "dish"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "recovery",
+        "diarrhea"
+      ]
+    },
+    {
+      "id": "dish_chicken_rice_oil_free",
+      "name": {
+        "en": "Chicken rice (oil-free)",
+        "zh": "鸡肉饭（少油）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 420,
+        "protein_g": 25
+      },
+      "note": {
+        "en": "Portion and preparation matter (low-fat, mild).",
+        "zh": "关键在做法与份量（少油、清淡）。"
+      },
+      "aliases": [
+        "鸡肉饭"
+      ],
+      "tags": [
+        "dish"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "recovery",
+        "diarrhea"
+      ]
+    },
+    {
+      "id": "dish_steamed_pork_patty_lean",
+      "name": {
+        "en": "Steamed pork patty (lean)",
+        "zh": "清蒸肉饼（瘦）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 260,
+        "protein_g": 18
+      },
+      "note": {
+        "en": "Portion and preparation matter (low-fat, mild).",
+        "zh": "关键在做法与份量（少油、清淡）。"
+      },
+      "aliases": [
+        "蒸肉饼"
+      ],
+      "tags": [
+        "dish"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "recovery",
+        "diarrhea"
+      ]
+    },
+    {
+      "id": "dish_steamed_fish_with_ginger_mild",
+      "name": {
+        "en": "Steamed fish with ginger (mild)",
+        "zh": "姜葱清蒸鱼（清淡）"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 150,
+        "protein_g": 24
+      },
+      "note": {
+        "en": "Portion and preparation matter (low-fat, mild).",
+        "zh": "关键在做法与份量（少油、清淡）。"
+      },
+      "aliases": [
+        "清蒸鱼"
+      ],
+      "tags": [
+        "dish"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "recovery",
+        "diarrhea"
+      ]
+    },
+    {
+      "id": "dish_tofu_custard_douhua",
+      "name": {
+        "en": "Tofu custard (douhua)",
+        "zh": "豆花"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 90,
+        "protein_g": 6
+      },
+      "note": {
+        "en": "Portion and preparation matter (low-fat, mild).",
+        "zh": "关键在做法与份量（少油、清淡）。"
+      },
+      "aliases": [
+        "豆花",
+        "douhua"
+      ],
+      "tags": [
+        "dish"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "recovery",
+        "diarrhea"
+      ]
+    },
+    {
+      "id": "dish_rice_porridge_with_yam",
+      "name": {
+        "en": "Rice porridge with yam",
+        "zh": "山药粥"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 200,
+        "protein_g": 4
+      },
+      "note": {
+        "en": "Portion and preparation matter (low-fat, mild).",
+        "zh": "关键在做法与份量（少油、清淡）。"
+      },
+      "aliases": [
+        "山药粥",
+        "淮山"
+      ],
+      "tags": [
+        "dish"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "recovery",
+        "diarrhea"
+      ]
+    },
+    {
+      "id": "dish_boiled_leafy_greens",
+      "name": {
+        "en": "Boiled leafy greens",
+        "zh": "清烫青菜"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 40,
+        "protein_g": 2
+      },
+      "note": {
+        "en": "Portion and preparation matter (low-fat, mild).",
+        "zh": "关键在做法与份量（少油、清淡）。"
+      },
+      "aliases": [
+        "烫青菜"
+      ],
+      "tags": [
+        "dish"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "recovery",
+        "diarrhea"
+      ]
+    },
+    {
+      "id": "dish_braised_tofu_light",
+      "name": {
+        "en": "Braised tofu (light)",
+        "zh": "清炖豆腐"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 160,
+        "protein_g": 12
+      },
+      "note": {
+        "en": "Portion and preparation matter (low-fat, mild).",
+        "zh": "关键在做法与份量（少油、清淡）。"
+      },
+      "aliases": [
+        "炖豆腐"
+      ],
+      "tags": [
+        "dish"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "recovery",
+        "diarrhea"
+      ]
+    },
+    {
+      "id": "dish_rice_crackers",
+      "name": {
+        "en": "Rice crackers",
+        "zh": "米饼"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 120,
+        "protein_g": 2
+      },
+      "note": {
+        "en": "Portion and preparation matter (low-fat, mild).",
+        "zh": "关键在做法与份量（少油、清淡）。"
+      },
+      "aliases": [
+        "米饼"
+      ],
+      "tags": [
+        "dish"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "recovery",
+        "diarrhea"
+      ]
+    },
+    {
+      "id": "dish_soft_sponge_cake_small",
+      "name": {
+        "en": "Soft sponge cake (small)",
+        "zh": "海绵蛋糕（少量）"
+      },
+      "status": "avoid",
+      "nutr": {
+        "kcal": 280,
+        "protein_g": 5
+      },
+      "note": {
+        "en": "Portion and preparation matter (low-fat, mild).",
+        "zh": "关键在做法与份量（少油、清淡）。"
+      },
+      "aliases": [
+        "蛋糕"
+      ],
+      "tags": [
+        "dish"
+      ],
+      "phases": [
+        "recovery"
+      ]
+    },
+    {
+      "id": "dish_instant_noodles",
+      "name": {
+        "en": "Instant noodles",
+        "zh": "方便面"
+      },
+      "status": "avoid",
+      "nutr": {
+        "kcal": 450,
+        "protein_g": 10
+      },
+      "note": {
+        "en": "Portion and preparation matter (low-fat, mild).",
+        "zh": "关键在做法与份量（少油、清淡）。"
+      },
+      "aliases": [
+        "泡面",
+        "方便面"
+      ],
+      "tags": [
+        "dish"
+      ],
+      "phases": [
+        "recovery"
+      ]
+    },
+    {
+      "id": "dish_hotpot_spicy_oily",
+      "name": {
+        "en": "Hotpot (spicy/oily)",
+        "zh": "火锅（麻辣/油腻）"
+      },
+      "status": "avoid",
+      "nutr": {
+        "kcal": 600,
+        "protein_g": 20
+      },
+      "note": {
+        "en": "Portion and preparation matter (low-fat, mild).",
+        "zh": "关键在做法与份量（少油、清淡）。"
+      },
+      "aliases": [
+        "火锅"
+      ],
+      "tags": [
+        "dish"
+      ],
+      "phases": [
+        "recovery"
+      ]
+    },
+    {
+      "id": "dish_pickles_very_salty_preserved_veg",
+      "name": {
+        "en": "Pickles / very salty preserved veg",
+        "zh": "咸菜/腌菜"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 50,
+        "protein_g": 1
+      },
+      "note": {
+        "en": "Portion and preparation matter (low-fat, mild).",
+        "zh": "关键在做法与份量（少油、清淡）。"
+      },
+      "aliases": [
+        "咸菜",
+        "腌菜"
+      ],
+      "tags": [
+        "dish"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "recovery",
+        "diarrhea"
+      ]
+    },
+    {
+      "id": "protein_steamed_turkey_mince",
+      "name": {
+        "en": "Steamed turkey mince",
+        "zh": "火鸡肉末（清蒸）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 180,
+        "protein_g": 25
+      },
+      "note": {
+        "en": "Preparation matters; keep low-fat and mild.",
+        "zh": "注意做法：少油清淡为主。"
+      },
+      "aliases": [
+        "火鸡",
+        "turkey mince"
+      ],
+      "tags": [
+        "protein"
+      ],
+      "phases": [
+        "recovery",
+        "chemo"
+      ]
+    },
+    {
+      "id": "protein_lean_ham_small",
+      "name": {
+        "en": "Lean ham (small)",
+        "zh": "瘦火腿（少量）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 120,
+        "protein_g": 18
+      },
+      "note": {
+        "en": "Preparation matters; keep low-fat and mild.",
+        "zh": "注意做法：少油清淡为主。"
+      },
+      "aliases": [
+        "火腿",
+        "ham"
+      ],
+      "tags": [
+        "processed"
+      ],
+      "phases": [
+        "recovery"
+      ]
+    },
+    {
+      "id": "protein_baked_beans_small",
+      "name": {
+        "en": "Baked beans (small)",
+        "zh": "焗豆（少量）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 180,
+        "protein_g": 9
+      },
+      "note": {
+        "en": "Preparation matters; keep low-fat and mild.",
+        "zh": "注意做法：少油清淡为主。"
+      },
+      "aliases": [
+        "焗豆",
+        "baked beans"
+      ],
+      "tags": [
+        "legume",
+        "gas"
+      ],
+      "phases": [
+        "recovery"
+      ]
+    },
+    {
+      "id": "protein_soft_tofu_pudding_unsweet",
+      "name": {
+        "en": "Soft tofu pudding (unsweet)",
+        "zh": "无糖豆腐脑"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 80,
+        "protein_g": 6
+      },
+      "note": {
+        "en": "Preparation matters; keep low-fat and mild.",
+        "zh": "注意做法：少油清淡为主。"
+      },
+      "aliases": [
+        "豆腐脑",
+        "豆花"
+      ],
+      "tags": [
+        "plant-protein"
+      ],
+      "phases": [
+        "postop",
+        "diarrhea",
+        "recovery"
+      ]
+    },
+    {
+      "id": "protein_scrambled_eggs_minimal_oil",
+      "name": {
+        "en": "Scrambled eggs (minimal oil)",
+        "zh": "炒蛋（少油）"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 120,
+        "protein_g": 10
+      },
+      "note": {
+        "en": "Preparation matters; keep low-fat and mild.",
+        "zh": "注意做法：少油清淡为主。"
+      },
+      "aliases": [
+        "炒蛋",
+        "scrambled egg"
+      ],
+      "tags": [
+        "protein"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "recovery"
+      ]
+    },
+    {
+      "id": "carb_rice_porridge_with_carrot_egg",
+      "name": {
+        "en": "Rice porridge with carrot & egg",
+        "zh": "胡萝卜鸡蛋粥"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 240,
+        "protein_g": 10
+      },
+      "note": {
+        "en": "Preparation matters; keep low-fat and mild.",
+        "zh": "注意做法：少油清淡为主。"
+      },
+      "aliases": [
+        "鸡蛋粥"
+      ],
+      "tags": [
+        "easy-digest"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "diarrhea"
+      ]
+    },
+    {
+      "id": "carb_plain_rice_noodles_dry_little_oil",
+      "name": {
+        "en": "Plain rice noodles (dry, little oil)",
+        "zh": "干拌米粉（少油）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 380,
+        "protein_g": 10
+      },
+      "note": {
+        "en": "Preparation matters; keep low-fat and mild.",
+        "zh": "注意做法：少油清淡为主。"
+      },
+      "aliases": [
+        "拌米粉"
+      ],
+      "tags": [
+        "carb"
+      ],
+      "phases": [
+        "recovery"
+      ]
+    },
+    {
+      "id": "carb_rice_cake_soup_small",
+      "name": {
+        "en": "Rice cake soup (small)",
+        "zh": "年糕汤（少量）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 350,
+        "protein_g": 8
+      },
+      "note": {
+        "en": "Preparation matters; keep low-fat and mild.",
+        "zh": "注意做法：少油清淡为主。"
+      },
+      "aliases": [
+        "年糕汤"
+      ],
+      "tags": [
+        "carb"
+      ],
+      "phases": [
+        "recovery"
+      ]
+    },
+    {
+      "id": "carb_corn_congee_soft",
+      "name": {
+        "en": "Corn congee (soft)",
+        "zh": "玉米粥（煮软）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 180,
+        "protein_g": 4
+      },
+      "note": {
+        "en": "Preparation matters; keep low-fat and mild.",
+        "zh": "注意做法：少油清淡为主。"
+      },
+      "aliases": [
+        "玉米粥"
+      ],
+      "tags": [
+        "fiber"
+      ],
+      "phases": [
+        "recovery"
+      ]
+    },
+    {
+      "id": "carb_rice_porridge_with_pumpkin_chicken",
+      "name": {
+        "en": "Rice porridge with pumpkin & chicken",
+        "zh": "南瓜鸡肉粥"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 280,
+        "protein_g": 18
+      },
+      "note": {
+        "en": "Preparation matters; keep low-fat and mild.",
+        "zh": "注意做法：少油清淡为主。"
+      },
+      "aliases": [
+        "南瓜鸡粥"
+      ],
+      "tags": [
+        "easy-digest"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "recovery"
+      ]
+    },
+    {
+      "id": "veg_pumpkin_puree",
+      "name": {
+        "en": "Pumpkin puree",
+        "zh": "南瓜泥"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 80,
+        "protein_g": 2
+      },
+      "note": {
+        "en": "Preparation matters; keep low-fat and mild.",
+        "zh": "注意做法：少油清淡为主。"
+      },
+      "aliases": [
+        "南瓜泥"
+      ],
+      "tags": [
+        "easy-digest"
+      ],
+      "phases": [
+        "postop",
+        "diarrhea",
+        "recovery"
+      ]
+    },
+    {
+      "id": "veg_squash_cooked",
+      "name": {
+        "en": "Squash (cooked)",
+        "zh": "西葫芦/南瓜类（熟）"
+      },
+      "status": "safe",
+      "nutr": {
+        "kcal": 60,
+        "protein_g": 2
+      },
+      "note": {
+        "en": "Preparation matters; keep low-fat and mild.",
+        "zh": "注意做法：少油清淡为主。"
+      },
+      "aliases": [
+        "南瓜",
+        "瓜类"
+      ],
+      "tags": [
+        "veg"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "recovery"
+      ]
+    },
+    {
+      "id": "veg_corn_kernels",
+      "name": {
+        "en": "Corn (kernels)",
+        "zh": "玉米粒"
+      },
+      "status": "avoid",
+      "nutr": {
+        "kcal": 160,
+        "protein_g": 5
+      },
+      "note": {
+        "en": "Preparation matters; keep low-fat and mild.",
+        "zh": "注意做法：少油清淡为主。"
+      },
+      "aliases": [
+        "玉米粒",
+        "sweetcorn"
+      ],
+      "tags": [
+        "high-fibre"
+      ],
+      "phases": [
+        "postop",
+        "diarrhea"
+      ]
+    },
+    {
+      "id": "veg_celery_cooked",
+      "name": {
+        "en": "Celery (cooked)",
+        "zh": "芹菜（熟）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 30,
+        "protein_g": 1
+      },
+      "note": {
+        "en": "Preparation matters; keep low-fat and mild.",
+        "zh": "注意做法：少油清淡为主。"
+      },
+      "aliases": [
+        "芹菜",
+        "celery"
+      ],
+      "tags": [
+        "fiber"
+      ],
+      "phases": [
+        "recovery"
+      ]
+    },
+    {
+      "id": "veg_onion_cooked",
+      "name": {
+        "en": "Onion (cooked)",
+        "zh": "洋葱（熟）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 45,
+        "protein_g": 1
+      },
+      "note": {
+        "en": "Preparation matters; keep low-fat and mild.",
+        "zh": "注意做法：少油清淡为主。"
+      },
+      "aliases": [
+        "洋葱",
+        "onion"
+      ],
+      "tags": [
+        "gas"
+      ],
+      "phases": [
+        "recovery"
+      ]
+    },
+    {
+      "id": "veg_garlic_small",
+      "name": {
+        "en": "Garlic (small)",
+        "zh": "大蒜（少量）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 10,
+        "protein_g": 0
+      },
+      "note": {
+        "en": "Preparation matters; keep low-fat and mild.",
+        "zh": "注意做法：少油清淡为主。"
+      },
+      "aliases": [
+        "大蒜",
+        "garlic"
+      ],
+      "tags": [
+        "irritant"
+      ],
+      "phases": [
+        "recovery"
+      ]
+    },
+    {
+      "id": "fruit_avocado_small",
+      "name": {
+        "en": "Avocado (small)",
+        "zh": "牛油果（少量）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 160,
+        "protein_g": 2
+      },
+      "note": {
+        "en": "Preparation matters; keep low-fat and mild.",
+        "zh": "注意做法：少油清淡为主。"
+      },
+      "aliases": [
+        "牛油果",
+        "avocado"
+      ],
+      "tags": [
+        "fat"
+      ],
+      "phases": [
+        "recovery"
+      ]
+    },
+    {
+      "id": "fruit_prunes_dried_fruit",
+      "name": {
+        "en": "Prunes / dried fruit",
+        "zh": "西梅干/果干"
+      },
+      "status": "avoid",
+      "nutr": {
+        "kcal": 240,
+        "protein_g": 2
+      },
+      "note": {
+        "en": "Preparation matters; keep low-fat and mild.",
+        "zh": "注意做法：少油清淡为主。"
+      },
+      "aliases": [
+        "果干",
+        "dried fruit"
+      ],
+      "tags": [
+        "diarrhea"
+      ],
+      "phases": [
+        "diarrhea"
+      ]
+    },
+    {
+      "id": "snack_plain_biscuits",
+      "name": {
+        "en": "Plain biscuits",
+        "zh": "原味饼干"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 160,
+        "protein_g": 3
+      },
+      "note": {
+        "en": "Preparation matters; keep low-fat and mild.",
+        "zh": "注意做法：少油清淡为主。"
+      },
+      "aliases": [
+        "饼干",
+        "biscuits"
+      ],
+      "tags": [
+        "snack"
+      ],
+      "phases": [
+        "recovery"
+      ]
+    },
+    {
+      "id": "snack_chocolate",
+      "name": {
+        "en": "Chocolate",
+        "zh": "巧克力"
+      },
+      "status": "avoid",
+      "nutr": {
+        "kcal": 220,
+        "protein_g": 3
+      },
+      "note": {
+        "en": "Preparation matters; keep low-fat and mild.",
+        "zh": "注意做法：少油清淡为主。"
+      },
+      "aliases": [
+        "巧克力",
+        "chocolate"
+      ],
+      "tags": [
+        "fat",
+        "sugar"
+      ],
+      "phases": [
+        "recovery"
+      ]
+    },
+    {
+      "id": "snack_ice_cream",
+      "name": {
+        "en": "Ice cream",
+        "zh": "冰淇淋"
+      },
+      "status": "avoid",
+      "nutr": {
+        "kcal": 250,
+        "protein_g": 4
+      },
+      "note": {
+        "en": "Preparation matters; keep low-fat and mild.",
+        "zh": "注意做法：少油清淡为主。"
+      },
+      "aliases": [
+        "冰淇淋",
+        "ice cream"
+      ],
+      "tags": [
+        "dairy",
+        "fat"
+      ],
+      "phases": [
+        "recovery"
+      ]
+    },
+    {
+      "id": "drink_soy_milk_unsweet",
+      "name": {
+        "en": "Soy milk (unsweet)",
+        "zh": "无糖豆浆"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 90,
+        "protein_g": 7
+      },
+      "note": {
+        "en": "Preparation matters; keep low-fat and mild.",
+        "zh": "注意做法：少油清淡为主。"
+      },
+      "aliases": [
+        "豆浆",
+        "soy milk"
+      ],
+      "tags": [
+        "legume",
+        "gas"
+      ],
+      "phases": [
+        "recovery",
+        "chemo"
+      ]
+    },
+    {
+      "id": "drink_coconut_water_small",
+      "name": {
+        "en": "Coconut water (small)",
+        "zh": "椰子水（少量）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 45,
+        "protein_g": 0
+      },
+      "note": {
+        "en": "Preparation matters; keep low-fat and mild.",
+        "zh": "注意做法：少油清淡为主。"
+      },
+      "aliases": [
+        "椰子水",
+        "coconut water"
+      ],
+      "tags": [
+        "hydration"
+      ],
+      "phases": [
+        "recovery"
+      ]
+    },
+    {
+      "id": "drink_sports_drink",
+      "name": {
+        "en": "Sports drink",
+        "zh": "运动饮料"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 120,
+        "protein_g": 0
+      },
+      "note": {
+        "en": "Preparation matters; keep low-fat and mild.",
+        "zh": "注意做法：少油清淡为主。"
+      },
+      "aliases": [
+        "运动饮料"
+      ],
+      "tags": [
+        "sugar"
+      ],
+      "phases": [
+        "diarrhea",
+        "chemo"
+      ]
+    },
+    {
+      "id": "cond_chili_sauce",
+      "name": {
+        "en": "Chili sauce",
+        "zh": "辣椒酱"
+      },
+      "status": "avoid",
+      "nutr": {
+        "kcal": 30,
+        "protein_g": 0
+      },
+      "note": {
+        "en": "Preparation matters; keep low-fat and mild.",
+        "zh": "注意做法：少油清淡为主。"
+      },
+      "aliases": [
+        "辣椒酱"
+      ],
+      "tags": [
+        "irritant"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "diarrhea"
+      ]
+    },
+    {
+      "id": "cond_vinegar_small",
+      "name": {
+        "en": "Vinegar (small)",
+        "zh": "醋（少量）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 5,
+        "protein_g": 0
+      },
+      "note": {
+        "en": "Preparation matters; keep low-fat and mild.",
+        "zh": "注意做法：少油清淡为主。"
+      },
+      "aliases": [
+        "醋",
+        "vinegar"
+      ],
+      "tags": [
+        "acid"
+      ],
+      "phases": [
+        "recovery"
+      ]
+    },
+    {
+      "id": "cond_ginger_fresh",
+      "name": {
+        "en": "Ginger (fresh)",
+        "zh": "生姜"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 5,
+        "protein_g": 0
+      },
+      "note": {
+        "en": "Preparation matters; keep low-fat and mild.",
+        "zh": "注意做法：少油清淡为主。"
+      },
+      "aliases": [
+        "生姜"
+      ],
+      "tags": [
+        "nausea"
+      ],
+      "phases": [
+        "chemo"
+      ]
+    },
+    {
+      "id": "cond_sesame_oil",
+      "name": {
+        "en": "Sesame oil",
+        "zh": "香油/芝麻油"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 120,
+        "protein_g": 0
+      },
+      "note": {
+        "en": "Preparation matters; keep low-fat and mild.",
+        "zh": "注意做法：少油清淡为主。"
+      },
+      "aliases": [
+        "香油",
+        "芝麻油"
+      ],
+      "tags": [
+        "fat"
+      ],
+      "phases": [
+        "recovery"
+      ]
+    },
+    {
+      "id": "cond_butter",
+      "name": {
+        "en": "Butter",
+        "zh": "黄油"
+      },
+      "status": "avoid",
+      "nutr": {
+        "kcal": 100,
+        "protein_g": 0
+      },
+      "note": {
+        "en": "Preparation matters; keep low-fat and mild.",
+        "zh": "注意做法：少油清淡为主。"
+      },
+      "aliases": [
+        "黄油",
+        "butter"
+      ],
+      "tags": [
+        "fat"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "diarrhea",
+        "recovery"
+      ]
+    },
+    {
+      "id": "cond_olive_oil_small",
+      "name": {
+        "en": "Olive oil (small)",
+        "zh": "橄榄油（少量）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 120,
+        "protein_g": 0
+      },
+      "note": {
+        "en": "Preparation matters; keep low-fat and mild.",
+        "zh": "注意做法：少油清淡为主。"
+      },
+      "aliases": [
+        "橄榄油"
+      ],
+      "tags": [
+        "fat"
+      ],
+      "phases": [
+        "recovery"
+      ]
+    },
+    {
+      "id": "dairy_cheese",
+      "name": {
+        "en": "Cheese",
+        "zh": "奶酪"
+      },
+      "status": "avoid",
+      "nutr": {
+        "kcal": 110,
+        "protein_g": 7
+      },
+      "note": {
+        "en": "Preparation matters; keep low-fat and mild.",
+        "zh": "注意做法：少油清淡为主。"
+      },
+      "aliases": [
+        "奶酪",
+        "cheese"
+      ],
+      "tags": [
+        "fat"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "diarrhea",
+        "recovery"
+      ]
+    },
+    {
+      "id": "dairy_low_fat_yogurt_drink",
+      "name": {
+        "en": "Low-fat yogurt drink",
+        "zh": "低脂酸奶饮品"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 120,
+        "protein_g": 6
+      },
+      "note": {
+        "en": "Preparation matters; keep low-fat and mild.",
+        "zh": "注意做法：少油清淡为主。"
+      },
+      "aliases": [
+        "酸奶饮品"
+      ],
+      "tags": [
+        "dairy"
+      ],
+      "phases": [
+        "chemo",
+        "recovery"
+      ]
+    },
+    {
+      "id": "veg_sea_cucumber_cooked",
+      "name": {
+        "en": "Sea cucumber (cooked)",
+        "zh": "海参（熟）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 110,
+        "protein_g": 22
+      },
+      "note": {
+        "en": "Preparation matters; keep low-fat and mild.",
+        "zh": "注意做法：少油清淡为主。"
+      },
+      "aliases": [
+        "海参"
+      ],
+      "tags": [
+        "protein"
+      ],
+      "phases": [
+        "recovery"
+      ]
+    },
+    {
+      "id": "protein_duck_lean_small",
+      "name": {
+        "en": "Duck (lean, small)",
+        "zh": "鸭肉（少量）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 200,
+        "protein_g": 18
+      },
+      "note": {
+        "en": "Preparation matters; keep low-fat and mild.",
+        "zh": "注意做法：少油清淡为主。"
+      },
+      "aliases": [
+        "鸭肉",
+        "duck"
+      ],
+      "tags": [
+        "protein",
+        "higher-fat"
+      ],
+      "phases": [
+        "recovery"
+      ]
+    },
+    {
+      "id": "protein_duck_skin_fatty_duck",
+      "name": {
+        "en": "Duck skin / fatty duck",
+        "zh": "鸭皮/肥鸭"
+      },
+      "status": "avoid",
+      "nutr": {
+        "kcal": 350,
+        "protein_g": 15
+      },
+      "note": {
+        "en": "Preparation matters; keep low-fat and mild.",
+        "zh": "注意做法：少油清淡为主。"
+      },
+      "aliases": [
+        "鸭皮"
+      ],
+      "tags": [
+        "high-fat"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "diarrhea",
+        "recovery"
+      ]
+    },
+    {
+      "id": "protein_chicken_skin",
+      "name": {
+        "en": "Chicken skin",
+        "zh": "鸡皮"
+      },
+      "status": "avoid",
+      "nutr": {
+        "kcal": 200,
+        "protein_g": 2
+      },
+      "note": {
+        "en": "Preparation matters; keep low-fat and mild.",
+        "zh": "注意做法：少油清淡为主。"
+      },
+      "aliases": [
+        "鸡皮"
+      ],
+      "tags": [
+        "high-fat"
+      ],
+      "phases": [
+        "postop",
+        "chemo",
+        "diarrhea",
+        "recovery"
+      ]
+    },
+    {
+      "id": "carb_brown_rice",
+      "name": {
+        "en": "Brown rice",
+        "zh": "糙米"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 215,
+        "protein_g": 5
+      },
+      "note": {
+        "en": "Preparation matters; keep low-fat and mild.",
+        "zh": "注意做法：少油清淡为主。"
+      },
+      "aliases": [
+        "糙米",
+        "brown rice"
+      ],
+      "tags": [
+        "fiber"
+      ],
+      "phases": [
+        "recovery"
+      ]
+    },
+    {
+      "id": "carb_quinoa_soft",
+      "name": {
+        "en": "Quinoa (soft)",
+        "zh": "藜麦（煮软）"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 220,
+        "protein_g": 8
+      },
+      "note": {
+        "en": "Preparation matters; keep low-fat and mild.",
+        "zh": "注意做法：少油清淡为主。"
+      },
+      "aliases": [
+        "藜麦",
+        "quinoa"
+      ],
+      "tags": [
+        "fiber"
+      ],
+      "phases": [
+        "recovery"
+      ]
+    },
+    {
+      "id": "carb_instant_oatmeal_packet",
+      "name": {
+        "en": "Instant oatmeal packet",
+        "zh": "即食燕麦包"
+      },
+      "status": "caution",
+      "nutr": {
+        "kcal": 200,
+        "protein_g": 6
+      },
+      "note": {
+        "en": "Preparation matters; keep low-fat and mild.",
+        "zh": "注意做法：少油清淡为主。"
+      },
+      "aliases": [
+        "即食燕麦"
+      ],
+      "tags": [
+        "processed"
+      ],
+      "phases": [
+        "recovery"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "meta": {
+    "source": "Chinese Healthy Eating Guide (based on Australian Dietary Guidelines)",
+    "note": "Values shown for adult males/females (likely 19-50); adjust as needed."
+  },
+  "servings": {
+    "adult_male": {
+      "vegetables_legumes_serves_per_day": 6,
+      "fruit_serves_per_day": 2,
+      "grains_serves_per_day": 6,
+      "lean_meat_alt_serves_per_day": 3,
+      "dairy_alt_serves_per_day": 2.5,
+      "water_l_per_day": 2.6
+    },
+    "adult_female": {
+      "vegetables_legumes_serves_per_day": 5,
+      "fruit_serves_per_day": 2,
+      "grains_serves_per_day": 6,
+      "lean_meat_alt_serves_per_day": 2.5,
+      "dairy_alt_serves_per_day": 2.5,
+      "water_l_per_day": 2.1
+    }
+  },
+  "serve_definitions": {
+    "vegetables_legumes": "1 serve = 1/2 cup cooked veg OR 1 cup salad",
+    "fruit": "1 serve = 1 medium fruit OR 2 small fruits OR 1 cup canned fruit",
+    "grains": "1 serve = 1 slice bread OR 1/2 cup cooked rice/pasta/noodles",
+    "lean_meat_alt": "1 serve = 2 large eggs OR palm-sized lean red meat OR hand-sized chicken/fish OR 1 cup cooked beans",
+    "dairy_alt": "1 serve = 1 cup milk OR 2 slices hard cheese OR 3/4 cup yoghurt OR small tub soft cheese"
+  }
+}
