@@ -152,24 +152,25 @@
 
       <div class="mt-5 p-4 rounded-2xl bg-brand-50 border border-brand-100 text-sm text-slate-700">
         <p class="font-bold mb-1">Tip 💡</p>
-        <p id="settingsTip">Targets here are estimation helpers. Clinical needs vary (symptoms, surgery type, enzymes, diabetes, etc.).</p>
+        <p id="settingsTip">Targets here are estimation helpers. Clinical needs vary (symptoms, surgery type, enzymes, diabetes, etc.). ✅ 少量多餐 • ✅ 低脂更友好 • ✅ 每口慢一点<br/>
+            🥩 蛋白是优先项（恢复/肌肉/免疫）<br/>
+            ⚠️ 若持续腹泻/体重下降/黄疸，请尽快就医评估。</p>
       </div>
     </div>
   </div>
 
   <!-- Evidence modal -->
-  <div id="modal" class="fixed inset-0 bg-black/40 hidden items-center justify-center z-50">
-    <div class="bg-white w-11/12 max-w-2xl rounded-3xl p-6 shadow-2xl border border-emerald-100 max-h-[80vh] overflow-auto">
-      <div class="flex items-start justify-between gap-3">
-        <h3 class="text-lg font-extrabold text-slate-900" id="modalTitle">Title</h3>
-        <button class="text-slate-400 hover:text-slate-700" onclick="PCare.closeModal()"><i class="fa-solid fa-xmark text-xl"></i></button>
+  <div id="evModal" class="hidden fixed inset-0 bg-black/40 items-center justify-center z-50">
+    <div class="bg-white w-11/12 max-w-2xl rounded-3xl p-5 card shadow-none">
+      <div class="flex items-center justify-between gap-3">
+        <div id="evModalTitle" class="text-lg font-extrabold"></div>
+        <button id="evClose" class="btn-ghost">✖</button>
       </div>
-      <div id="modalBody" class="mt-4 text-sm text-slate-700 leading-6"></div>
-      <div class="mt-5">
-        <button onclick="PCare.closeModal()" class="btn-brand w-full py-3 rounded-2xl font-extrabold">OK 👍</button>
-      </div>
+      <div id="evModalBody" class="mt-3"></div>
     </div>
   </div>
+
+  <div id="toast" class="hidden">OK</div>
 
   <script src="./app_v3.js"></script>
 </body>
