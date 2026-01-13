@@ -890,7 +890,7 @@ const PCare = (() => {
     try{
       [state.foodDB, state.tcmDB, state.aus] = await Promise.all([
         loadJSON("./fooddb_v3.json"),
-        loadJSON("./tcm_evidence_v2.json").catch(()=>loadJSON("./tcm_evidence_v1.json")),
+        loadJSON("./tcm_evidence_v1.json").catch(()=>loadJSON("./tcm_evidence_v1.json")),
         loadJSON("./aus_guidelines_v1.json")
       ]);
       state.tcmDB = normalizeTCM(state.tcmDB);
