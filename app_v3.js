@@ -66,7 +66,7 @@ const PCare = (() => {
       btnTCM: "Integrative cautions",
       btnPhase: "Why this phase?",
       bannerTitle: "Safety note",
-      bannerText: "This app is for education & tracking. It can’t diagnose or replace professional care."
+      bannerText: "This app is for education & tracking. It can’t diagnose or replace professional care. ✅ Sleep Well • ✅ Eat Well"
     },
     zh: {
       subtitle: "胰腺营养 + 证据库（中西结合）",
@@ -103,7 +103,7 @@ const PCare = (() => {
       btnTCM: "中西医注意事项",
       btnPhase: "为什么是这个阶段？",
       bannerTitle: "安全提示",
-      bannerText: "本工具用于健康教育与记录，不可替代医生/营养师的诊疗。"
+      bannerText: "本工具用于健康教育与记录，不可替代医生/营养师的诊疗。✅ 少量多餐 • ✅ 低脂更友好 • ✅ 每口慢一点"
     }
   };
 
