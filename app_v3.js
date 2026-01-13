@@ -103,7 +103,7 @@ const PCare = (() => {
       btnPhase: "为什么是这个阶段？",
       bannerTitle: "安全提示",
       bannerText: "本工具用于健康教育与记录，不可替代医生/营养师的诊疗。✅ 少量多餐 • ✅ 低脂更友好 • ✅ 每口慢一点",
-
+}
   const $ = (id) => document.getElementById(id);
 
   function t(key){ return (i18n[state.lang] && i18n[state.lang][key]) || key; }
