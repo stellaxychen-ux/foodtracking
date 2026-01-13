@@ -941,4 +941,28 @@
         }
       ]
     },
-    {
+    {"id": "formula_huaier_granule",
+      "type": "formula_overview"
+      "title": {
+        "en": "Huaier Granule",
+        "zh": "槐耳颗粒（Huaier Granule）"
+      },
+      "summary": {
+        "en": "Referenced in clinical studies in hepatobiliary-related cancers as an adjunct/supportive therapy. Evidence specific to pancreatic cancer is limited or indirect; interpret cautiously and monitor product quality and organ function.",
+        "zh": "综述提及其在肝胆胰相关肿瘤临床研究中的应用，常作为辅助/支持治疗探索。对胰腺癌的证据多来自小样本或间接证据，需谨慎解读；若使用应关注产品来源与肝肾监测。",
+      },
+      "evidence_level": "low",
+      "source_refs": "https://doi.org/10.1186/s12943-024-02136-2",
+      "key_points": [
+        {
+          "en": "Evidence varies; prioritize safety and communication.",
+          "zh": "证据不一；以安全与沟通为先。"
+        }
+      ],
+      "safety": [
+        {
+          "en": "May worsen reflux in some.",
+          "zh": "与化疗合用需监测肝功能与过敏反应""
+        },
+      ]
+    },
